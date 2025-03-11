@@ -62,7 +62,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={
             <>
-              <Hero showIndicator={showIndicator} />
+              <Hero showIndicator={showIndicator} setSelectedNav={setSelectedNav} />
               <Main projects={projects} selectedNav={selectedNav} setSelectedNav={setSelectedNav} />
             </>
           } />

@@ -1,6 +1,6 @@
 import { SocialMedia } from "./SocialMedia";
 
-export function Hero({ showIndicator }) {
+export function Hero({ showIndicator, setSelectedNav }) {
   return (
     <section id="home" className="hero">
       <div className="hero-container">
@@ -13,8 +13,8 @@ export function Hero({ showIndicator }) {
           <h2> Interactive <span>Front-End Developer</span></h2>
           <p>Building beautiful, responsive web experiences.</p>
           <div className="cta-buttons">
-            <a href="#projects" className="btn">View My Work</a>
-            <a href="#contact" className="btn btn-outline">Contact me</a>
+            <a href="#projects" className="btn" onClick={() => setSelectedNav('projects')}>View My Work</a>
+            <a href="#contact" className="btn btn-outline" onClick={() => setSelectedNav('contact')}>Contact me</a>
           </div>
 
           <SocialMedia marginTop={26} />
