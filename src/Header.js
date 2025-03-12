@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 import { navList } from "./App";
 
 export function Header({ selectedNav, setSelectedNav }) {
@@ -62,7 +62,7 @@ export function NavList({ item, selectedNav, setSelectedNav }) {
   const selected = item === selectedNav;
   return (
     <li className="nav-item" onClick={closeNavBar}>
-      <a className={selected ? "nav-active" : "nav-link"} href={`#${item}`}>{item}</a>
+      <Link className={selected ? "nav-active" : "nav-link"} to={`${item}`}>{item}</Link>
     </li>
   );
 }
