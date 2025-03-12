@@ -1,11 +1,12 @@
 import { SocialMedia } from "./SocialMedia";
+import intro from "./images/intro.png";
 
 export function Hero({ showIndicator, setSelectedNav }) {
   return (
     <section id="home" className="hero">
       <div className="hero-container">
         <div className="hero-image">
-          <img src="\images\Adobe Express - file.png" alt="" />
+        <img src={intro} alt="my-pic" />
         </div>
 
         <div className="hero-content">
@@ -27,9 +28,10 @@ export function Hero({ showIndicator, setSelectedNav }) {
 }export function Indicator() {
   return (
     <div className="indicator" data-title="Explore me">
-      <a href="#about"><span className="material-symbols-outlined">
-        keyboard_double_arrow_down
-      </span>
+      <a href="#about">
+       <span className="material-symbols-outlined">
+keyboard_double_arrow_down
+</span>
       </a>
     </div>
   );

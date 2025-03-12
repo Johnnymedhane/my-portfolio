@@ -1,9 +1,44 @@
 import { useEffect, useState } from "react";
 import { Loading } from "./Loading";
 
+import calculator from './images/calculator2.png';
+import uppopcorn from './images/movies.png';
+import bill from './images/bill-split.png';
+import pizza from './images/pizza-image.png';
+import river from './images/river-puzzle.png';
+import todo from './images/to-do-list.png';
+import spotify from './images/python-spotify.png';
+import analist from './images/data-analist.png';
+import saving from './images/saving-planer.png';
+import rateRe from './images/rate-res.png';
+import stpSaving from './images/stp saving-planer.png';
+// import stpCalculator from './images/stp-calculator.png';
+import screenManagemant from './images/screen-manage.png';
+
+const projects = [
+  { name: 'Management Screen STD', category: 'QA', img:screenManagemant, webLink: '', github: 'https://github.com/Johnnymedhane/QA_Projects_Exercises/blob/main/QA-KMS-%20STD.docx' },
+  { name: 'RateRes STD', category: 'QA', img: rateRe, webLink: '', github: 'https://github.com/Johnnymedhane/QA_Projects_Exercises/blob/main/std%20RateRes.docx' },
+  { name: 'Saving-planer STP', category: 'QA', img: stpSaving, webLink: '', github: 'https://github.com/Johnnymedhane/Saving-Planer/blob/main/QA/STP-Save%20Planer.docx' },
+  { name: 'Spotify-Dataset', category: 'Python data-analist', img: spotify, webLink: '', github: 'https://github.com/Johnnymedhane/Python-projects-and-exercises/blob/main/Project_spotifay.dataset.ipynb' },
+  { name: 'Dtaset analysis', category: 'Python data-analist', img: analist,  github: 'https://github.com/Johnnymedhane/Python-projects-and-exercises/blob/main/Chipotle/Exercise_with_Solutions.ipynb' },
+  { name: 'Saving-Planer', category: 'Web development', img: saving, webLink: 'https://app.netlify.com/teams/johnnymedhane', github: 'https://github.com/Johnnymedhane/Saving-Planer' },
+  { name: 'eat-n-split', category: 'Web development', img: bill, webLink: 'https://app.netlify.com/teams/johnnymedhane', github: 'https://github.com/Johnnymedhane/06-eat-n-split' },
+  { name: 'Travel-List', category: 'Web development', img: todo, webLink: 'https://dazzling-tulumba-2334c5.netlify.app/', github: 'https://github.com/Johnnymedhane/Travel-List' },
+  { name: 'River-Puzzle', category: 'Web development', img: river, webLink: ' https://johnnymedhane.github.io/river-puzzle/', github: 'https://github.com/Johnnymedhane/river-puzzle' },
+  { name: 'Pizza-page', category: 'Web development', img: pizza, webLink: 'strong-trifle-c1690d.netlify.app', github: 'https://github.com/Johnnymedhane/Pizza-page' },
+  { name: 'PopCorn', category: 'Web development', img: uppopcorn, webLink: 'https://johnnymedhane.github.io/usePopCorn/', github: 'https://github.com/Johnnymedhane/usePopCorn' },
+  { name: 'Calculator', category: 'Web development', img: calculator, webLink: 'myclculatorproject.netlify.app', github: 'https://github.com/Johnnymedhane/Calculator' },
+];
 
 
-export function Projects({ projects }) {
+
+
+
+
+
+
+
+export function Projects() {
   const projectsCategory = ['All', 'Web development', 'Python data-analist', 'QA'];
   const [selectItem, setSelectItem] = useState('');
 
@@ -51,7 +86,6 @@ export function FilterItem({ project, i, selectItem, setSelectItem }) {
 }
 export function SmallerScreen({ projects, selectItem, setSelectItem }) {
   const [showList, setShowList] = useState(false);
-  //  const [selectedProjectType, setSelectedProjectType] = useState('Select category');
   function handleSelectProject(project) {
     setSelectItem(project);
     setShowList(false);

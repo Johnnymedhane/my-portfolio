@@ -46,7 +46,7 @@ export function About() {
             <p> I invite you to take a look at my projects
               and resume, and feel free to contact me if you have any questions
               or would like to work together.
-               <Link className="link-my-story" to="/my-story" target="_blank">
+               <Link className="link-my-story" to="/my-story" >
                 Read my story &rarr;</Link>
             </p>
           </div>
@@ -95,7 +95,7 @@ function Benefits() {
 
   return (
     <div className="benefits">
-      <h2 className="benefits-title">Why I’m a Great Fit</h2>
+      <h2 className="benefits-title">Why I'm a Great Fit</h2>
       <ul className="benefits-list">
         {values.map((value, index) => (
           <Value
@@ -139,10 +139,9 @@ function ContactMe() {
         professional who has overcome challenges
         and is ready to make an impact, let's connect.
         <span className="contact-link"> 
-          <a href="mailto:johnnymedhane@gmail.com" className="contact-me-link"> Feel freecontact me</a>
+          <a href="mailto:johnnymedhane@gmail.com" className="contact-me-link">johnnymedhane@gmail.com</a>
         </span>
       </p>
     </div>
   );
-
 }

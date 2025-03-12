@@ -1,6 +1,7 @@
-import './myStory.css'; // Import the CSS file for styling
+import './myStory.css';
+import image from './images/black-img.png';
 import React from 'react';
-import { useNavigate }  from 'react-router-dom';
+// import { useNavigate }  from 'react-router-dom';
 
 const values = [
     { title: 'What Drives Me' ,
@@ -60,7 +61,8 @@ function BackGround() {
         <div className="background-container">
             <div className="background-hero">
             <div className="image-container">
-                <img src="\images\Black_img.png" alt="my pic" />
+               <img src={image} alt="Black Image" />
+
             </div>
 
             <div className="content">
@@ -173,7 +175,7 @@ function ContactMe() {
         <div className="end-story">
             <p>
                 Thank you for reading my story! 
-                I’m excited to connect and explore new opportunities together!
+                I'm excited to connect and explore new opportunities together!
 
                 Feel free to reach me <a href="mailto:johnnymedhane@gmail.com" className="link"> contact me</a>.
             </p>

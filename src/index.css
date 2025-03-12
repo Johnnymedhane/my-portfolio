@@ -1,7 +1,7 @@
 
 
 
-/* @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap'); */
+ @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap'); 
 
 
 *, *::before, *::after {
@@ -87,6 +87,72 @@ hsl(35, 100%, 68%)
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
 }
+
+.light-mode {
+
+  /* fonts */
+  --ffpoppins: 'poppins';
+  --ffLeagueSpartan: 'League Spartan';
+  --ffSaira: 'Saira';
+  --ffroboto: 'Roboto';
+
+  /* colors */
+  --bg-gradient-jet: linear-gradient(
+    to bottom right,
+    hsla(0, 0%, 98%, 0.9) 0%,
+    hsla(0, 0%, 90%, 0) 100%
+  ), hsl(0, 0%, 95%);
+  --bg-gradient-yellow-1: linear-gradient(
+    to bottom right,
+    hsl(45, 100%, 85%) 0%,
+    hsla(45, 100%, 78%, 0) 50%
+  );
+  --bg-gradient-yellow-2: linear-gradient(
+    135deg,
+    hsla(45, 100%, 85%, 0.7) 0%,
+    hsla(45, 100%, 75%, 0) 60%
+  ), hsl(0, 0%, 95%);
+  --bg-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 90%) 3%,
+    hsl(0, 0%, 85%) 97%
+  );
+
+  /* swapped colors */
+  --bg: hsl(0, 0%, 100%);
+  --tbg: hsla(0, 0%, 98%, 0.75);
+  --black-1: hsl(0, 0%, 98%);
+  --black-2: hsl(0, 0%, 95%);
+  --white-1: hsl(0, 0%, 10%);
+  --white-2: hsl(0, 0%, 15%);
+  
+  --light-gray: hsl(0, 0%, 30%);
+  --light-gray-70: hsla(0, 0%, 90%, 0.7);
+  --orange-1: hsl(45, 87%, 56%);
+  --orange-2: hsl(45, 79%, 56%);
+  --jet: hsl(0, 0%, 80%);
+  --lightGreen: hsl(145, 80%, 70%);
+
+  /* font-size */
+  --text-gradient-yellow: linear-gradient(
+    to right,
+    hsl(45, 100%, 72%),
+    hsl(45, 90%, 68%)
+  );
+  /* box-shadow */
+   --shadow-1: -4px 8px 24px hsla(0, 0%, 100%, 0.25);
+  --shadow-2: 0 16px 30px hsla(0, 0%, 100%, 0.25);
+  --shadow-3: 0 16px 40px hsla(0, 0%, 100%, 0.25);
+  --shadow-4: 0 25px 50px hsla(0, 0%, 100%, 0.15);
+  --shadow-5: 0 24px 80px hsla(0, 0%, 100%, 0.25);
+
+
+
+}
+
+
+
+
 
 
 a { text-decoration: none; }
@@ -197,7 +263,6 @@ background: var(--tbg);
 backdrop-filter: blur(10px);
 -webkit-backdrop-filter: blur(10px);
 border:1px solid var(--jet);
-/* padding: 0 10px 0; */
 z-index: 10;
 
 }
@@ -241,11 +306,7 @@ z-index: 10;
 .logo:hover span {
   background: var(--bg-gradient-yellow-2);
 }
-/* .logo img{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-} */
+
 
 .nav-list{
   display: flex;
@@ -378,7 +439,7 @@ transform-origin: center;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--lightGreen) ;
+  background-color: var(--bg);
   transition: .4s;
   border-radius: 30px;
 }
@@ -386,13 +447,14 @@ transform-origin: center;
 .slider:before {
   position: absolute;
   content: "";
-  height: 25px;
-  width: 25px;
+  height: 27px;
+  width: 27px;
   border-radius: 20px;
   left: 2px;
   bottom: 2px;
   z-index: 2;
-  background-color: white;
+  background-color: var(--white-1);
+  filter: blur(3px);
   transition: .4s;
 }
 
@@ -454,7 +516,7 @@ transform-origin: center;
 }
 
 .input:checked + .slider {
-  background-color: #183153;
+  background-color: transparent;
 }
 
 .input:focus + .slider {
@@ -463,6 +525,7 @@ transform-origin: center;
 
 .input:checked + .slider:before {
   transform: translateX(30px);
+  filter: blur(3px);
 }
 
 /* home */
@@ -754,7 +817,7 @@ transition: var(--transition-2);
 
   main {
   margin: auto;
-  margin-bottom: 75px;
+  margin-bottom: 15px;
   min-width: 259px;
   max-width: 90%;
   border: 1px solid var(--jet);
@@ -767,9 +830,9 @@ transition: var(--transition-2);
   margin-top: 4rem;
   box-shadow: var(--shadow-1);
   z-index: 1;
-  transform-origin: center;
+   transform-origin: bottom; 
   animation: articl 1s linear forwards;
-  transition: var(--transition-2);
+  transition: var(--transition-1);
  
 }
 
@@ -1183,7 +1246,7 @@ position: relative;
   
 }
 .project-info h3 {
-  font-size: var(--fs-4);
+  font-size: var(--fs-5);
   font-weight: 500;
   color: var(--white-1);
 }
@@ -1890,7 +1953,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
  .projects-list{
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 50px;
   }
 .mapbox {
