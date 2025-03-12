@@ -1,10 +1,11 @@
-
-  // import { Link } from "react-router-dom";
+/* eslint-disable no-unused-vars */
+import { Link } from "react-router-dom";
 import { Resume } from "./Resume";
 import { Projects } from "./Projects";
 import { Skills } from "./Skills";
 import { About } from "./About";
 import { Contact } from "./Contact";
+/* eslint-enable no-unused-vars */
 
 export function Main({ selectedNav }) {
   return (
