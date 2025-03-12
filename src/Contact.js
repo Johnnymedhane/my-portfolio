@@ -33,7 +33,7 @@ export function Map() {
   return isMapAvailable ? (
     <div className="mapbox">
       <figure>
-        <iframe
+        <iframe title="map"
           src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=petah%20tikva%20israel&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
           width="100%"
           height="100%"

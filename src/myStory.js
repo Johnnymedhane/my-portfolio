@@ -61,7 +61,7 @@ function BackGround() {
         <div className="background-container">
             <div className="background-hero">
             <div className="image-container">
-               <img src={image} alt="Black Image" />
+               <img src={image} alt="my-pic" />
 
             </div>
 
