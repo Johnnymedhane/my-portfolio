@@ -1,5 +1,5 @@
 import { SocialMedia } from "./SocialMedia";
-import intro from "./images/intro.png";
+// import intro from "./images/removed-bg.png";
 // import { a } from "react-router-dom";
 
 export function Hero({ showIndicator, setSelectedNav }) {
@@ -13,7 +13,7 @@ const handleScroll = (sectionId) => {
     <section id="home" className="hero">
       <div className="hero-container">
         <div className="hero-image">
-        <img src={intro} alt="my-pic" />
+       <img src={`${process.env.PUBLIC_URL}/images/removed-bg.png`} alt="my-pic" />
         </div>
 
         <div className="hero-content">

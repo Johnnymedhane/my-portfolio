@@ -1,33 +1,20 @@
 import { useEffect, useState } from "react";
 import { Loading } from "./Loading";
 
-import calculator from './images/calculator2.png';
-import uppopcorn from './images/movies.png';
-import bill from './images/bill-split.png';
-import pizza from './images/pizza-image.png';
-import river from './images/river-puzzle.png';
-import todo from './images/to-do-list.png';
-import spotify from './images/python-spotify.png';
-import analist from './images/data-analist.png';
-import saving from './images/saving-planer.png';
-import rateRe from './images/rate-res.png';
-import stpSaving from './images/stp saving-planer.png';
-// import stpCalculator from './images/stp-calculator.png';
-import screenManagemant from './images/screen-manage.png';
 
 const projects = [
-  { name: 'Management Screen STD', category: 'QA', img:screenManagemant, webLink: '', github: 'https://github.com/Johnnymedhane/QA_Projects_Exercises/blob/main/QA-KMS-%20STD.docx' },
-  { name: 'RateRes STD', category: 'QA', img: rateRe, webLink: '', github: 'https://github.com/Johnnymedhane/QA_Projects_Exercises/blob/main/std%20RateRes.docx' },
-  { name: 'Saving-planer STP', category: 'QA', img: stpSaving, webLink: '', github: 'https://github.com/Johnnymedhane/Saving-Planer/blob/main/QA/STP-Save%20Planer.docx' },
-  { name: 'Spotify-Dataset', category: 'Python data-analist', img: spotify, webLink: '', github: 'https://github.com/Johnnymedhane/Python-projects-and-exercises/blob/main/Project_spotifay.dataset.ipynb' },
-  { name: 'Dtaset analysis', category: 'Python data-analist', img: analist,  github: 'https://github.com/Johnnymedhane/Python-projects-and-exercises/blob/main/Chipotle/Exercise_with_Solutions.ipynb' },
-  { name: 'Saving-Planer', category: 'Web development', img: saving, webLink: 'https://app.netlify.com/teams/johnnymedhane', github: 'https://github.com/Johnnymedhane/Saving-Planer' },
-  { name: 'eat-n-split', category: 'Web development', img: bill, webLink: 'https://app.netlify.com/teams/johnnymedhane', github: 'https://github.com/Johnnymedhane/06-eat-n-split' },
-  { name: 'Travel-List', category: 'Web development', img: todo, webLink: 'https://dazzling-tulumba-2334c5.netlify.app/', github: 'https://github.com/Johnnymedhane/Travel-List' },
-  { name: 'River-Puzzle', category: 'Web development', img: river, webLink: ' https://johnnymedhane.github.io/river-puzzle/', github: 'https://github.com/Johnnymedhane/river-puzzle' },
-  { name: 'Pizza-page', category: 'Web development', img: pizza, webLink: 'strong-trifle-c1690d.netlify.app', github: 'https://github.com/Johnnymedhane/Pizza-page' },
-  { name: 'PopCorn', category: 'Web development', img: uppopcorn, webLink: 'https://johnnymedhane.github.io/usePopCorn/', github: 'https://github.com/Johnnymedhane/usePopCorn' },
-  { name: 'Calculator', category: 'Web development', img: calculator, webLink: 'myclculatorproject.netlify.app', github: 'https://github.com/Johnnymedhane/Calculator' },
+    { name: 'Management Screen STD', category: 'QA', img: `${process.env.PUBLIC_URL}/images/screen-manage.png`, webLink: '', github: 'https://github.com/Johnnymedhane/QA_Projects_Exercises/blob/main/QA-KMS-%20STD.docx' },
+  { name: 'RateRes STD', category: 'QA', img: `${process.env.PUBLIC_URL}/images/rate-res.png`, webLink: '', github: 'https://github.com/Johnnymedhane/QA_Projects_Exercises/blob/main/std%20RateRes.docx' },
+  { name: 'Saving-planer STP', category: 'QA', img: `${process.env.PUBLIC_URL}/images/stp saving-planer.png`, webLink: '', github: 'https://github.com/Johnnymedhane/Saving-Planer/blob/main/QA/STP-Save%20Planer.docx' },
+  { name: 'Spotify-Dataset', category: 'Python data-analist', img: `${process.env.PUBLIC_URL}/images/python-spotify.png`, webLink: '', github: 'https://github.com/Johnnymedhane/Python-projects-and-exercises/blob/main/Project_spotifay.dataset.ipynb' },
+  { name: 'Dtaset analysis', category: 'Python data-analist', img: `${process.env.PUBLIC_URL}/images/data-analist.png`, github: 'https://github.com/Johnnymedhane/Python-projects-and-exercises/blob/main/Chipotle/Exercise_with_Solutions.ipynb' },
+  { name: 'Saving-Planer', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/saving-planer.png`, webLink: 'https://app.netlify.com/teams/johnnymedhane', github: 'https://github.com/Johnnymedhane/Saving-Planer' },
+  { name: 'eat-n-split', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/bill-split.png`, webLink: 'https://app.netlify.com/teams/johnnymedhane', github: 'https://github.com/Johnnymedhane/06-eat-n-split' },
+  { name: 'Travel-List', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/to-do-list.png`, webLink: 'https://dazzling-tulumba-2334c5.netlify.app/', github: 'https://github.com/Johnnymedhane/Travel-List' },
+  { name: 'River-Puzzle', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/river-puzzle.png`, webLink: 'https://johnnymedhane.github.io/river-puzzle/', github: 'https://github.com/Johnnymedhane/river-puzzle' },
+  { name: 'Pizza-page', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/pizza-image.png`, webLink: 'https://strong-trifle-c1690d.netlify.app', github: 'https://github.com/Johnnymedhane/Pizza-page' },
+  { name: 'PopCorn', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/movies.png`, webLink: 'https://johnnymedhane.github.io/usePopCorn/', github: 'https://github.com/Johnnymedhane/usePopCorn' },
+  { name: 'Calculator', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/calculator2.png`, webLink: 'https://myclculatorproject.netlify.app', github: 'https://github.com/Johnnymedhane/Calculator' },
 ];
 
 

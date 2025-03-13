@@ -1,7 +1,4 @@
 import './myStory.css';
-import image from './images/black-img.png';
-import React from 'react';
-// import { useNavigate }  from 'react-router-dom';
 
 const values = [
     { title: 'What Drives Me' ,
@@ -46,7 +43,7 @@ const values = [
 ]
 
 
-export function Mybackground({setShowMyStory}) {
+export function Mybackground() {
     return (
         <div className="mystory-container">
             <BackGround />
@@ -62,7 +59,7 @@ function BackGround() {
         <div className="background-container">
             <div className="background-hero">
             <div className="image-container">
-               <img src={image} alt="my-pic" />
+              <img src={`${process.env.PUBLIC_URL}/images/black-img.png`} alt="my-pic" />
 
             </div>
 
