@@ -631,7 +631,8 @@ animation: typing 2.5s steps(15)  infinite alternate;
 
 }
 .hero-image{
-height: 450px;
+height: 400px;
+aspect-ratio: 2/3;
 max-height: 450px;
 position: relative;
 animation: image 1s linear;
@@ -714,7 +715,8 @@ gap:1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px;
+  width: 35px;
+  height: 35px;
    background: var(--bg);
    border-radius: 50%;
    position: relative;
@@ -1628,8 +1630,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   /* home */
  
   .hero-container{
-    margin-top:1.3rem;
-   gap: 2rem;
+    margin-top:2rem;
+   gap: 1.3rem;
    flex-direction: column;
   }
   .hero-image{
@@ -1666,8 +1668,12 @@ textarea.form-input::-webkit-resizer { display: none; }
   .indicator .material-symbols-outlined{
     font-size: 30px;
   }
-  
-  
+  /* .media{
+    font-size: var(--fs-5);
+    width: 32px;
+    height: 32px;
+  }
+   */
  
   /* main */
   main {
@@ -1772,11 +1778,13 @@ textarea.form-input::-webkit-resizer { display: none; }
  .hero-container{
     margin-top: 1rem;
    flex-direction: column;
-   gap: 1.8rem;
+   gap: 1.2rem;
    padding: 10px;
   
   }
-  
+  .hero-image{
+    max-height: 150px;
+  }
  
   .hero-image::before{
     inset: -15px;
@@ -1785,7 +1793,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     inset: -10px;
   }
  .hero-content h1{
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   
  }
  .hero-content h2{
@@ -1813,7 +1821,9 @@ textarea.form-input::-webkit-resizer { display: none; }
   
  
  .media{
-    font-size: var(--fs-6);
+    font-size: var(--fs-5);
+    width: 32px;
+    height: 32px;
 
  }
 
@@ -1920,7 +1930,32 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   }
 
+/* .media{
+  font-size: var(--fs-4);
+  width: 50px;
+  height: 50px;
+} */
 
+  /**
+   * RESET
+   */
+
+  body::-webkit-scrollbar { width: 10px; }
+
+  body::-webkit-scrollbar-track { background: var(--black-1); }
+
+  body::-webkit-scrollbar-thumb {
+    border: 5px solid var(--black-1);
+    background: hsla(0, 0%, 100%, 0.1);
+    border-radius: 20px;
+    box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
+                inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+  }
+
+  body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
+
+  body::-webkit-scrollbar-button { height: 60px;
+}
 
   /**
    * REUSED STYLE
