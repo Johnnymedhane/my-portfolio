@@ -62,13 +62,17 @@ export function About() {
         <Benefits />
         <ContactMe />
 
-        {showMyStory &&<button className="btn" onClick={() => setShowMyStory(!showMyStory)}>
+        {showMyStory &&<button className="btn close" onClick={() => setShowMyStory(!showMyStory)}>
           Close ❌
         </button>
         }
 
       </section>
-     {showMyStory && <Mybackground setShowMyStory={setShowMyStory} />}
+      {showMyStory &&
+        <div className='my-story'>
+          <Mybackground setShowMyStory={setShowMyStory} />
+        </div>
+      }
     </article>
   );
 }
