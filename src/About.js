@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Mybackground } from './myStory';
+
+// import { Link } from 'react-router-dom';
 const values = [ 
    {
                 title: 'Attention to detail: ',
@@ -26,6 +28,8 @@ const values = [
 ]
 
 export function About() {
+ const [showMyStory, setShowMyStory] = useState(false);
+
   return (
     <article>
       <section id="about">
@@ -46,15 +50,25 @@ export function About() {
             <p> I invite you to take a look at my projects
               and resume, and feel free to contact me if you have any questions
               or would like to work together.
-               <Link className="link-my-story" to="/my-story" >
-                Read my story &rarr;</Link>
+              <a className="link-my-story"
+                href="#my-story"
+                onClick={() => setShowMyStory(!showMyStory)}
+                >
+                Read my story &rarr;</a>
             </p>
           </div>
         </div>
         <Service />
         <Benefits />
         <ContactMe />
+
+        {showMyStory &&<button className="btn" onClick={() => setShowMyStory(!showMyStory)}>
+          Close ❌
+        </button>
+        }
+
       </section>
+     {showMyStory && <Mybackground setShowMyStory={setShowMyStory} />}
     </article>
   );
 }

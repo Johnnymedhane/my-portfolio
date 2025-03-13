@@ -1,7 +1,14 @@
 import { SocialMedia } from "./SocialMedia";
 import intro from "./images/intro.png";
+// import { a } from "react-router-dom";
 
 export function Hero({ showIndicator, setSelectedNav }) {
+
+const handleScroll = (sectionId) => {
+    setSelectedNav(sectionId);
+    // document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section id="home" className="hero">
       <div className="hero-container">
@@ -14,7 +21,7 @@ export function Hero({ showIndicator, setSelectedNav }) {
           <h2> Interactive <span>Front-End Developer</span></h2>
           <p>Building beautiful, responsive web experiences.</p>
           <div className="cta-buttons">
-            <a href="#projects" className="btn" onClick={() => setSelectedNav('projects')}>View My Work</a>
+            <a href="#projects"  onClick={() => handleScroll('projects')}    className="btn">View My Work</a>
             <a href="#contact" className="btn btn-outline" onClick={() => setSelectedNav('contact')}>Contact me</a>
           </div>
 

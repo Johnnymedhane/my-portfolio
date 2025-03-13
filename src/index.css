@@ -633,7 +633,6 @@ animation: typing 2.5s steps(15)  infinite alternate;
 .hero-image{
 height: 450px;
 max-height: 450px;
-/* aspect-ratio: 2/2; */
 position: relative;
 animation: image 1s linear;
 }
@@ -662,11 +661,11 @@ z-index: -1;
 
 @keyframes image {
   0%{
-  transform:  scale(0);
+  transform:  translateX(-100%) scale(0);
     
   }
   100%{
-    transform:  scale(1);
+    transform: translateX(0%)  scale(1);
    
   }
 }
@@ -715,8 +714,7 @@ gap:1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-   width: 40px;
-   height: 40px;
+  padding: 8px;
    background: var(--bg);
    border-radius: 50%;
    position: relative;
@@ -830,7 +828,7 @@ transition: var(--transition-2);
   margin-top: 4rem;
   box-shadow: var(--shadow-1);
   z-index: 1;
-   transform-origin: bottom; 
+   transform-origin: top; 
   animation: articl 1s linear forwards;
   transition: var(--transition-1);
  
@@ -873,7 +871,7 @@ transition: var(--transition-2);
   box-shadow: var(--shadow-1);
  
 }
-.link-my-hestory:hover, .contact-me-link:hover{
+.link-my-story:hover, .contact-me-link:hover{
   color: var(--lightGreen);
   box-shadow: var(--shadow-2);
   transition: var(--transition-1);
@@ -1438,12 +1436,15 @@ padding: 10px 15px;
   grid-template-columns: 1fr;
   gap: 14px;
  font-size: var(--fs-7);
+
+
 }
 .contact-item{
   min-width: 100%;
   display: flex;
   align-items: center;
   gap: 16px;
+  
 }
 .contact-info{
   max-width: calc(100% - 46px);
@@ -1453,7 +1454,7 @@ padding: 10px 15px;
 .contact-icon i{
   display: block;
   color: var(--orange-1);
-  font-size: var(--fs-5);
+  font-size: var(--fs-6);
 }
 .contact-title{
   color: var(--light-gray);
@@ -1615,7 +1616,7 @@ textarea.form-input::-webkit-resizer { display: none; }
  
   .hero-container{
     margin-top:1.3rem;
-   gap: 1rem;
+   gap: 2rem;
    flex-direction: column;
   }
   .hero-image{
@@ -1632,9 +1633,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   
  }
- .cta-buttons{ 
-  margin-bottom: 10px;
- }
+ 
  .btn{
   padding: 8px 15px;
   /* font-size: var(--fs-7); */
@@ -1654,9 +1653,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .indicator .material-symbols-outlined{
     font-size: 30px;
   }
-  .media{
-    font-size: var(--fs-5);
-  }
+  
   
  
   /* main */
@@ -1694,9 +1691,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 /* contact */
-  .more-info{
-    padding: 8px 15px;
-  }
+  
   .contact-icon{
     font-size: var(--fs-7);
   }
@@ -1715,6 +1710,13 @@ textarea.form-input::-webkit-resizer { display: none; }
   width: 100%;
   height: 100%;
   }
+
+
+
+
+
+
+
 }
 
 
@@ -1757,13 +1759,11 @@ textarea.form-input::-webkit-resizer { display: none; }
  .hero-container{
     margin-top: 1rem;
    flex-direction: column;
-   border: 1px solid var(--lightGreen);
+   gap: 1.8rem;
    padding: 10px;
   
   }
-  .hero-image{
-    /* max-height: 180px; */
-  }
+  
  
   .hero-image::before{
     inset: -15px;
@@ -1772,7 +1772,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     inset: -10px;
   }
  .hero-content h1{
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   
  }
  .hero-content h2{
@@ -1784,8 +1784,11 @@ textarea.form-input::-webkit-resizer { display: none; }
  }
   .hero p{
     font-size: var(--fs-6);
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
   }
+  .cta-buttons{ 
+  margin-bottom: 10px;
+ }
 
  .hero-content .btn{
   margin-bottom: 5px;
@@ -1796,7 +1799,10 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
   
  
- 
+ .media{
+    font-size: var(--fs-6);
+
+ }
 
   
   /* main */
@@ -1861,7 +1867,9 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: 100%;
     text-wrap: wrap;
   } 
-
+.more-info{
+    font-size: var(--fs-7);
+  }
   
   .separator{
     margin-top: 1.5rem;
@@ -1869,6 +1877,10 @@ textarea.form-input::-webkit-resizer { display: none; }
   .form-btn{
     width: 100%;
   }
+
+
+
+
 }
 
 
@@ -1972,9 +1984,29 @@ background: var(--black-1);
 width: 60%;
 }
 
+
+
+.social-media{
+ 
+ gap:2rem;
+}
+
+ 
+}
+
+
+
+
+
+/**
+ * responsive larger than 1250px screen
+ */
+
+@media (min-width: 1250px) {
 .contact-list{
   gap: 24px;
  font-size: var(--fs-5);
+ padding: 10px;
 }
 .contact-item{
   min-width: 100%;
@@ -1991,7 +2023,7 @@ width: 60%;
   color: var(--light-gray);
   text-transform: uppercase;
   margin-bottom: 2px;
- font-size: var(--fs-4);
+ font-size: var(--fs-5);
   
 }
 
@@ -2005,30 +2037,14 @@ width: 60%;
 
 
 
-.social-media{
- 
- gap:2rem;
-}
-.media{
-  font-size: var(--fs-4);
- 
-}
- 
-}
 
 
-
-
-
-/**
- * responsive larger than 1250px screen
- */
-
-@media (min-width: 1250px) {
 
   /**
    * RESET
-   */
+
+}
+
 
   body::-webkit-scrollbar { width: 40px; }
 

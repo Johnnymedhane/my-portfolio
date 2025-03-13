@@ -46,7 +46,7 @@ const values = [
 ]
 
 
-export function Mybackground() {
+export function Mybackground({setShowMyStory}) {
     return (
         <div className="mystory-container">
             <BackGround />
@@ -58,6 +58,7 @@ export function Mybackground() {
 }
 function BackGround() {
     return (
+        <section id="my-story" className="my-story">
         <div className="background-container">
             <div className="background-hero">
             <div className="image-container">
@@ -89,7 +90,8 @@ function BackGround() {
                 </p>
                </div>
             </div>
-        </div>
+            </div>
+        </section>
     )
 } function MyJourney() {
     return (
@@ -177,7 +179,7 @@ function ContactMe() {
                 Thank you for reading my story! 
                 I'm excited to connect and explore new opportunities together!
 
-                Feel free to reach me <a href="mailto:johnnymedhane@gmail.com" className="link"> contact me</a>.
+                Feel free to reach me <a href="mailto:johnnymedhane@gmail.com" className="link"> johnnymedhane@gmail.com</a>.
             </p>
         </div>
     )
