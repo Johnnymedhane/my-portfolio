@@ -17,7 +17,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://Johnnymedhane.github.io/My-portfolio",
+  "homepage": "https://bucolic-dango-5a0f8c.netlify.app",
   "eslintConfig": {
     "extends": [
       "react-app",
