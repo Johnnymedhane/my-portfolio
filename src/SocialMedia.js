@@ -3,7 +3,7 @@ export function SocialMedia({marginTop = 15}) {
     <div className="info" style={{marginTop:`${marginTop}px`}}>
       <div className="social-media">
         <div className="media">
-          <a href="www.linkedin.com/in/johnny-medhane-53152b1a8">
+          <a href="https://www.linkedin.com/in/johnny-medhane-53152b1a8/" className="linkedin">
             <i className="fa-brands fa-linkedin-in"> </i>
           </a>
           
