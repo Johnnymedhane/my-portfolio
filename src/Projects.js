@@ -75,7 +75,7 @@ export function SmallerScreen({ projects, selectItem, setSelectItem }) {
   const [showList, setShowList] = useState(false);
   function handleSelectProject(project) {
     setSelectItem(project);
-    setShowList(false);
+    setShowList(true);
   }
 
   return (

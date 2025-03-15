@@ -63,6 +63,9 @@ export function Form() {
     email: '',
     message: ''
   });
+  const [responseMessage, setResponseMessage] = useState('');
+
+
   function handleInput(e) {
     const { name, value } = e.target;
     setFormData((formData) => ({ ...formData, [name]: value }));
@@ -77,10 +80,26 @@ export function Form() {
     const form = e.target.form;
     setIsFormValid(form.checkValidity());
   }
-  function hadleSubmit(e) {
+   async function  hadleSubmit(e) {
     e.preventDefault();
-    console.log("form submited", formData);
-  }
+     console.log("form submited", formData);
+     try {
+       const response = await fetch('/.netlify/functions/submitForm', {
+         method: 'POST',
+         headers: {
+           'Content-Type': 'application/json',
+         },
+
+         body: JSON.stringify(formData),
+       });
+       const data = await response.json();
+       setResponseMessage(data.message);
+     }
+     catch (error) {
+       console.error('Error:', error);
+       setResponseMessage('Something went wrong. Please try again.');
+     }
+  };
 
 
   return (
@@ -121,6 +140,9 @@ export function Form() {
           <i className="fa-regular fa-paper-plane"></i>
           <span>Send Message</span>
         </button>
+        {responseMessage &&
+          <p className="response-message">{responseMessage}
+          </p>}
       </form>
     </div>
   );

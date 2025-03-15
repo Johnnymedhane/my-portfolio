@@ -55,7 +55,7 @@ export function Mybackground() {
 }
 function BackGround() {
     return (
-        <section id="my-story" className="my-story">
+        <section id="my-story" >
         <div className="background-container">
             <div className="background-hero">
             <div className="image-container">
@@ -74,16 +74,16 @@ function BackGround() {
                 <p> I moved to Ethiopia in 2010 and was there for a year. </p>
                 <p> I then  came to Israel in 2012, i came through the desert when i was 15 years old. </p>
                 <p> I now live in Petah Tikva.</p>
-                <p> I'm alone here, my family is in eritrea.</p>
+                <p> I'm alone here,  my family is in eritrea.</p>
                 <p> I'm obsess on going to gym to forget things that makes me worry. </p>
                 <p> I  like to cooke and watch moves alot at home. </p>
                 <p> I alwas motivated to learn  and develop.  </p>
-                <p> I learn skills online by my own,<b> (CSS, HTML, SQL, JavaScript, React, Git)</b> are some of them. </p>
                 <p> I work part time in  <a href="https://www.utest.com/ref947881" className='link'>UTest
                 </a>  as a freelancer QA Tester.</p>
-                <p> I'm a self-taught Front-end Developer. </p>
+                        <p> I'm a self-taught Front-end Developer. </p>
+                <p> I have taught myself coding languages <b> CSS, HTML, SQL, JavaScript, React </b> from internet. </p>       
                 <p>I'M highly motivatied to learn and develop, not afraid of challenges, naturally inclined towards optimism,
-                    attentive, curious, open-minded, responsible, flexible and have a good sense of humor.
+                    attentive, curious, open-minded, responsible, flexible and have a good communcatio.
                 </p>
                </div>
             </div>
@@ -96,17 +96,13 @@ function BackGround() {
             <h2 className="h2-title">My Journey Into Tech</h2>
             <div className="joureny-content">
                 <p>
-                   Hello,
-                    I'm Johnny Medhane, originally from Eritrea, and I've been
-                    living in Israel for the past 13 years. My journey hasn't been
+                   My journey hasn't been
                     simple, but it has shaped me into a determined and hardworking
                     individual ready to contribute meaningfully to the tech world.
                 </p>
 
                 <p>
-                    When I graduated high school, I dreamed of contributing to
-                    society by serving in the IDF and later becoming a doctor.
-                    However, life had other plans for me. I faced countless
+                     I faced countless
                     challenges—periods of instability, difficult decisions, and moments
                     of doubt. But these struggles became the foundation for my personal growth.
                 </p>

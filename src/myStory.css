@@ -42,11 +42,15 @@
 
  
  .mystory-container {
-  font-size: 16px;
-  line-height: 1.6;
-   background: var(--white);
-  color: var(--primary-color);
- font-family: 'Poppins';
+font-size: 16px;
+line-height: 1.6;
+background: var(--white);
+color: var(--primary-color);
+font-family: 'Poppins';
+border: 1px solid #e1e1e1;
+border-radius: 10px;
+box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+
   
   
     
@@ -85,8 +89,9 @@
 
 
 .background-container {
-background: var(--bg1);
-margin-bottom: 20px;
+    background: var(--bg2);
+    margin-bottom: 20px;
+  border-radius: 10px;
 }
 .background-hero{
 display:grid;
@@ -95,7 +100,6 @@ grid-gap: 2rem;
 margin: 20px auto 20px;
 line-height: 1.2;
 padding: 10px;
-background: var(--bg1);
 font-family:'Roboto' ;
 color:var(--secondary-color);
 max-width: 1000px;
@@ -104,7 +108,7 @@ max-width: 1000px;
 .image-container {
    max-width: 100%;
     height: auto;
-    border: 1px silid red;
+    /* border: 1px silid red; */
   
 }
 .image-container img {
@@ -166,8 +170,8 @@ background: var(--white)
 }
 
 .joureny-content {
-  text-align: justify;
-    font-size: var(--fsize4);
+text-align: justify;
+ font-size: var(--fsiz5);
 }
 
 .values-container {
@@ -185,7 +189,7 @@ background: var(--white)
     color: var(--primary-color);
 }
 .value-text{
-    font-size: var(--fsiz4);
+    font-size: var(--fsiz5);
     margin-bottom: 30px;
     color: var(--secondary-color);
 }
@@ -215,13 +219,14 @@ box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
 .end-story{
 margin: 40px 30px;
 text-align: center;
-font-size: var(--fsiz3);
-color: var(--primary-color);
-text-align: justify;
 padding:  40px;
 }
 .end-story p {
-    margin-bottom: 5rem;
+margin-bottom: 5rem;
+text-align: justify;
+font-size: var(--fsiz5);
+color: var(--primary-color);
+
 }
 
 
