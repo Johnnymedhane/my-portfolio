@@ -72,12 +72,12 @@ hsl(35, 100%, 68%)
 
 
 
-    --fs-1:clamp(3.500rem, 2.242rem + -0.519vw, 1.2rem);
-    --fs-2:  clamp(3.100rem, 1.588rem + -0.390vw, 1.500rem);
+    --fs-1:clamp(3.500rem, 2.242rem + -0.519vw, 1.5rem);
+    --fs-2:  clamp(3.100rem, 1.588rem + -0.390vw, 1.200rem);
     --fs-3: clamp(2.225rem, 1.727rem + -0.455vw, 1.188rem);
     --fs-4:clamp(1.900rem, 1.602rem + -0.455vw, 1.063rem);
     --fs-5:clamp(1.200rem, 1.602rem + -0.455vw, 0.863rem);
-    --fs-6:clamp(0.875rem, 0.841rem + 0.151vw, 0.938rem);
+    --fs-6:clamp(0.875rem, 0.841rem + 0.151vw, 0.738rem);
     --fs-7: clamp(0.938rem, 0.952rem + -0.065vw, 0.675rem);
     --fs-8: clamp(0.750rem, 0.765rem + -0.065vw, 0.588rem);
 
@@ -537,11 +537,10 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 position: relative;
+
 }
 .hero-container{
 display: flex;
-margin-top: 5rem;
-color: var(--white-1);
 gap: 4.5rem;
 align-items: center;
 justify-content: center;
@@ -550,6 +549,7 @@ padding:   20px;
 }
 .hero-content{
   animation: content 1s linear;
+
 }
 @keyframes content{
   from{
@@ -564,20 +564,23 @@ padding:   20px;
 }
 .hero-content h1{
   font-size: var(--fs-1);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  color: var(--white-1);
   font-weight: 700;
   font-family: var(--ffLeagueSpartan);
-  line-height: 1.2;
+  line-height: 1.1;
 }
 .hero-content h1 span{
   display: block;
   font-weight: 300;
+  color: var(--light-gray);
 }
 .hero-content h2{
 font-size: var(--fs-3);
-margin-bottom: 20px;
+margin-bottom: 30px;
 font-weight: 600;
-line-height: 1.3;
+color: var(--light-gray);
+line-height: 1.4;
 }
 .hero-content h2 span{
 display: block;
@@ -600,15 +603,15 @@ animation: typing 2.5s steps(15)  infinite alternate;
 
 .hero p{
   font-size: var(--fs-5);
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   color: var(--light-gray);
   animation: fade 4s ease-in-out;
 }
 .cta-buttons{
-  display: flex;
-  justify-content: center;
-  gap: 15px;
- margin-bottom: 40px;
+display: flex;
+justify-content: center;
+gap: 15px;
+margin-bottom: 3rem;
 }
 
 .btn{
@@ -631,31 +634,40 @@ animation: typing 2.5s steps(15)  infinite alternate;
 
 }
 .hero-image{
-height: 400px;
+height: 450px;
 aspect-ratio: 2/3;
-max-height: 450px;
 position: relative;
 animation: image 1s linear;
 }
 .hero-image img{
-  display: block;
-  width: 100%;
-  height: 100%; 
-  object-fit: cover;
-  box-shadow: var(--shadow-4);
+display: block;
+width: 100%;
+height: 100%; 
+object-fit: cover;
+box-shadow: var(--shadow-4);
 border-radius: 50%;
 z-index: 2;
 transition: var(--transition-2);
+box-shadow: 0 0 20px var(--lightGreen);
 animation: blink 2s linear infinite;
- box-shadow: 0 0 20px var(--lightGreen);
+}
+@keyframes blink {
+  0%{
+    opacity: 0.5;
+
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0.5;
+  }
 }
 .hero-image:hover img {
   transform: scale(1.1);
+  animation: none;
 }
-.hero-image:hover:after{
-display: none;
-z-index: -1;
-}
+
 
 
 
@@ -676,10 +688,14 @@ z-index: -1;
   display: block;
   content: "";
   position: absolute;
-  inset: -5px;
+  inset: 0;
   background: radial-gradient(circle, rgba(255,255,255,0.8), rgba(255,255,255,0));
   border-radius: 50%;
-  animation: pulse 2s infinite;
+  animation: pulse 2s infinite alternate;
+  transition: var(--transition-2);
+}
+.hero-image:hover::before {
+display: none;
 }
 
 
@@ -699,31 +715,36 @@ z-index: -1;
 
 
 .info{
-  margin: auto;
- max-width: 300px;
+margin: auto;  
+max-width: 300px;
 }
 .social-media{
 display: flex;
 justify-content: center;
 align-items: center;
 gap:1rem;
+
 }
 .media{
-  font-size: var(--fs-5);
-  color:var(--white-2) ;
-  border: 1px solid var(--light-gray);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 35px;
-  height: 35px;
-   background: var(--bg);
-   border-radius: 50%;
-   position: relative;
-   cursor: pointer;
-   box-shadow: var(--shadow-1) ;
-  transition: var(--transition-2);
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+cursor: pointer;
+background: var(--bg);
+border-radius: 50%;
+width: 35px;
+height: 35px;
+box-shadow: var(--shadow-1) ;
+transition: var(--transition-2);
+border: 1px solid var(--light-gray);
 }
+.media a {
+display: block;
+font-size: var(--fs-5);
+color:var(--white-2) ;
+}
+
 .media:after{
   content: "";
   z-index: -1;
@@ -743,12 +764,26 @@ gap:1rem;
 
 .media:hover{
    --fill:100%;
-  color: var(--lightGreen);
   transform: translateY(-3px);
   box-shadow: var(--shadow-1);
   transition: var(--transition-1);
  border: none;
 }
+.media:hover .linkedin{
+  color: hsl(200, 100%, 50%);
+  
+}
+.media:hover .github{
+  color: hsl(0, 0%, 100%);
+}
+.media:hover .instagram{
+  color: hsl(330, 100%, 52%);
+}
+.media:hover .facebook{
+  color: hsl(200, 100%, 50%);
+}
+
+/* indicator */
 .indicator {
   text-align: center;
   bottom: 20px;
@@ -824,10 +859,8 @@ transition: var(--transition-2);
   }
 
   article {
-  background: var(--eerie-black-1);
   border-radius: 20px;
   padding: 15px;
-  margin-top: 4rem;
   box-shadow: var(--shadow-1);
   z-index: 1;
    transform-origin: top; 
@@ -856,10 +889,7 @@ transition: var(--transition-2);
 
 }
 .about-text p { margin-bottom: 15px; }
-.about-info .highlight{
-  
-  font-weight: bold;
-}
+
 .link-my-story, .contact-me-link{
   color: var(--orange-1);
   font-size: var(--fs-8);
@@ -1630,15 +1660,14 @@ textarea.form-input::-webkit-resizer { display: none; }
   /* home */
  
   .hero-container{
-    margin-top:2rem;
-   gap: 1.3rem;
+    /* margin-top:2rem; */
+   gap: 1.5rem;
    flex-direction: column;
   }
   .hero-image{
-    max-height: 200px;
+    max-height: 250px;
   }
    .hero-content h1{
-  font-weight: 600;
   line-height: 1;
   margin-bottom: 10px;
  }
@@ -1654,27 +1683,13 @@ textarea.form-input::-webkit-resizer { display: none; }
   /* font-size: var(--fs-7); */
  }
  
-  .hero-image::before{
-    inset: -15px;
-  }
-  .hero-image::after{
-    inset: -15px;
-  }
-  .indicator{
-    bottom: 0;
-    font-size: 30px;
-   
-  }
+ 
+
+  /* indicator */
   .indicator .material-symbols-outlined{
     font-size: 30px;
   }
-  /* .media{
-    font-size: var(--fs-5);
-    width: 32px;
-    height: 32px;
-  }
-   */
- 
+
   /* main */
   main {
     max-width: 100%;
@@ -1687,11 +1702,16 @@ textarea.form-input::-webkit-resizer { display: none; }
  .link-my-hestory{
     font-size: var(--fs-8);
   }
+  .service-title, .benefits-title, .contact-me-title{
+    text-align: center;
+  }
+
   /* projects */
   .projects-list{
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   
   }
+
   /* skills */
   .skills-list{
     grid-template-columns: 1fr;
@@ -1773,57 +1793,55 @@ textarea.form-input::-webkit-resizer { display: none; }
   .logo{
     height: 24px;
   }
+
  
  
  .hero-container{
-    margin-top: 1rem;
-   flex-direction: column;
-   gap: 1.2rem;
-   padding: 10px;
-  
+margin-top: 1rem;
+flex-direction: column;
+gap: 2rem;
+padding: 15px;
+
   }
   .hero-image{
-    max-height: 150px;
+    max-height: 200px;
   }
  
-  .hero-image::before{
-    inset: -15px;
-  }
-  .hero-image::after{
-    inset: -10px;
-  }
+ 
+ 
  .hero-content h1{
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: var(--fs-2);
   
  }
+ 
+
+
  .hero-content h2{
  margin-bottom: 10px;
  font-size: var(--fs-4);
-  font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.2
 
  }
-  .hero p{
-    font-size: var(--fs-6);
-    /* margin-bottom: 20px; */
-  }
+ .hero-content h2 span{
+ width:calc(100% + 20px);
+ }
+ .hero-content p{
+  margin-bottom: 25px;
+ }
+  
   .cta-buttons{ 
-  margin-bottom: 10px;
+  margin-bottom: 1.5rem;
  }
 
  .hero-content .btn{
   margin-bottom: 5px;
  }
 
-  .indicator{
-    bottom: 2px;
-  }
   
- 
  .media{
-    font-size: var(--fs-5);
-    width: 32px;
-    height: 32px;
+    width: 33px;
+    height: 33px;
 
  }
 
@@ -1831,11 +1849,10 @@ textarea.form-input::-webkit-resizer { display: none; }
   /* main */
   main {
     max-width: 100%;
-    margin: 10px 15px;
   }
   article{
-    margin-top: 1rem;
-    padding: 15px;
+margin-top: 1rem;
+padding: 15px;
   }
   
   /* resume */
@@ -1956,6 +1973,8 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   body::-webkit-scrollbar-button { height: 60px;
 }
+
+
 
   /**
    * REUSED STYLE

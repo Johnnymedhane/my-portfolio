@@ -38,18 +38,16 @@ export function About() {
 
           <div className="about-text">
             <p>
-              Hello, I'm <strong> Johnny Medhane</strong> a self-taught Front-end Developer with a passion for
-              creating beautiful and responsive websites. I have
-              a strong foundation in <span className="highlight">HTML </span>,
-              <span className="highlight">CSS </span>,
-              <span className="highlight">JavaScript </span>,
-              and  <span className="highlight">React </span>
-              and I'm constantly learning new technologies to improve my skills.
+              Hello, I'm <strong> Johnny Medhane</strong>  —   a self-taught Front-end Developer
+              with a passion for crafting beautiful, responsive, and user-friendly websites.
+              I have a solid foundation in <b> HTML </b>, <b>CSS </b>, <b>JavaScript </b>,
+              and  <b >React </b>
+              and I'm constantly exploring new technologies to sharpen my skills.
               Programming is a source of inspiration and creativity for me, and I love the challenge of turning ideas into code.
             </p>
             <p> I invite you to take a look at my projects
-              and resume, and feel free to contact me if you have any questions
-              or would like to work together.
+              and resume -  and if you're curious or want
+              to collaborate, feel free to reach out. I'd love to connect!
               <a className="link-my-story"
                 href="#my-story"
                 onClick={() => setShowMyStory(!showMyStory)}

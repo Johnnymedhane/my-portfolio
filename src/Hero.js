@@ -18,14 +18,14 @@ const handleScroll = (sectionId) => {
 
         <div className="hero-content">
           <h1> <span>Hello👋 I'm,</span>Johnny Medhane</h1>
-          <h2> Interactive <span>Front-End Developer</span></h2>
-          <p>Building beautiful, responsive web experiences.</p>
+          <h2> A Passionate <span>Front-End Developer</span></h2>
+          <p>Building sleek, responsive and high-performance websites.</p>
           <div className="cta-buttons">
             <a href="#projects"  onClick={() => handleScroll('projects')}    className="btn">View My Work</a>
             <a href="#contact" className="btn btn-outline" onClick={() => setSelectedNav('contact')}>Contact me</a>
           </div>
 
-          <SocialMedia marginTop={26} />
+          <SocialMedia marginTop={5} />
         </div>
 
       </div>
