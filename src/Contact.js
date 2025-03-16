@@ -94,6 +94,12 @@ export function Form() {
        });
        const data = await response.json();
        setResponseMessage(data.message);
+        setFormData({
+          Fullname: '',
+          phoneNumber: '',
+          email: '',
+          message: ''
+        });
      }
      catch (error) {
        console.error('Error:', error);
