@@ -64,6 +64,7 @@ export function Form() {
     message: ''
   });
   const [responseMessage, setResponseMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
 
   function handleInput(e) {
@@ -81,7 +82,9 @@ export function Form() {
     setIsFormValid(form.checkValidity());
   }
    async function  hadleSubmit(e) {
-    e.preventDefault();
+     e.preventDefault();
+     if (isSubmitting) return;
+      setIsSubmitting(true);
      console.log("form submited", formData);
      try {
        const response = await fetch('/.netlify/functions/submitForm', {
@@ -100,11 +103,21 @@ export function Form() {
           email: '',
           message: ''
         });
+       setTimeout(() => {
+         setResponseMessage('');
+       }, 5000);
      }
      catch (error) {
        console.error('Error:', error);
        setResponseMessage('Something went wrong. Please try again.');
+       setTimeout(() => {
+         setResponseMessage('');
+       }, 5000);
      }
+      finally {
+        setIsSubmitting(false);
+      }
+
   };
 
 
@@ -144,7 +157,7 @@ export function Form() {
 
         <button className="form-btn" type="submit" disabled={!isFormValid} data-form-btn>
           <i className="fa-regular fa-paper-plane"></i>
-          <span>Send Message</span>
+          <span>{isSubmitting ? 'Submitting...' : 'Send Message'}</span>
         </button>
         {responseMessage &&
           <p className="response-message">{responseMessage}

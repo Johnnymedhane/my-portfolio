@@ -1647,7 +1647,22 @@ textarea.form-input::-webkit-resizer { display: none; }
   text-align: center;
   margin-top: 20px;
   color: var(--lightGreen);
-  
+  animation: fadeOut 5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+ 90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
 }
 
 
@@ -1843,26 +1858,26 @@ padding: 15px;
  
  .hero-content h1{
   margin-bottom: 15px;
-  /* font-size: var(--fs-2); */
+  font-size: var(--fs-2);
  }
  
 
 
  .hero-content h2{
  margin-bottom: 10px;
- /* font-size: var(--fs-4); */
-  line-height: 1.1;
+font-size: var(--fs-4);
+line-height: 1.1;
  }
  .hero-content h2 span{
- width: calc(100% + 20px) ;
+ width: calc(100% + 5px) ;
   
  }
  .hero-content p{
-  margin-bottom: 30px;
+  margin-bottom: 25px;
  }
   
   .cta-buttons{ 
-  margin-bottom: 1.9rem;
+  margin-bottom: 1.8rem;
  }
 
 
@@ -1873,7 +1888,7 @@ padding: 15px;
 
  }
 .indicator{
-  bottom: 5px;
+  bottom: 2px;
   
 }
   
