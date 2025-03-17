@@ -1881,11 +1881,11 @@ padding: 15px;
 
  .hero-content h2{
  margin-bottom: 10px;
-font-size: var(--fs-4);
+/* font-size: var(--fs-4); */
 line-height: 1.1;
  }
  .hero-content h2 span{
- width: 17ch;
+ width: 16ch;
   
  }
  .hero-content p{
