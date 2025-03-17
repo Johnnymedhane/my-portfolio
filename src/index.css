@@ -75,7 +75,7 @@ hsl(35, 100%, 68%)
     --fs-1:clamp(3.500rem, 2.242rem + -0.519vw, 1.5rem);
     --fs-2:  clamp(3.100rem, 1.588rem + -0.390vw, 1.200rem);
     --fs-3: clamp(2.225rem, 1.727rem + -0.455vw, 1.188rem);
-    --fs-4:clamp(1.900rem, 1.602rem + -0.455vw, 1.063rem);
+    --fs-4:clamp(1.700rem, 1.602rem + -0.455vw, 1.063rem);
     --fs-5:clamp(1.200rem, 1.602rem + -0.455vw, 0.863rem);
     --fs-6:clamp(0.875rem, 0.841rem + 0.151vw, 0.738rem);
     --fs-7: clamp(0.938rem, 0.952rem + -0.065vw, 0.675rem);
@@ -174,6 +174,8 @@ section{
 
   padding: 1.5rem 1rem;
  transition: var(--transition-2);
+ scroll-snap-align: start;
+
 }
 
 .loading{
@@ -890,7 +892,23 @@ transition: var(--transition-2);
   transform-origin: top; 
   animation: articl 1s linear forwards;
   transition: var(--transition-1);
- 
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--lightGreen) ;
+  }
+
+  article::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  article::-webkit-scrollbar-thumb {
+    background-color: var(--lightGreen);
+    border-radius: 10px;
+  }
+
+  article::-webkit-scrollbar-track {
+    background: var(--light-gray);
 }
 
 
@@ -945,7 +963,20 @@ transition: var(--transition-2);
   font-size: var(--fs-4);
   text-transform: capitalize;
   margin-bottom: 30px;
+opacity: 0;
   color: var(--lightGreen);
+  animation: titles 1s linear forwards;
+  animation-delay: 1s;
+}
+@keyframes titles {
+  from{
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 .service-list{
   display: grid;
@@ -1869,7 +1900,7 @@ font-size: var(--fs-4);
 line-height: 1.1;
  }
  .hero-content h2 span{
- width: calc(100% + 5px) ;
+ width: 17ch;
   
  }
  .hero-content p{

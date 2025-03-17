@@ -6,7 +6,9 @@ const values = [
    {
                 title: 'Attention to detail: ',
     text: `I ensure quality in everything I do. 
-                  I ensure  that my code is clean, efficient, and well-documented.`
+              I ensure  that my code is clean, functional, and user-friendly. 
+              And test it thoroughly to ensure the layout, animations, and responsiveness 
+              behave as expected on different devices and browsers.`
              },
             {
                 title: 'A growth mindset: ', 
@@ -39,11 +41,12 @@ export function About() {
           <div className="about-text">
             <p>
               Hello, I'm <strong> Johnny Medhane</strong>  —   a self-taught Front-end Developer
-              with a passion for crafting beautiful, responsive, and user-friendly websites.
+              with a passion for building beautiful, responsive, and user-friendly websites.
               I have a solid foundation in <b> HTML </b>, <b>CSS </b>, <b>JavaScript </b>,
-              and  <b >React </b>
+                <b >React </b> and  <b>python </b>
               and I'm constantly exploring new technologies to sharpen my skills.
-              Programming is a source of inspiration and creativity for me, and I love the challenge of turning ideas into code.
+              Programming is a source of inspiration and creativity for me, and I love the all challenges
+              of coding, debugging, testing, and exploring to find a solution.
             </p>
             <p> I invite you to take a look at my projects
               and resume -  and if you're curious or want
