@@ -172,11 +172,11 @@ img{
 
 section{
 
-  padding: 1.5rem 1rem;
- transition: var(--transition-2);
- scroll-snap-align: start;
+padding: 1.5rem 1rem;
+transition: var(--transition-2);
 
 }
+
 
 .loading{
   display: flex;
@@ -892,25 +892,10 @@ transition: var(--transition-2);
   transform-origin: top; 
   animation: articl 1s linear forwards;
   transition: var(--transition-1);
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-  scrollbar-width: thin;
-  scrollbar-color: var(--lightGreen) ;
+  
   }
 
-  article::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  article::-webkit-scrollbar-thumb {
-    background-color: var(--lightGreen);
-    border-radius: 10px;
-  }
-
-  article::-webkit-scrollbar-track {
-    background: var(--light-gray);
-}
-
+  
 
 @keyframes articl{
   from{
