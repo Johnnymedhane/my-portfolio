@@ -886,7 +886,7 @@ transition: var(--transition-2);
 
   main {
   margin: auto;
-  margin-bottom: 15px;
+  margin-bottom: 65px;
   min-width: 259px;
   max-width: 90%;
   border: 1px solid var(--jet);
