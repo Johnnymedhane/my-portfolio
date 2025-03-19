@@ -24,15 +24,10 @@ export function Resume() {
     {
       name: 'The SVCollege',
       year: '2020 - 2021',
-      description: 'Professional and practical QA course',
-      children: <p className="timeline-text">Gained practical experience in QA methodologies and tools.</p>
+      description: 'software testing (QA) course',
+      children: <p className="timeline-text">Graduated professional and practical Software Testing</p>
     },
-    {
-      name: 'University school of the arts',
-      year: '2007 — 2008',
-      description: '',
-      children: <p className="timeline-text">Studied various forms of art and design.</p>
-    },
+   
   ];
 
   const experienceList = [
@@ -40,7 +35,8 @@ export function Resume() {
       name: 'freelancer QA Tester',
       year: '2021 - current',
       description: 'UTest',
-      children: <p className="timeline-text">Worked on various QA projects as a freelancer.</p>
+      children: <p className="timeline-text">conducting manual tests on various
+        products on mobile and web. </p>
     },
     {
       name: 'kitchen manager',

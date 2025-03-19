@@ -72,7 +72,8 @@ export function FilterItem({ project, i, selectItem, setSelectItem }) {
   );
 }
 export function SmallerScreen({ projects, selectItem, setSelectItem }) {
-  const [showList, setShowList] = useState(false);
+  const [showList, setShowList] = useState(true);
+
   function handleSelectProject(project) {
     setSelectItem(project);
     setShowList(true);

@@ -81,7 +81,7 @@ function BackGround() {
                 <p> I work part time in  <a href="https://www.utest.com/ref947881" className='link'>UTest
                 </a>  as a freelancer QA Tester.</p>
                         <p> I'm a self-taught Front-end Developer. </p>
-                <p> I have taught myself coding languages <b> CSS, HTML, SQL, JavaScript, React </b> from internet. </p>       
+                <p> I have taught myself coding languages <b> CSS, HTML, SQL, JavaScript, React, Python </b> from internet. </p>       
                 <p>I'M highly motivatied to learn and develop, not afraid of challenges, naturally inclined towards optimism,
                     attentive, curious, open-minded, responsible, flexible and have a good communcatio.
                 </p>
