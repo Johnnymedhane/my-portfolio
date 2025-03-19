@@ -3,7 +3,7 @@ import { MoreInfo } from "./MoreInfo";
 
 export function Contact() {
   return (
-    <article>
+    
       <section id="contact">
         <div className="contact">
           <h2 className="section-title">Contact</h2>
@@ -14,7 +14,7 @@ export function Contact() {
           <Form />
         </div>
       </section>
-    </article>
+    
   );
 }
 export function Map() {

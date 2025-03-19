@@ -33,7 +33,7 @@ export function Projects() {
 
 
   return (
-    <article>
+    
       <section id="projects">
         <div className="projects">
           <h2 className="section-title">Projects
@@ -47,7 +47,7 @@ export function Projects() {
             selectItem={selectItem} />
         </div>
       </section>
-    </article>
+   
   );
 }export function BigScreen({ projects, selectItem, setSelectItem }) {
 

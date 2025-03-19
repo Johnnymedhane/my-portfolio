@@ -13,7 +13,7 @@ export function Skills() {
     { name: 'Git', width: 60, img: 'https://miro.medium.com/max/3840/1*fDwzjCH3qzhosC6DVel4ng.jpeg' },
   ];
   return (
-    <article>
+   
       <section id="skills">
         <div className="skills">
           <h2 className="section-title">Skills</h2>
@@ -22,7 +22,6 @@ export function Skills() {
           </ul>
         </div>
       </section>
-    </article>
   );
 }
 export function SkillsItem({ skill, i }) {

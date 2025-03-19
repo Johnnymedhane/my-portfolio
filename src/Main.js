@@ -15,21 +15,21 @@ export function Main({ selectedNav }) {
   return (
     <main className="main">
       
-      <div ref={(el) => (articleRef.current[0] = el)}>
+      <article ref={(el) => (articleRef.current[0] = el)}>
         <About />
-      </div>
-      <div ref={(el) => (articleRef.current[1] = el)}>
+      </article>
+      <article ref={(el) => (articleRef.current[1] = el)}>
         <Projects />
-      </div>
-      <div ref={(el) => (articleRef.current[2] = el)}>
+      </article>
+      <article ref={(el) => (articleRef.current[2] = el)}>
         <Resume />
-      </div>
-      <div ref={(el) => (articleRef.current[3] = el)}>
+      </article>
+      <article ref={(el) => (articleRef.current[3] = el)}>
         <Skills />
-      </div>
-      <div ref={(el) => (articleRef.current[4] = el)}>
+      </article>
+      <article ref={(el) => (articleRef.current[4] = el)}>
         <Contact />
-      </div>
+      </article>
 
 
       {/* {(selectedNav === 'about' || selectedNav === "home") && <About />}

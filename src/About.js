@@ -33,7 +33,7 @@ export function About() {
  const [showMyStory, setShowMyStory] = useState(false);
 
   return (
-    <article>
+   
       <section id="about">
         <div className="about">
           <h2 className="section-title">About Me</h2>
@@ -68,13 +68,13 @@ export function About() {
         </button>
         }
 
-      </section>
       {showMyStory &&
         <div className='my-story'>
           <Mybackground setShowMyStory={setShowMyStory} />
         </div>
       }
-    </article>
+      </section>
+    
   );
 }
 function Service() {

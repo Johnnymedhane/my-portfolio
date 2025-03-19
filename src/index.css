@@ -900,8 +900,9 @@ transition: var(--transition-2);
   z-index: 1;
   opacity: 0;
   transition: var(--transition-1);
+  background: var(--eerie-black-2);
 }
- .animate article {
+  .animate {
 animation: articles 1s ease-out forwards;
 transform: translateY(20px) scale(0);
 transform-origin: bottom;
@@ -913,10 +914,12 @@ opacity: 0;
    @keyframes articles {
   from {
     opacity: 0;
+    background: var(--bg-gradient-jet);
     transform: translateY(20px) ;
   }
   to {
     opacity: 1;
+  background: var(--eerie-black-2);
     transform: translateY(0) ;
   }
 }
@@ -936,6 +939,19 @@ opacity: 0;
   text-align: justify;
   font-family: var(--ffpoppins);
 
+}
+.animate .about-text{
+  animation: about 1s linear forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
+}
+@keyframes about {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
 .about-text p { margin-bottom: 15px; }
 
@@ -1049,11 +1065,14 @@ opacity: 0;
   z-index: 1;
   color: var(--light-gray);
 }
+
 .benefits-item .text, .contact-me-text{
   font-size: var(--fs-6);
   font-weight: 300;
   line-height: 1.6;
 }
+
+
 .benefits-indicator{
   position: absolute;
   font-size: var(--fs-5);
@@ -1186,7 +1205,25 @@ opacity: 0;
     gap: 25px;
     padding-left: 15px;
     margin-bottom: 30px;
+   
   }
+  .animate .filter-list{
+    animation: filter 1s linear forwards ;
+    transform: translateX(0);
+    opacity: 0;
+    animation-delay: 0.5s;
+  }
+  @keyframes filter {
+    0%{
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100%{
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
   
 
   .filter-item button {
@@ -1211,28 +1248,19 @@ opacity: 0;
   display: none;
 }
 .animate .filter-select-box{
-  animation: filter 1s linear forwards;
-  transform: translateY(-20px);
+  animation: filterBox 1s linear forwards;
   opacity: 0;
   animation-delay: 0.5s;
 }
-
-.animate .filter-list{
-    animation: filter 1s linear forwards;
-    transform: translateX(-20px);
+@keyframes filterBox {
+  0%{
     opacity: 0;
-    animation-delay: 0.5s;
   }
-  @keyframes filter {
-    from{
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to{
-      transform: translateX(0);
-      opacity: 1;
-    }
+  100%{
+    opacity: 1;
   }
+}
+
 
 
 .filter-select-box .select-icon {

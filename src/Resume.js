@@ -47,7 +47,7 @@ export function Resume() {
   ];
 
   return (
-    <article>
+   
       <section id="resume">
         <div className="resume">
           <h2 className="section-title">Resume</h2>
@@ -57,7 +57,7 @@ export function Resume() {
           <Timeline title="Experience" list={experienceList} />
         </div>
       </section>
-    </article>
+ 
   );
 }export function TimelineItem({ item }) {
   return (
