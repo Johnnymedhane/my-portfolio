@@ -1,6 +1,5 @@
 import { useRef, useEffect } from "react";
 
-
 export const useIntersectionObserver = (options) => {
   const elementsRef = useRef([]);
 
@@ -8,19 +7,22 @@ export const useIntersectionObserver = (options) => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
+          entry.target.classList.add("animate");
         } else {
-          entry.target.classList.remove('animate');
+          entry.target.classList.remove("animate");
         }
       });
     }, options);
 
-    elementsRef.current.forEach((element) => {
+    // Copy current ref to a local variable
+    const observedElements = elementsRef.current;
+
+    observedElements.forEach((element) => {
       if (element) observer.observe(element);
     });
 
     return () => {
-      elementsRef.current.forEach((element) => {
+      observedElements.forEach((element) => {
         if (element) observer.unobserve(element);
       });
     };
