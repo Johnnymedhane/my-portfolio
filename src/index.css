@@ -898,13 +898,14 @@ transition: var(--transition-2);
   padding: 15px;
   box-shadow: var(--shadow-1);
   z-index: 1;
+  opacity: 0;
   transition: var(--transition-1);
 }
- .animate {
-  animation: articles 1s ease-out forwards;
-  transform: translateY(20px) scale(0);
+ .animate article {
+animation: articles 1s ease-out forwards;
+transform: translateY(20px) scale(0);
 transform-origin: bottom;
-  opacity: 0;
+opacity: 0;
 }
   
  
