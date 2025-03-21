@@ -105,7 +105,7 @@ export function SelectItem({ project, i, onClickItem }) {
   );
 }
 export function ProjectsList({ projects, selectItem }) {
-  const [projectsList, setProjectsList] = useState(projects.slice(9));
+  const [projectsList, setProjectsList] = useState(projects.slice(8));
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {

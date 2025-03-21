@@ -170,12 +170,6 @@ img{
 }
 
 
-section{
-
-padding: 1.5rem 1rem;
-transition: var(--transition-2);
-
-}
 
 
 
@@ -198,6 +192,15 @@ transition: var(--transition-2);
   100% { transform: rotate(360deg); }
 }
 
+section{
+
+padding: 1.5rem 1rem;
+transition: var(--transition-2);
+
+}
+
+
+
 .section-title{
   font-size: var(--fs-3);
   font-family: var(--ffpoppins);
@@ -207,8 +210,8 @@ transition: var(--transition-2);
   color: var(--white-1);
   text-transform: capitalize;
   position: relative;
- 
 }
+
 .animate .section-title{
   animation: title 1s linear forwards;
   opacity: 0;
@@ -899,30 +902,23 @@ transition: var(--transition-2);
   box-shadow: var(--shadow-1);
   z-index: 1;
   opacity: 0;
-  transition: var(--transition-1);
   background: var(--eerie-black-2);
+ transform: translateY(30px);
+ transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  }
+  article:hover {
+  box-shadow: var(--shadow-2);
+  transform: translateY(-5px);
+ 
 }
-  .animate {
-animation: articles 1s ease-out forwards;
-transform: translateY(20px) scale(0);
-transform-origin: bottom;
-opacity: 0;
+  article.animate  {
+  opacity: 1;
+  transform: translateY(0);
 }
   
  
   
-   @keyframes articles {
-  from {
-    opacity: 0;
-    background: var(--bg-gradient-jet);
-    transform: translateY(20px) ;
-  }
-  to {
-    opacity: 1;
-  background: var(--eerie-black-2);
-    transform: translateY(0) ;
-  }
-}
+  
 
   
 
@@ -938,21 +934,15 @@ opacity: 0;
   font-weight: 300;
   text-align: justify;
   font-family: var(--ffpoppins);
-
+  opacity: 0;
+  transition: opacity 1s linear;
+  transition-delay: 0.2s;
 }
 .animate .about-text{
-  animation: about 1s linear forwards;
-  opacity: 0;
-  animation-delay: 0.6s;
+  opacity: 1;
+  
 }
-@keyframes about {
-  from{
-    opacity: 0;
-  }
-  to{
-    opacity: 1;
-  }
-}
+
 .about-text p { margin-bottom: 15px; }
 
 .link-my-story, .contact-me-link{
@@ -985,13 +975,14 @@ opacity: 0;
   text-transform: capitalize;
   margin-bottom: 30px;
   color: var(--lightGreen);
+
 }
 
 .animate .service-title, 
 .animate .benefits-title, 
 .animate .contact-me-title{
   animation: titles 1s linear forwards;
-  transform: translateY(-20px);
+  transform: translateY(-20);
   opacity: 0;
   animation-delay: 0.5s;
 }
@@ -1016,7 +1007,14 @@ opacity: 0;
   padding: 20px;
   border-radius: 14px;
   box-shadow: var(--shadow-2);
+  transform: scale(0);
+  transition: all 2s linear;
+ 
 }
+.animate .service-item{
+  transform: scale(1);
+}
+
 .service-item::before, .benefits-item::before {
   content: "";
   position: absolute;
@@ -1134,7 +1132,7 @@ opacity: 0;
   display: flex;
   align-items: center;
   gap: 5px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .skills-item:hover{
@@ -1157,11 +1155,14 @@ opacity: 0;
   background: var(--lightGreen);
   transform-origin: left;
   box-shadow: var(--shadow-1);
-  animation: fill 5s forwards;
-  transition: var(--transition-1);
- 
-}
+  /* animation: fill 5s forwards; */
+  transform: scale(0);
+  transition: transform 4s linear;
 
+}
+.animate .bar-fill{
+   transform: scale(1);
+}
 
 @keyframes fill {
   0% { transform: scaleX(0);}
@@ -1185,7 +1186,7 @@ opacity: 0;
   display: none;
 }
 
-.bar-fill:hover::after {
+.skills-item:hover .bar-fill::after {
   display: block;
   transform: translateX(0);
 }
