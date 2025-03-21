@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { MoreInfo } from "./MoreInfo";
 
 export function Contact() {
   return (
-    <article>
+    
       <section id="contact">
         <div className="contact">
           <h2 className="section-title">Contact</h2>
@@ -14,7 +14,7 @@ export function Contact() {
           <Form />
         </div>
       </section>
-    </article>
+    
   );
 }
 export function Map() {
@@ -54,116 +54,112 @@ export function OfflineMap() {
   );
 }
 export function Form() {
-  const [isFormValid, setIsFormValid] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
   const [isPhoneValid, setIsPhoneValid] = useState(true);
-  const phoneRegex = /^(\+972-?|0)([23489]|5[012345689]|77)-?\d{7}$/;
-  const [formData, setFormData] = useState({
-    Fullname: '',
-    phoneNumber: '',
-    email: '',
-    message: ''
-  });
-  const [responseMessage, setResponseMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
 
+  const timeoutRef = useRef(null);
 
-  function handleInput(e) {
-    const { name, value } = e.target;
-    setFormData((formData) => ({ ...formData, [name]: value }));
+  const phoneRegex = /^(\+972-?|0)([23489]|5[012345689]|77)-?\d{7}$/;
 
-    if (name === "phoneNumber") {
-      if (name === "phoneNumber") {
-        setIsPhoneValid(value === '' || phoneRegex.test(value));
-      }
+  useEffect(() => {
+    return () => clearTimeout(timeoutRef.current);
+  }, []);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    const formData = { name, email, phone, message };
+
+    try {
+      const response = await fetch("/.netlify/functions/submitForm", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.message || "Something went wrong");
+
+      setResponseMessage(data.message);
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+
+      timeoutRef.current = setTimeout(() => setResponseMessage(""), 5000);
+    } catch (error) {
+      console.error("Error:", error);
+      setResponseMessage("Something went wrong. Please try again.");
+      timeoutRef.current = setTimeout(() => setResponseMessage(""), 5000);
+    } finally {
+      setIsSubmitting(false);
     }
-
-    const form = e.target.form;
-    setIsFormValid(form.checkValidity());
-  }
-   async function  hadleSubmit(e) {
-     e.preventDefault();
-     if (isSubmitting) return;
-      setIsSubmitting(true);
-     console.log("form submited", formData);
-     try {
-       const response = await fetch('/.netlify/functions/submitForm', {
-         method: 'POST',
-         headers: {
-           'Content-Type': 'application/json',
-         },
-
-         body: JSON.stringify(formData),
-       });
-       const data = await response.json();
-       setResponseMessage(data.message);
-        setFormData({
-          Fullname: '',
-          phoneNumber: '',
-          email: '',
-          message: ''
-        });
-       setTimeout(() => {
-         setResponseMessage('');
-       }, 5000);
-     }
-     catch (error) {
-       console.error('Error:', error);
-       setResponseMessage('Something went wrong. Please try again.');
-       setTimeout(() => {
-         setResponseMessage('');
-       }, 5000);
-     }
-      finally {
-        setIsSubmitting(false);
-      }
-
   };
 
+  const isFormValid = name && email && isPhoneValid;
 
   return (
     <div className="contact-form">
       <h3 className="h3 form-title">Contact Form</h3>
-      <form action="#" className="form" onSubmit={hadleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <div className="input-wrapper">
-          <input type="text" value={formData.Fullname}
-            onChange={handleInput}
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             className="form-input"
             name="Fullname"
-            placeholder="Full name" required />
+            placeholder="Full name"
+            required
+          />
 
-          <input type="email" value={formData.email}
-            onChange={handleInput}
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="form-input"
             name="email"
-            placeholder="Email address" required />
+            placeholder="Email address"
+            required
+          />
 
           <input
             type="tel"
-            value={formData.phoneNumber}
-            onChange={handleInput}
+            value={phone}
+            onChange={(e) => {
+              setPhone(e.target.value);
+              setIsPhoneValid(e.target.value === "" || phoneRegex.test(e.target.value));
+            }}
             className="form-input"
-            name="phoneNumber"
-            pattern={phoneRegex.source}
+            name="phone"
             placeholder="Phone"
-            required />
+            required
+          />
           {!isPhoneValid && <p className="error-message">Please enter a valid phone number.</p>}
         </div>
-        <textarea value={formData.message}
-          onChange={handleInput}
+
+        <textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
           className="form-input"
           name="message"
-          placeholder="Your Message"></textarea>
+          placeholder="Your Message"
+        ></textarea>
 
-        <button className="form-btn" type="submit" disabled={!isFormValid} data-form-btn>
+        <button className="form-btn" type="submit" disabled={!isFormValid}>
           <i className="fa-regular fa-paper-plane"></i>
-          <span>{isSubmitting ? 'Submitting...' : 'Send Message'}</span>
+          <span>{isSubmitting ? "Submitting..." : "Send Message"}</span>
         </button>
-        {responseMessage &&
-          <p className="response-message">{responseMessage}
-          </p>}
+
+        {responseMessage && <p className="response-message">{responseMessage}</p>}
       </form>
     </div>
   );
 }
-

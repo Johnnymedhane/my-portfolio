@@ -33,7 +33,7 @@ export function Projects() {
 
 
   return (
-    <article>
+    
       <section id="projects">
         <div className="projects">
           <h2 className="section-title">Projects
@@ -47,7 +47,7 @@ export function Projects() {
             selectItem={selectItem} />
         </div>
       </section>
-    </article>
+   
   );
 }export function BigScreen({ projects, selectItem, setSelectItem }) {
 
@@ -72,7 +72,8 @@ export function FilterItem({ project, i, selectItem, setSelectItem }) {
   );
 }
 export function SmallerScreen({ projects, selectItem, setSelectItem }) {
-  const [showList, setShowList] = useState(false);
+  const [showList, setShowList] = useState(true);
+
   function handleSelectProject(project) {
     setSelectItem(project);
     setShowList(true);
@@ -104,7 +105,7 @@ export function SelectItem({ project, i, onClickItem }) {
   );
 }
 export function ProjectsList({ projects, selectItem }) {
-  const [projectsList, setProjectsList] = useState(projects.slice(9));
+  const [projectsList, setProjectsList] = useState(projects.slice(8));
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
