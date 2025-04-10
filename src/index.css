@@ -1816,7 +1816,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     max-height: 250px;
   }
    .hero-content h1{
-  line-height: 1;
+  line-height: 1.1;
   margin-bottom: 10px;
  }
  .hero-content h2{
@@ -1959,15 +1959,14 @@ padding: 15px;
  
  .hero-content h1{
   margin-bottom: 15px;
-  font-size: var(--fs-2);
+  font-size: var(--fs-3);
  }
  
 
 
  .hero-content h2{
  margin-bottom: 10px;
-/* font-size: var(--fs-4); */
-line-height: 1.1;
+font-size: var(--fs-4);
  }
  .hero-content h2 span{
  width: 16ch;
@@ -1994,6 +1993,7 @@ line-height: 1.1;
 }
   
   /* main */
+
 
 article{
 margin-top: 0.5rem;
