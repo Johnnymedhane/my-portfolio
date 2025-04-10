@@ -4,7 +4,7 @@
 export function Resume() {
   const educationList = [
     {
-      name: 'On intenet (self-taught)',
+      name: 'Online Programming Courses (Self-Taught)',
       year: '2024 - current',
       description: 'front-end development',
       children: <p className="timeline-text">I have learned the process of Web development: coding, designing, testing, and debugging.   </p>
@@ -82,7 +82,7 @@ export function Timeline({ title, list }) {
       </div>
       <ul className="timeline-list">
         {list.map((item, i) => (
-          <TimelineItem key={i} item={item} />
+          <TimelineItem key={item.name} item={item} />
         ))}
       </ul>
     </div>

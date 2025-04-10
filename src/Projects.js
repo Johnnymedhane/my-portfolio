@@ -15,6 +15,9 @@ const projects = [
   { name: 'Pizza-page', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/pizza-image.png`, webLink: 'https://strong-trifle-c1690d.netlify.app', github: 'https://github.com/Johnnymedhane/Pizza-page' },
   { name: 'PopCorn', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/movies.png`, webLink: 'https://johnnymedhane.github.io/usePopCorn/', github: 'https://github.com/Johnnymedhane/usePopCorn' },
   { name: 'Calculator', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/calculator2.png`, webLink: 'https://myclculatorproject.netlify.app', github: 'https://github.com/Johnnymedhane/Calculator' },
+  { name: 'React-quizs', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/quizs.png`, webLink: 'react-quizss.netlify.app', github: 'https://github.com/Johnnymedhane/React-Quizs' },
+  { name: 'Classy-Weather', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/classy-weather.png`, webLink: 'https://johnnymedhane.github.io/classy-weather/', github: 'https://github.com/Johnnymedhane/classy-weather' },
+
 ];
 
 
@@ -54,7 +57,7 @@ export function Projects() {
 
   return (
     <ul className="filter-list">
-      {projects.map((project, i) => <FilterItem key={i}
+      {projects.map((project, i) => <FilterItem key={project}
         project={project}
         i={i}
         setSelectItem={setSelectItem}
@@ -88,7 +91,7 @@ export function SmallerScreen({ projects, selectItem, setSelectItem }) {
         </div>
       </button>
       <ul className={showList ? "select-list" : "select-list-hide"}>
-        {projects.map((project, i) => <SelectItem key={i}
+        {projects.map((project, i) => <SelectItem key={project}
           project={project}
           i={i}
           onClickItem={handleSelectProject} />)}
@@ -131,7 +134,7 @@ export function ProjectsList({ projects, selectItem }) {
       ) : (
         <ul className="projects-list">
           {projectsList.map((project, i) => (
-            <ProjectItem key={i} project={project} i={i} selectItem={selectItem} />
+            <ProjectItem key={project.name} project={project} i={i} selectItem={selectItem} />
           ))}
         </ul>
       )}
