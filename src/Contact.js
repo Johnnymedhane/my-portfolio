@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { MoreInfo } from "./MoreInfo";
-
+import { Loading } from "./Loading";
 export function Contact() {
   return (
     
@@ -83,7 +83,7 @@ export function Form() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
+    
       const data = await response.json();
       if (!response.ok) throw new Error(data.message || "Something went wrong");
 
@@ -108,7 +108,9 @@ export function Form() {
   return (
     <div className="contact-form">
       <h3 className="h3 form-title">Contact Form</h3>
-      <form className="form" onSubmit={handleSubmit}>
+      {isSubmitting && <Loading />}
+      {responseMessage && <p className="response-message">{responseMessage}</p>}
+      {!isSubmitting && !responseMessage && <form className="form" onSubmit={handleSubmit}>
         <div className="input-wrapper">
           <input
             type="text"
@@ -158,8 +160,8 @@ export function Form() {
           <span>{isSubmitting ? "Submitting..." : "Send Message"}</span>
         </button>
 
-        {responseMessage && <p className="response-message">{responseMessage}</p>}
       </form>
+      }
     </div>
   );
 }

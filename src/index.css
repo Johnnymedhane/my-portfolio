@@ -1681,7 +1681,7 @@ transition: var(--transition-1);
 
 .form-input::placeholder { font-weight: var(500); }
 
-.form-input:focus { border-color: var(--orange-2); }
+.form-input:focus { border: 1px solid var(--orange-2); }
 
 .error-message{
   color:  hsl(0, 82%, 47%);
@@ -1696,7 +1696,7 @@ textarea.form-input {
 
 textarea.form-input::-webkit-resizer { display: none; }
 
-.form-input:focus:invalid { border-color: hsl(0, 43%, 51%); }
+.form-input:focus:invalid { border: 1px solid hsl(0, 43%, 51%); }
 
 .form-btn {
   position: relative;
@@ -1993,8 +1993,7 @@ text-align: center;
 
  }
 .indicator{
-/* margin-top: auto; */
-bottom: 2px;
+bottom: 5px;
   
 }
   
@@ -2088,9 +2087,7 @@ padding: 15px;
     max-height: 140px;
   } 
   
-  .cta-buttons{ 
-    margin-bottom: 1.8rem;
-   }
+ 
   
 }
 

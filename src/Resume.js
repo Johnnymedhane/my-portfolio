@@ -82,7 +82,7 @@ export function Timeline({ title, list }) {
       </div>
       <ul className="timeline-list">
         {list.map((item, i) => (
-          <TimelineItem key={item.name} item={item} />
+          <TimelineItem key={item.description} item={item} />
         ))}
       </ul>
     </div>
