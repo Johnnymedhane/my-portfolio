@@ -75,7 +75,7 @@ hsl(35, 100%, 68%)
     --fs-1:clamp(3.500rem, 2.242rem + -0.519vw, 1.5rem);
     --fs-2:  clamp(3.100rem, 1.588rem + -0.390vw, 1.200rem);
     --fs-3: clamp(2.225rem, 1.727rem + -0.455vw, 1.188rem);
-    --fs-4:clamp(1.700rem, 1.602rem + -0.455vw, 1.063rem);
+    --fs-4:clamp(1.900rem, 1.602rem + -0.455vw, 1.063rem);
     --fs-5:clamp(1.200rem, 1.602rem + -0.455vw, 0.863rem);
     --fs-6:clamp(0.875rem, 0.841rem + 0.151vw, 0.738rem);
     --fs-7: clamp(0.938rem, 0.952rem + -0.065vw, 0.675rem);
@@ -1681,7 +1681,7 @@ transition: var(--transition-1);
 
 .form-input::placeholder { font-weight: var(500); }
 
-.form-input:focus { border-color: var(--orange-2); }
+.form-input:focus { border: 1px solid var(--orange-2); }
 
 .error-message{
   color:  hsl(0, 82%, 47%);
@@ -1696,7 +1696,7 @@ textarea.form-input {
 
 textarea.form-input::-webkit-resizer { display: none; }
 
-.form-input:focus:invalid { border-color: hsl(0, 43%, 51%); }
+.form-input:focus:invalid { border: 1px solid hsl(0, 43%, 51%); }
 
 .form-btn {
   position: relative;
@@ -1816,7 +1816,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     max-height: 250px;
   }
    .hero-content h1{
-  line-height: 1;
+  line-height: 1.1;
   margin-bottom: 10px;
  }
  .hero-content h2{
@@ -1947,8 +1947,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 .hero-container{
 
 flex-direction: column;
-gap: 1.5rem;
+gap: 1.8rem;
 padding: 15px;
+margin-bottom: auto;
+margin-top: 3rem;
 
   }
   .hero-image{
@@ -1959,18 +1961,20 @@ padding: 15px;
  
  .hero-content h1{
   margin-bottom: 15px;
-  font-size: var(--fs-2);
+  font-size: var(--fs-3);
+  text-align: center;
  }
  
 
 
  .hero-content h2{
  margin-bottom: 10px;
-/* font-size: var(--fs-4); */
-line-height: 1.1;
+ font-size: var(--fs-4);
+text-align: center;
  }
  .hero-content h2 span{
  width: 16ch;
+ margin: auto;
   
  }
  .hero-content p{
@@ -1989,11 +1993,12 @@ line-height: 1.1;
 
  }
 .indicator{
-  bottom: 2px;
+bottom: 5px;
   
 }
   
   /* main */
+
 
 article{
 margin-top: 0.5rem;
@@ -2068,7 +2073,23 @@ padding: 15px;
 
 }
 
-
+@media  screen and (max-width: 390px) {
+  .hero-content h1{
+    font-size: var(--fs-4);
+  }
+  .hero-content h2{
+    font-size: var(--fs-5);
+  }
+  .hero-content p{
+    font-size: var(--fs-7);
+  }
+   .hero-image{
+    max-height: 140px;
+  } 
+  
+ 
+  
+}
 
 
 

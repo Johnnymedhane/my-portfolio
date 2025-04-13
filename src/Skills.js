@@ -19,7 +19,7 @@ export function Skills() {
         <div className="skills">
           <h2 className="section-title">Skills</h2>
           <ul className="skills-list">
-            {skills.map((skill, i) => <SkillsItem key={i} skill={skill} i={i} />)}
+            {skills.map((skill, i) => <SkillsItem key={skill.name} skill={skill} i={i} />)}
           </ul>
         </div>
       </section>
