@@ -2,7 +2,7 @@ import { useAppContext } from "../contextApi";
 
 function ButtonMode() {
 
-    const { isLightMode, toggleLightMode } = useAppContext();
+    const {  toggleLightMode } = useAppContext();
     return (
        <label className="switch">
                <span className="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

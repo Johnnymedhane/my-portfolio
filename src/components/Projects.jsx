@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Loading } from "./Loading";
-import Header from "./Header";
 
 
 const projects = [

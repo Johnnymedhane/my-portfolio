@@ -1,4 +1,3 @@
-import Header from "./Header";
 import { SocialMedia } from "./SocialMedia";
 // import intro from "./images/removed-bg.png";
 // import { a } from "react-router-dom";

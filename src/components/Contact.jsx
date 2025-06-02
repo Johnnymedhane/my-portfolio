@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 
 import { Loading } from "./Loading";
 import { MoreInfo } from "./MoreInfo";
-import Header from "./Header";
 export function Contact() {
   return (
    
