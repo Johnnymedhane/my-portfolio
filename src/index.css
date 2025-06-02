@@ -90,13 +90,7 @@ hsl(35, 100%, 68%)
 
 .light-mode {
 
-  /* fonts */
-  --ffpoppins: 'poppins';
-  --ffLeagueSpartan: 'League Spartan';
-  --ffSaira: 'Saira';
-  --ffroboto: 'Roboto';
-
-  /* colors */
+ 
   --bg-gradient-jet: linear-gradient(
     to bottom right,
     hsla(0, 0%, 98%, 0.9) 0%,
@@ -118,7 +112,7 @@ hsl(35, 100%, 68%)
     hsl(0, 0%, 85%) 97%
   );
 
-  /* swapped colors */
+
   --bg: hsl(0, 0%, 100%);
   --tbg: hsla(0, 0%, 98%, 0.75);
   --black-1: hsl(0, 0%, 98%);
@@ -133,18 +127,20 @@ hsl(35, 100%, 68%)
   --jet: hsl(0, 0%, 80%);
   --lightGreen: hsl(145, 80%, 70%);
 
-  /* font-size */
+ 
   --text-gradient-yellow: linear-gradient(
     to right,
     hsl(45, 100%, 72%),
     hsl(45, 90%, 68%)
   );
-  /* box-shadow */
+
    --shadow-1: -4px 8px 24px hsla(0, 0%, 100%, 0.25);
   --shadow-2: 0 16px 30px hsla(0, 0%, 100%, 0.25);
   --shadow-3: 0 16px 40px hsla(0, 0%, 100%, 0.25);
   --shadow-4: 0 25px 50px hsla(0, 0%, 100%, 0.15);
   --shadow-5: 0 24px 80px hsla(0, 0%, 100%, 0.25);
+
+
 
 
 
@@ -154,8 +150,8 @@ hsl(35, 100%, 68%)
 
 
 
-
 a { text-decoration: none; }
+
 
 li { list-style: none; }
 
@@ -566,7 +562,7 @@ transform-origin: center;
 /* home */
 .hero{
 background: var(--bg-gradient-jet);
-min-height: 100vh; 
+min-height: calc(100vh - 5px) ; 
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -937,6 +933,7 @@ transition: var(--transition-2);
   opacity: 0;
   transition: opacity 1s linear;
   transition-delay: 0.2s;
+  animation:  fade 2s linear forwards;
 }
 .animate .about-text{
   opacity: 1;
@@ -945,10 +942,10 @@ transition: var(--transition-2);
 
 .about-text p { margin-bottom: 15px; }
 
-.link-my-story, .contact-me-link{
-  color: var(--orange-1);
-  font-size: var(--fs-8);
+.link-my-story, .contact-me-link {
+ font-size: var(--fs-8);
   font-weight: bold;
+  color: var(--orange-1);
   text-transform: capitalize;
   text-decoration: none;
   display: inline-block;
@@ -956,12 +953,25 @@ transition: var(--transition-2);
   padding: 5px 10px;
   border-radius: 10px;
   box-shadow: var(--shadow-1);
- 
+  
 }
+.link-my-story:visited, .contact-me-link:visited {
+  background: var(--bg-gradient-yellow-1);
+}
+
+.about-text .link-my-story{ 
+  color: var(--orange-1);
+}
+.contact-me-text .contact-me-link{
+  color: var(--orange-1);
+}
+
+
 .link-my-story:hover, .contact-me-link:hover{
   color: var(--lightGreen);
   box-shadow: var(--shadow-2);
   transition: var(--transition-1);
+  background: var(--bg-gradient-yellow-1);
 }
 .service, .benefits, .contact-me{
  
@@ -1009,11 +1019,20 @@ transition: var(--transition-2);
   box-shadow: var(--shadow-2);
   transform: scale(0);
   transition: all 2s linear;
+  animation: service 1s linear forwards;
  
 }
-.animate .service-item{
-  transform: scale(1);
+@keyframes service {
+  from{
+    transform: scale(0);
+    opacity: 0;
+  }
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
 }
+ 
 
 .service-item::before, .benefits-item::before {
   content: "";
@@ -1155,7 +1174,7 @@ transition: var(--transition-2);
   background: var(--lightGreen);
   transform-origin: left;
   box-shadow: var(--shadow-1);
-  /* animation: fill 5s forwards; */
+  animation: fill 5s forwards;
   transform: scale(0);
   transition: transform 4s linear;
 
