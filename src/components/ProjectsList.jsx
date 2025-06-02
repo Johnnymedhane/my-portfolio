@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Loading } from "./Loading";
 import { ProjectItem } from "./ProjectItem";
 import { useProjects } from "../contexts/ProjectsContext";
