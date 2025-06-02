@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useAppContext } from "../contextApi";
+import { useAppContext } from "../contexts/contextApi";
 
 
 function PagesNav({item}) {

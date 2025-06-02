@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import HomePage from './pages/HomePage';
-import { AppProvider } from './contextApi';
+import { AppProvider } from './contexts/contextApi';
 import { Mybackground } from './pages/myStory';
 import HeroSection from './pages/HeroSection';
 import ContactSection from './pages/ContactSection';
@@ -9,13 +9,17 @@ import ProjectsSecction from './pages/ProjectsSecction';
 import ResumeSection from './pages/Resume.Section';
 import SkillsSection from './pages/SkillsSection';
 import AboutSection from './pages/AboutSection';
+import { ProjectsProvider } from './contexts/ProjectsContext';
 
 export const navList = ['home', 'about', 'skills', 'projects', 'resume', 'contact'];
 
 function App() {
  
   return (
-   <AppProvider className="App">
+    
+    <AppProvider className="App">
+      <ProjectsProvider>
+
       <BrowserRouter>
         <Routes>
           <Route index element={<HomePage />} />
@@ -29,6 +33,7 @@ function App() {
       </Routes>
       
       </BrowserRouter>
+      </ProjectsProvider>
       </AppProvider>
 
   );

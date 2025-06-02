@@ -1,5 +1,5 @@
 import { Header } from "../components/Header"
-import { useAppContext } from "../contextApi";
+import { useAppContext } from "../contexts/contextApi";
 import { Main } from "../components/Main"
 import { Hero } from "../components/Hero"
 

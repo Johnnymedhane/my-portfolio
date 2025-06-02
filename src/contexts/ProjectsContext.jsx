@@ -1,9 +1,9 @@
-import { useProjects } from "../contexts/ProjectsContext";
-import { BigScreen } from "./BigScreen";
-import { SmallerScreen } from "./SmallerScreen";
-import { ProjectsList } from "./ProjectsList";
 
 
+import { createContext, useContext, useState, useEffect } from 'react';
+
+
+const ProjectsContext = createContext();
 const projects = [
     { name: 'Management Screen STD', category: 'QA', img: `${process.env.PUBLIC_URL}/images/screen-manage.png`, webLink: '', github: 'https://github.com/Johnnymedhane/QA_Projects_Exercises/blob/main/QA-KMS-%20STD.docx' },
   { name: 'RateRes STD', category: 'QA', img: `${process.env.PUBLIC_URL}/images/rate-res.png`, webLink: '', github: 'https://github.com/Johnnymedhane/QA_Projects_Exercises/blob/main/std%20RateRes.docx' },
@@ -26,28 +26,60 @@ const projects = [
 
 
 
-
-
-
-
-
-export function Projects() {
- const {  selectItem } = useProjects();
-
-
-
-  return (
+ const ProjectsProvider = ({ children }) => {
+    const projectsCategory = ['All', 'Web development', 'Python data-analist', 'QA'];
+     const [selectItem, setSelectItem] = useState('All');
+     const [showList, setShowList] = useState(true);
+     const [projectsList, setProjectsList] = useState(projects.slice(8));
+     const [isLoading, setIsLoading] = useState(false);
    
-      <section id="projects">
-        <div className="projects">
-          <h2 className="section-title">Projects
-          </h2>
+     function handleSelectProject(project) {
+       setSelectItem(project);
+       setShowList(true);
+     }
+    
+       useEffect(() => {
+         if (!selectItem) return;
+         setIsLoading(true);
+         setTimeout(() => {
+           if (selectItem === 'All') {
+             setProjectsList(projects);
+           } else {
+             const filteredProjects = projects.filter(project => project.category === selectItem);
+             setProjectsList(filteredProjects);
+           }
+           setIsLoading(false);
+         }, 500); // Simulate a loading delay
+     
+         return () => console.log('clean up');
+       }, [selectItem, projects]);
+     
 
-          <BigScreen />
-          <SmallerScreen  />
-          <ProjectsList />
-        </div>
-      </section>
-  );
-}
+
+    return (
+        <ProjectsContext.Provider value={{
+            projectsCategory,
+            selectItem,
+            setSelectItem,
+            showList,
+            setShowList,
+            handleSelectProject,
+            projectsList,
+            setProjectsList,
+            isLoading,
+            setIsLoading,
+        }}>
+            {children}
+        </ProjectsContext.Provider>
+    );
+};
+
+ const useProjects = () => {
+    const context = useContext(ProjectsContext);
+    if (!context) {
+        throw new Error('useProjects must be used within a ProjectsProvider');
+    }
+    return context;
+};
+export { ProjectsProvider, useProjects };
 
