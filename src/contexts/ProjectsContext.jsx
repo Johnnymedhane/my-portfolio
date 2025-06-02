@@ -52,7 +52,7 @@ const projects = [
          }, 500); // Simulate a loading delay
      
          return () => console.log('clean up');
-       }, [selectItem, projects]);
+       }, [selectItem, projectsList]);
      
 
 
