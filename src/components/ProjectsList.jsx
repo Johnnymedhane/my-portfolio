@@ -1,9 +1,16 @@
 import { Loading } from "./Loading";
 import { ProjectItem } from "./ProjectItem";
 import { useProjects } from "../contexts/ProjectsContext";
+import { useEffect, useState } from "react";
+
+
+
+
+
 
 export function ProjectsList() {
-  const {projectsList,  isLoading, selectItem } = useProjects()
+  const { projectsList, isLoading} = useProjects()
+
 
   return (
     <div>
@@ -12,7 +19,7 @@ export function ProjectsList() {
       ) : (
         <ul className="projects-list">
           {projectsList.map((project, i) => (
-            <ProjectItem key={project.name} project={project} i={i} selectItem={selectItem} />
+            <ProjectItem key={project.name} project={project} i={i}  />
           ))}
         </ul>
       )}

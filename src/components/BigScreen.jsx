@@ -8,7 +8,7 @@ const { projectsCategory} = useProjects();
     <ul className="filter-list">
       {projectsCategory.map((project, i) => <FilterItem key={project}
         project={project}
-        i={i} />)}
+       />)}
     </ul>
   );
 }
