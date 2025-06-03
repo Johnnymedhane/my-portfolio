@@ -72,7 +72,6 @@ const projects = [
             isLoading,
     
 
-            // Initial projects to display
         }}>
             {children}
         </ProjectsContext.Provider>

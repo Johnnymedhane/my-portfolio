@@ -1,7 +1,6 @@
 import { Loading } from "./Loading";
 import { ProjectItem } from "./ProjectItem";
 import { useProjects } from "../contexts/ProjectsContext";
-import { useEffect, useState } from "react";
 
 
 
