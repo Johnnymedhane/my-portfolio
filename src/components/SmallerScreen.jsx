@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { SelectItem } from "./SelectItem";
 import { useProjects } from "../contexts/ProjectsContext";
 
@@ -16,9 +15,9 @@ export function SmallerScreen() {
         </div>
       </button>
       <ul className={showList ? "select-list" : "select-list-hide"}>
-        {projectsCategory.map((project, i) => <SelectItem key={project}
+        {projectsCategory.map((project) => <SelectItem key={project}
           project={project}
-          i={i}
+         
           />)}
       </ul>
     </div>
