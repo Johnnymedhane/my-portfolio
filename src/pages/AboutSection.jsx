@@ -1,4 +1,5 @@
 import { About } from "../components/AboutMe"
+import Footer from "../components/Footer"
 import Header from "../components/Header"
 
 
@@ -7,6 +8,7 @@ function AboutSection() {
         <div>
             <Header />
             <About />
+            <Footer />
         </div>
     )
 }

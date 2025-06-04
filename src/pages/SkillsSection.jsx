@@ -1,3 +1,4 @@
+import Footer from "../components/Footer"
 import Header from "../components/Header"
 import { Skills } from "../components/Skills"
 
@@ -7,6 +8,7 @@ function SkillsSection() {
         <div>
             <Header />
             <Skills />
+            <Footer />
         </div>
     )
 }

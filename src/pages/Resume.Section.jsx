@@ -1,3 +1,4 @@
+import Footer from "../components/Footer"
 import Header from "../components/Header"
 import { Resume } from "../components/Resume"
 
@@ -7,6 +8,7 @@ function ResumeSection() {
         <div>
             <Header />
             <Resume />
+            <Footer />
         </div>
     )
 }
