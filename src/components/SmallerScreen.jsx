@@ -3,8 +3,7 @@ import { SelectItem } from "./SelectItem";
 import { useProjects } from "../contexts/ProjectsContext";
 
 export function SmallerScreen() {
-  const { projectsCategory, selectItem } = useProjects();
-  const [showList, setShowList] = useState(true);
+  const { projectsCategory, selectItem,  showList, setShowList } = useProjects();
 
 
 

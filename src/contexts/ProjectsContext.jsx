@@ -38,7 +38,7 @@ const projects = [
    
      function handleSelectProject(project) {
        setSelectItem(project);
-       setShowList(true);
+       setShowList(show => !show);
      }
     
        useEffect(() => {
