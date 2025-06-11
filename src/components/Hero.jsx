@@ -1,3 +1,4 @@
+import { Indicator } from "./Indicator";
 import { SocialMedia } from "./SocialMedia";
 // import intro from "./images/removed-bg.png";
 // import { a } from "react-router-dom";
@@ -10,6 +11,7 @@ const handleScroll = (sectionId) => {
   };
 
   return (
+
     <section id="home" className="hero">
       <div className="hero-container">
         <div className="hero-image">
@@ -30,17 +32,7 @@ const handleScroll = (sectionId) => {
 
       </div>
       {showIndicator && <Indicator />}
-    </section>
-  );
-}export function Indicator() {
-  return (
-    <div className="indicator" data-title="Explore More">
-      <a href="#about">
-       <span className="material-symbols-outlined">
-keyboard_double_arrow_down
-</span>
-      </a>
-    </div>
+      </section>
   );
 }
 

@@ -57,7 +57,7 @@ export function Resume() {
           <Timeline title="Experience" list={experienceList} />
         </div>
       </section>
- 
+    
   );
 }export function TimelineItem({ item }) {
   return (

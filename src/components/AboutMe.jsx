@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Mybackground } from './myStory';
+import  { useState } from 'react';
+
+import { Link } from 'react-router-dom';
 
 // import { Link } from 'react-router-dom';
 const values = [ 
@@ -30,7 +31,7 @@ const values = [
 ]
 
 export function About() {
- const [showMyStory, setShowMyStory] = useState(false);
+//  const [showMyStory, setShowMyStory] = useState(false);
 
   return (
    
@@ -51,11 +52,9 @@ export function About() {
             <p> I invite you to take a look at my projects
               and resume -  and if you're curious or want
               to collaborate, feel free to reach out. I'd love to connect!
-              <a className="link-my-story"
-                href="#my-story"
-                onClick={() => setShowMyStory(!showMyStory)}
-                >
-                Read my story &rarr;</a>
+
+              <Link className="link-my-story" to="/my-story">
+                Read my story &rarr;</Link>
             </p>
           </div>
         </div>
@@ -63,18 +62,9 @@ export function About() {
         <Benefits />
         <ContactMe />
 
-        {showMyStory &&<button className="btn close" onClick={() => setShowMyStory(!showMyStory)}>
-          Close ❌
-        </button>
-        }
-
-      {showMyStory &&
-        <div className='my-story'>
-          <Mybackground setShowMyStory={setShowMyStory} />
-        </div>
-      }
       </section>
     
+       
   );
 }
 function Service() {

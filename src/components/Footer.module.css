@@ -1,0 +1,38 @@
+
+
+.footer {
+    font-size: var(--fs-5);
+    font-weight: 600;
+    font-family:  var(--ffLeagueSpartan);
+    margin-top: 3rem;
+   color: var(--light-gray);
+    padding: 1rem;
+    padding-bottom: 3.5rem;
+    text-align: center;
+    border-top: 1px solid var(--white-2);
+    cursor: pointer;
+    background-color: var(--black-1);
+    transition: background-color 0.5s ease, color 0.3s ease;
+}
+
+.footer:hover {
+    background-color: var(--jet-black);
+    color: var(--light-gray-1);
+   
+}
+
+
+
+.footer a:visited {
+    color: var(--lightGreen);
+    
+}
+
+
+@media screen and (max-width: 768px) {
+    .footer {
+      padding-bottom: 1rem;
+      font-size: var(--fs-6);
+    }
+
+}

@@ -1,11 +1,13 @@
-import { useIntersectionObserver } from "./useIntersectionObserver";
+import { useIntersectionObserver } from "../useIntersectionObserver";
 import { Resume } from "./Resume";
 import { Projects } from "./Projects";
 import { Skills } from "./Skills";
-import { About } from "./About";
 import { Contact } from "./Contact";
+import { About } from "./AboutMe"
 
-export function Main({ selectedNav }) {
+
+
+export function Main() {
   const articleRef = useIntersectionObserver({
     threshold: 0.1, 
      rootMargin: "0px 0px -10% 0px",
@@ -32,11 +34,6 @@ export function Main({ selectedNav }) {
       </article>
 
 
-      {/* {(selectedNav === 'about' || selectedNav === "home") && <About />}
-      {selectedNav === 'projects' && <Projects />}
-      {selectedNav === 'resume' && <Resume />}
-      {selectedNav === 'skills' && <Skills />}
-      {selectedNav === 'contact' && <Contact />}  */}
     </main>
   );
 }

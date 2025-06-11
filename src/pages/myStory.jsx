@@ -1,4 +1,5 @@
-import './myStory.css';
+import Header from '../components/Header';
+import styles from "./myStory.module.css";
 
 const values = [
     { title: 'What Drives Me' ,
@@ -45,28 +46,33 @@ const values = [
 
 export function Mybackground() {
     return (
-        <div className="mystory-container">
+        <div>
+            <Header />
+            <section id="mystory" >
+        <div className= {styles.mystoryContainer}>
             <BackGround />
             <MyJourney />
             <Values />
             <ContactMe />
+            </div>
+            </section>
         </div>
     )
 }
 function BackGround() {
     return (
-        <section id="my-story" >
-        <div className="background-container">
-            <div className="background-hero">
-            <div className="image-container">
+
+        <div className={styles.backgroundContainer}>
+            <div className={styles.backgroundHero}>
+            <div className={styles.imageContainer}>
               <img src={`${process.env.PUBLIC_URL}/images/black-img.png`} alt="my-pic" />
 
             </div>
 
-            <div className="content">
-                <h1 className='intro-title' > Johnny Medhane </h1>
+            <div className={styles.content}>
+                <h1 className={styles.introTitle}> Johnny Medhane </h1>
                 <p> I am 28 years old. </p>
-                <p> I am originally from <a href="https://en.wikipedia.org/wiki/Eritrea#:~:text=Eritrea%20%28%2F%20%CB%8C%C9%9Br%C9%AA%CB%88tri%CB%90.%C9%99%2C%20-%20%CB%88tre%C9%AA%20-%2F%29%20%28listen%29%2C%20officially,in%20the%20west%2C%20and%20Djibouti%20in%20the%20southeast." className='link'>
+                <p> I am originally from <a href="https://en.wikipedia.org/wiki/Eritrea#:~:text=Eritrea%20%28%2F%20%CB%8C%C9%9Br%C9%AA%CB%88tri%CB%90.%C9%99%2C%20-%20%CB%88tre%C9%AA%20-%2F%29%20%28listen%29%2C%20officially,in%20the%20west%2C%20and%20Djibouti%20in%20the%20southeast." className={styles.link}>
                     Eritrea.
                    </a>
                 </p>
@@ -78,7 +84,7 @@ function BackGround() {
                 <p> I'm obsess on going to gym to forget things that makes me worry. </p>
                 <p> I  like to cooke and watch moves alot at home. </p>
                 <p> I alwas motivated to learn  and develop.  </p>
-                <p> I work part time in  <a href="https://www.utest.com/ref947881" className='link'>UTest
+                <p> I work part time in  <a href="https://www.utest.com/ref947881" className={styles.link}>UTest
                 </a>  as a freelancer QA Tester.</p>
                         <p> I'm a self-taught Front-end Developer. </p>
                 <p> I have taught myself coding languages <b> CSS, HTML, SQL, JavaScript, React, Python </b> from internet. </p>       
@@ -88,13 +94,13 @@ function BackGround() {
                </div>
             </div>
             </div>
-        </section>
+          
     )
 } function MyJourney() {
     return (
-        <div className="journey-container">
-            <h2 className="h2-title">My Journey Into Tech</h2>
-            <div className="joureny-content">
+        <div className={styles.journeyContainer}>
+            <h2 className={styles.h2Title}>My Journey Into Tech</h2>
+            <div className={styles.journeyContent}>
                 <p>
                    My journey hasn't been
                     simple, but it has shaped me into a determined and hardworking
@@ -121,8 +127,8 @@ function BackGround() {
                 <p>
                     I later expanded my skills to Frontend Development, learning HTML, CSS, JavaScript, React,
                     and Python through self-study.
-                    You can view my projects here: <a href="https://github.com/Johnnymedhane?tab=repositories" className='link'> My
-                        GitHub.</a> 
+                    You can view my projects here: <a href="https://github.com/Johnnymedhane?tab=repositories" className={styles.link}> My
+                        GitHub.</a>
                 </p>
 
                 <p>
@@ -139,21 +145,21 @@ function BackGround() {
 
 function Values() {
     return (
-        <div className="values-container">
-        
-            <h2 className='h2-title'>Values</h2>
-            <div className="values-content">
-                <h3 className='content-title'>{values[0].title}</h3>
-                <p className='value-text'>{values[0].text}</p>
+        <div className={styles.valuesContainer}>
+
+            <h2 className={styles.h2Title}>Values</h2>
+            <div className={styles.valuesContent}>
+                <h3 className={styles.contentTitle}>{values[0].title}</h3>
+                <p className={styles.valueText}>{values[0].text}</p>
            </div>
-            
-            <div className="values-content">
-                <h3 className='content-title'>{values[1].title}</h3>
-                <ul className="values-list">
+
+            <div className={styles.valuesContent}>
+                <h3 className={styles.contentTitle}>{values[1].title}</h3>
+                <ul className={styles.valuesList}>
                     {values[1].text.map((value, index) => (
                         <li key={index}>
                             <h4 >{value.title}</h4>
-                            <p className='value-tex'>{value.text}</p>
+                            <p className={styles.valueText}>{value.text}</p>
                         </li>
                     ))}
 
@@ -167,12 +173,12 @@ function Values() {
 
 function ContactMe() {
     return (
-        <div className="end-story">
+        <div className={styles.endStory}>
             <p>
                 Thank you for reading my story! 
                 I'm excited to connect and explore new opportunities together!
 
-                Feel free to reach me <a href="mailto:johnnymedhane@gmail.com" className="link"> johnnymedhane@gmail.com</a>.
+                Feel free to reach me <a href="mailto:johnnymedhane@gmail.com" className={styles.link}> johnnymedhane@gmail.com</a>.
             </p>
         </div>
     )

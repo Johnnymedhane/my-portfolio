@@ -1,20 +1,20 @@
 import { useState, useEffect, useRef } from "react";
-import { MoreInfo } from "./MoreInfo";
+
 import { Loading } from "./Loading";
+import { MoreInfo } from "./MoreInfo";
 export function Contact() {
   return (
-    
+   
       <section id="contact">
         <div className="contact">
           <h2 className="section-title">Contact</h2>
           <div className="address">
-            <MoreInfo />
+            <MoreInfo/>
             <Map />
           </div>
           <Form />
         </div>
       </section>
-    
   );
 }
 export function Map() {
