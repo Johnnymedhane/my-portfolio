@@ -12,9 +12,6 @@ const projects = [
 { name: 'Saving-planer STP', category: 'QA', img: `${process.env.PUBLIC_URL}/images/stp saving-planer.png`, webLink: '', github: 'https://github.com/Johnnymedhane/Saving-Planer/blob/main/QA/STP-Save%20Planer.docx' },
 { name: 'Spotify-Dataset', category: 'Python data-analist', img: `${process.env.PUBLIC_URL}/images/python-spotify.png`, webLink: '', github: 'https://github.com/Johnnymedhane/Python-projects-and-exercises/blob/main/Project_spotifay.dataset.ipynb' },
 { name: 'Dtaset analysis', category: 'Python data-analist', img: `${process.env.PUBLIC_URL}/images/data-analist.png`, github: 'https://github.com/Johnnymedhane/Python-projects-and-exercises/blob/main/Chipotle/Exercise_with_Solutions.ipynb' },
-{ name: 'Calculator', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/calculator2.png`, webLink: 'https://myclculatorproject.netlify.app', github: 'https://github.com/Johnnymedhane/Calculator' },
-{ name: 'Pizza-page', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/pizza-image.png`, webLink: 'https://strong-trifle-c1690d.netlify.app', github: 'https://github.com/Johnnymedhane/Pizza-page' },
-{ name: 'River-Puzzle', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/river-puzzle.png`, webLink: 'https://johnnymedhane.github.io/river-puzzle/', github: 'https://github.com/Johnnymedhane/river-puzzle' },
 { name: 'Worldwise', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/worldwise.png`, webLink: 'https://world-wise-cities.netlify.app/', github: 'https://github.com/Johnnymedhane/World-Wise' },
 { name: 'React-quizs', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/quizs.png`, webLink: 'https://react-quizss.netlify.app', github: 'https://github.com/Johnnymedhane/React-Quizs' },
 { name: 'PopCorn', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/movies.png`, webLink: 'https://johnnymedhane.github.io/usePopCorn/', github: 'https://github.com/Johnnymedhane/usePopCorn' },
@@ -22,6 +19,11 @@ const projects = [
 { name: 'eat-n-split', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/bill-split.png`, webLink: 'https://app.netlify.com/teams/johnnymedhane', github: 'https://github.com/Johnnymedhane/06-eat-n-split' },
 { name: 'Travel-List', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/to-do-list.png`, webLink: 'https://dazzling-tulumba-2334c5.netlify.app/', github: 'https://github.com/Johnnymedhane/Travel-List' },
 { name: 'Classy-Weather', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/classy-weather.png`, webLink: 'https://johnnymedhane.github.io/classy-weather/', github: 'https://github.com/Johnnymedhane/classy-weather' },
+// { name: 'Calculator', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/calculator2.png`, webLink: 'https://myclculatorproject.netlify.app', github: 'https://github.com/Johnnymedhane/Calculator' },
+{ name: 'Pizza-page', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/pizza-image.png`, webLink: 'https://strong-trifle-c1690d.netlify.app', github: 'https://github.com/Johnnymedhane/Pizza-page' },
+{ name: 'River-Puzzle', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/river-puzzle.png`, webLink: 'https://johnnymedhane.github.io/river-puzzle/', github: 'https://github.com/Johnnymedhane/river-puzzle' },
+{ name: 'Workout Timer', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/work-out.png`, webLink: 'https://workouts-timer.netlify.app/', github: 'https://github.com/Johnnymedhane/workout-timer' },
+{ name: 'Job Tracker', category: 'Web development', img: `${process.env.PUBLIC_URL}/images/job-tracker.png`, webLink: 'https://track-your-jobs.netlify.app/', github: 'https://github.com/Johnnymedhane/job-tracker/tree/main' },
 
 ];
 

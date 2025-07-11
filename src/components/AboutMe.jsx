@@ -4,30 +4,50 @@ import { Link } from 'react-router-dom';
 
 // import { Link } from 'react-router-dom';
 const values = [ 
-   {
-                title: 'Attention to detail: ',
-    text: `I ensure quality in everything I do. 
-              I ensure  that my code is clean, functional, and user-friendly. 
-              And test it thoroughly to ensure the layout, animations, and responsiveness 
-              behave as expected on different devices and browsers.`
-             },
-            {
-                title: 'A growth mindset: ', 
-              text: `I'm eager to learn and develop. 
-                 I'm always looking for ways to improve my skills and knowledge.`
-            },
-            {
-                 title: 'Problem-solving skills:',
-              text: `I dive deep into challenges to find the best solutions. 
-              I'm not afraid to ask questions and seek help when needed 
-              and i really enjoy all the challenges of coding, debugging, testing, and exploring to find a solution.`
-                
-            },
-              {
-                title: 'Teamwork and independence:',
-                text: `I can thrive both as a collaborator and an individual contributor.`
-
-            }
+  {
+    title: 'Attention to detail:',
+    text: `I ensure quality in everything I do. I ensure that my code is clean, functional, and user-friendly. 
+           And test it thoroughly to ensure the layout, animations, and responsiveness behave as expected 
+           on different devices and browsers.`
+  },
+  {
+    title: 'Problem-solving skills:',
+    text: `I dive deep into challenges to find the best solutions. I'm not afraid to ask questions and seek 
+           help when needed and I really enjoy all the challenges of coding, debugging, testing, and exploring 
+           to find a solution.`
+  },
+  {
+    title: 'Teamwork and independence:',
+    text: `I can thrive both as a collaborator and an individual contributor. I believe in the power of 
+           collaboration and actively seek feedback from others to improve my work.`
+  },
+  {
+    title: 'Strong communication skills:',
+    text: `I can convey ideas clearly and effectively, both in writing and verbally. I actively listen to 
+           others and encourage open dialogue to foster collaboration.`
+  },
+  {
+    title: 'Time management and organization:',
+    text: `I prioritize tasks effectively and manage my time well to meet deadlines.`
+  },
+  {
+    title: 'Responsibility:',
+    text: `I take ownership of my work and am accountable for my actions. I believe in delivering on my 
+           commitments and maintaining a high standard of quality.`
+  },
+  {
+    title: 'A growth mindset:',
+    text: `I'm eager to learn and develop. I'm always looking for ways to improve my skills and knowledge.`
+  },
+  {
+    title: 'Adaptability:',
+    text: `I can quickly adjust to new situations and challenges, making me a versatile team member.`
+  },
+  {
+    title: 'Passion for technology:',
+    text: `I love exploring new technologies and staying up-to-date with industry trends, which helps me 
+           bring fresh ideas to the table.`
+  }
 ]
 
 export function About() {
