@@ -10,13 +10,13 @@ const values = [
     },
 
     {
-        title: 'Some of My Core Values',
+        title: 'Personal characteristics & strengths',
         text: [
             {
-                title: 'Resilience & Perseverance: ',
-                text: `You have faced numerous challenges, from being forced into exile at an 
+                title: 'Resilience and perseverance: ',
+                text: `I have faced numerous challenges, from being forced into exile at an 
                     early age(14 years old) to struggling financially and 
-                    overcoming difficult personal circumstances. Yet i refused to give up and continuosly worked toward a better future.`
+                    overcoming difficult personal circumstances. Yet I refused to give up and continuously worked toward a better future.`
              },
             {
                 title: 'Growth & Learning: ', 
@@ -147,7 +147,9 @@ function Values() {
     return (
         <div className={styles.valuesContainer}>
 
-            <h2 className={styles.h2Title}>Values</h2>
+            <h2 className={styles.h2Title}>
+                My Values 
+            </h2>
             <div className={styles.valuesContent}>
                 <h3 className={styles.contentTitle}>{values[0].title}</h3>
                 <p className={styles.valueText}>{values[0].text}</p>

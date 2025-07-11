@@ -23,8 +23,12 @@ const handleScroll = (sectionId) => {
           <h2> A Passionate <span>Front-End Developer</span></h2>
           <p>Building sleek, responsive and high-performance websites.</p>
           <div className="cta-buttons">
-            <a href="#projects"  onClick={() => handleScroll('projects')}    className="btn">View My Work</a>
-            <a href="#contact" className="btn btn-outline" onClick={() => setSelectedNav('contact')}>Contact me</a>
+            <a href="#projects" onClick={() => handleScroll('projects')} className="btn">
+              View My Work
+            </a>
+            <a href={`${process.env.PUBLIC_URL}/cv/Johnny_Medhane_CV.pdf`} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+             view My CV
+            </a>
           </div>
 
           <SocialMedia marginTop={5} />
