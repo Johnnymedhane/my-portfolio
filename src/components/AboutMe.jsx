@@ -5,43 +5,41 @@ import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 const values = [ 
   {
-    title: 'Attention to detail:',
-    text: `I ensure quality in everything I do. I ensure that my code is clean, functional, and user-friendly. 
-           And test it thoroughly to ensure the layout, animations, and responsiveness behave as expected 
-           on different devices and browsers.`
+    title: 'Proven Self-taught with Real Projects:',
+    text: `Taught myself modern frontend development from scratch and built 15+ real-world applications using React, JavaScript, and CSS.`
+  },
+  {
+    title: 'Strong Technical Foundation:',
+    text: `Proficient in React, JSX, State Management, (Redux, Context , useReducer), Tailwind CSS, API integration and performance optimization.`
+  },
+  {
+    title: 'Balanced Skillset: Frontend + QA',
+    text: `My QA background makes me a careful, detail-oriented developer who builds with quality and debugging in mind from day one.`
+
+  },
+
+  {
+    title: 'Design & UX Awareness :',
+    text: `Understand responsive design principles, UX best practices, and styling with Figma and Tailwind. I care deeply about user experience..`
   },
   {
     title: 'Problem-solving skills:',
-    text: `I dive deep into challenges to find the best solutions. I'm not afraid to ask questions and seek 
-           help when needed and I really enjoy all the challenges of coding, debugging, testing, and exploring 
+    text: `I dive deep into challenges to find the best solutions. I really enjoy all the challenges of coding, debugging, testing, and exploring 
            to find a solution.`
   },
   {
-    title: 'Teamwork and independence:',
-    text: `I can thrive both as a collaborator and an individual contributor. I believe in the power of 
-           collaboration and actively seek feedback from others to improve my work.`
+    title: 'Excellent Debugging & Testing Skills:',
+    text: `Familiar with DevTools, React DevTools, Redux DevTools, Profiler, and other debugging tools.
+    I identify and fix bugs efficiently, ensuring high-quality code.`
+  },
+ 
+  {
+    title: 'Consistent Growth & Adaptability:',
+    text: `Always learning. I actively keep up with new features in React, and I’ve transitioned careers through grit, focus, and discipline.`
   },
   {
-    title: 'Strong communication skills:',
-    text: `I can convey ideas clearly and effectively, both in writing and verbally. I actively listen to 
-           others and encourage open dialogue to foster collaboration.`
-  },
-  {
-    title: 'Time management and organization:',
-    text: `I prioritize tasks effectively and manage my time well to meet deadlines.`
-  },
-  {
-    title: 'Responsibility:',
-    text: `I take ownership of my work and am accountable for my actions. I believe in delivering on my 
-           commitments and maintaining a high standard of quality.`
-  },
-  {
-    title: 'A growth mindset:',
-    text: `I'm eager to learn and develop. I'm always looking for ways to improve my skills and knowledge.`
-  },
-  {
-    title: 'Adaptability:',
-    text: `I can quickly adjust to new situations and challenges, making me a versatile team member.`
+    title: 'Mission-Driven and Resilient:',
+    text: `As an Eritrean asylum seeker building a new career in Israel, I bring unique perspective, perseverance, and a drive to contribute meaningfully.`
   },
   {
     title: 'Passion for technology:',
@@ -51,7 +49,7 @@ const values = [
 ]
 
 export function About() {
-//  const [showMyStory, setShowMyStory] = useState(false);
+
 
   return (
    
