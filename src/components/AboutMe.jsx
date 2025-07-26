@@ -1,9 +1,11 @@
-import  { useState } from 'react';
 
 import { Link } from 'react-router-dom';
+import { ContactMe } from './ContactMe';
+import { Service } from './Service';
+import { Benefits } from './Benefits';
 
 // import { Link } from 'react-router-dom';
-const values = [ 
+export const values = [ 
   {
     title: 'Proven Self-taught with Real Projects:',
     text: `Taught myself modern frontend development from scratch and built 15+ real-world applications using React, JavaScript, and CSS.`
@@ -59,14 +61,23 @@ export function About() {
 
           <div className="about-text">
             <p>
-              Hello, I'm <strong> Johnny Medhane</strong>  —   a self-taught Front-end Developer
+              Hello, I'm <span> Johnny Medhane</span>  —   a self-taught Front-end Developer
               with a passion for building beautiful, responsive, and user-friendly websites.
-              I have a solid foundation in <b> HTML </b>, <b>CSS </b>, <b>JavaScript </b>,
-                <b >React </b> and  <b>python </b>
-              and I'm constantly exploring new technologies to sharpen my skills.
-              Programming is a source of inspiration and creativity for me, and I love the all challenges
-              of coding, debugging, testing, and exploring to find a solution.
+              I have a solid foundation in <b> HTML </b>, <b> CSS, </b> <b> JavaScript, </b>
+                <b> React, </b> and  <b> Python </b>
+            and I'm constantly exploring new technologies to sharpen my skills and stay up-to-date.
             </p>
+            <p>
+            Programming is  a creative outlet and a source of inspiration for me.
+            I enjoy every part of the development process — Designing, Coding, debugging, testing, and exploring new solutions.
+          </p>
+          <p>
+            Through my coding journey, I've learned more than just programming — I've mastered
+            <strong> how to learn anything </strong>, developed strong
+            <strong> self-discipline </strong>, enhanced my
+            <strong> research skills </strong>, and become highly effective at <strong> problem-solving under pressure </strong>.
+            When I encounter new technologies, I don't panic — I'm confident in my ability to figure things out and adapt quickly.
+          </p>
             <p> I invite you to take a look at my projects
               and resume -  and if you're curious or want
               to collaborate, feel free to reach out. I'd love to connect!
@@ -85,62 +96,7 @@ export function About() {
        
   );
 }
-function Service() {
-  return (
-     <div className="service">
-          <h2 className="service-title">What I do</h2>
-          <div className="service-list">
-            <div className="service-item">
-              <div className="service-icon">
-                <i className="fa-solid fa-file-contract"></i>
-              </div>
-              <h3>QA Testing</h3>
-              <div className="service-description">
-              <p>Writing documentation(STP, STD, STR), performing test cases and bug reporting.</p>
-              <p> Ensuring that the product is of the highest possible quality for customers.
-                Using all of the techniques and methodologies I've learned to prevent issues with the product or service and to ensure great user experience for your customers.
-                </p>
-                </div>
-            </div>
-            <div className="service-item">
-              <div className="service-icon">
-                <i className="fa-solid fa-laptop-code"></i>
-              </div>
-              <h3>Web Development</h3>
-              <div className="service-description">
-                <p> I build websites using modern technologies like HTML, CSS, and JavaScript.  
-                </p>
-                </div>
-            </div>
-
-          </div>
-        </div>
-  )
-}
-function Benefits() {
-  const [showText, setShowText] = useState(null);
-
-  return (
-    <div className="benefits">
-      <h2 className="benefits-title">Why I'm a Great Fit</h2>
-      <ul className="benefits-list">
-        {values.map((value, index) => (
-          <Value
-            key={index}
-            index={index}
-            value={value}
-            showText={showText}
-            setShowText={setShowText}
-          />
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-    
-    
- function Value({ index, value, showText, setShowText }) {
+ export function Value({ index, value, showText, setShowText }) {
   const isTextVisible = index === showText;
 
   return (
@@ -149,26 +105,5 @@ function Benefits() {
       {isTextVisible && <p className="text">{value.text}</p>}
       <span className="benefits-indicator">{isTextVisible ? "-" : "+"} </span>
     </li>
-  );
-}
-function ContactMe() {
-  return (
-    <div className="contact-me">
-      <h2 className="contact-me-title">Let's Connect</h2>
-     
-      <p className='contact-me-text'>
-        I'm seeking opportunities where I can contribute my skills,
-        learn from others, and grow professionally as a Frontend Developer.
-      </p>
-      <p  className='contact-me-text'>
-        If you have a project you'd like to discuss or
-         you're looking for a motivated, detail-oriented
-        professional who has overcome challenges
-        and is ready to make an impact, let's connect.
-        <span className="contact-link"> 
-          <a href="mailto:johnnymedhane@gmail.com" className="contact-me-link">johnnymedhane@gmail.com</a>
-        </span>
-      </p>
-    </div>
   );
 }
