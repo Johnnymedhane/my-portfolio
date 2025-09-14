@@ -31,6 +31,17 @@ export function Resume() {
   ];
 
   const experienceList = [
+  
+    {
+      name: "Front-end Developer",
+      year: '2024 - current',
+      description: 'Self-Directed Projects',
+      children: <p className="timeline-text">Developing and maintaining real web applications and practicing modern frontend development with a focus on React.
+        <br />
+        <span>Built and deployed 20+ responsive React projects</span>
+      </p> 
+    },
+
     {
       name: 'freelancer QA Tester',
       year: '2021 - current',

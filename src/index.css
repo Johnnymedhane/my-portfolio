@@ -37,7 +37,7 @@
   );
  
 --bg: hsl(0, 0%, 1%);
---tbg:hsla(240, 1%, 17%, 0.75);
+--tbg:hsla(240, 1%, 20%, 0.95);
 --black-1:hsl(240, 2%, 13%);
 --black-2:hsl(240, 2%, 12%);
 --white-1:#FFFFFF;
@@ -381,10 +381,10 @@ transform-origin: center;
 .nav-link:hover,
 .nav-link:focus { color: var(--light-gray); }
 
-.nav-link.active { color: var(--orange-2); }
+/* .nav-link.active { color: var(--orange-2); } */
 
 .nav-active{
-  color:var(--orange-1);
+  color: var(--orange-1) !important;
   font-size: var(--fs-6);
 } 
 
@@ -1865,26 +1865,45 @@ textarea.form-input::-webkit-resizer { display: none; }
     padding: 12px 5px;
    
   } */
-  .nav-list{
-   flex-direction: column;
+    .nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: var(--tbg);
+    backdrop-filter: blur(20px);
+    transform: translateX(100%);
+
+    transition: var(--transition-2);
   }
+
+  .nav-list{
+    margin-top: 20px;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+    gap: 10px;
+  }
+  .nav-link{
+    font-size: var(--fs-3);
+  }
+  .nav-link:hover, .nav-link:focus{
+    font-size: var(--fs-4);
+  }
+  .nav-active{
+    font-size: var(--fs-5);
+  }
+ 
   .nav-toggle {
     display: block;
     position: fixed;
     z-index: 9000;
   }
-  .nav{
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 100%;
-    background: var(--tbg);
-    backdrop-filter: blur(0px);
-    transform: translateX(100%);
-
-    transition: var(--transition-2);
-  }
+ 
   /* home */
  
   .hero-container{
@@ -1990,31 +2009,26 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 640px) {
   
   .head{
     padding: 10px 5px;
   }
-  .nav-list{
-   flex-direction: column;
+ 
+   .nav-link{
+    font-size: var(--fs-4);
   }
+  .nav-link:hover, .nav-link:focus{
+    font-size: var(--fs-5);
+  }
+  .nav-active{
+    font-size: var(--fs-5);
+  }
+ 
   .nav-toggle {
     display: block;
     position: fixed;
     z-index: 9000;
-  }
-  .nav{
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 50vh;
-    width: 100%;
-    background: var(--tbg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    z-index: 1000;
-    transform: translateX(100%);
-    transition: var(--transition-2);
   }
   .logo{
     height: 24px;
@@ -2075,6 +2089,9 @@ bottom: 5px;
   
 }
 
+main{
+  border-radius: 0%;
+}
 
  
 
