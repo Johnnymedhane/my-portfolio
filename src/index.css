@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Nabla&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap'); 
 
 
 *, *::before, *::after {
@@ -13,6 +13,7 @@
   --ffLeagueSpartan: 'League Spartan';
   --ffSaira: 'Saira';
   --ffroboto: 'Roboto';
+  --ffNabla: 'Nabla';
 
   /* colors */
  --bg-gradient-jet: linear-gradient(
@@ -47,7 +48,9 @@
 --orange-1: hsl(45, 100%, 72%);
 --orange-2: hsl(45, 54%, 58%);
 --jet: hsl(0, 0%, 22%);
---lightGreen: hsl(180, 90%, 61%);
+
+--lightGold: hsl(51, 48%, 61%);
+/* --lightGreen: hsl(180, 90%, 55%); */
 
 /* font-size */
 
@@ -122,7 +125,7 @@ hsl(35, 100%, 68%)
   --orange-1: hsl(45, 87%, 56%);
   --orange-2: hsl(45, 79%, 56%);
   --jet: hsl(0, 0%, 80%);
-  --lightGreen: hsl(145, 80%, 70%);
+  --lightGold: hsl(51, 48%, 61%);
 
  
   --text-gradient-yellow: linear-gradient(
@@ -234,7 +237,7 @@ transition: var(--transition-2);
   font-family: var(--ffpoppins);
   text-align: center;
   margin-bottom: 2rem;
-  color: var(--lightGreen);
+  color: var(--lightGold);
   text-transform: capitalize;
   position: relative;
 }
@@ -265,11 +268,29 @@ body {
   font-family: var(--ffpoppins);
 }
 
+
+.app-layout{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+ 
+ 
+}
+
+.main-container {
+ margin: auto;
+  transition: var(--transition-2);
+  width: 100%;
+  max-width: 1200px;
+}
+
 /* header */
 .head{
 position: fixed;
 top: 0;
 width: 100%;
+padding-right:  20px;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -285,7 +306,7 @@ z-index: 10;
 .logo {
   display: flex;
   align-items: center;
-  font-family: var(--ffLeagueSpartan);
+  font-family: var(--ffNabla);
   font-size: var(--fs-3);
   font-weight: 700;
   color: var(--orange-1);
@@ -313,15 +334,16 @@ z-index: 10;
   box-shadow: var(--shadow-1);
 }
 
-.logo:hover {
-  color: var(--lightGreen);
+.logo:hover, .logo:active {
+  color: var(--lightGold);
 }
 
-.logo:hover span {
+.logo:hover  span {
   background: var(--bg-gradient-yellow-2);
+  color: var(--lightGold);
 }
 
-
+ 
 .nav-list{
   display: flex;
   justify-content: space-evenly;
@@ -391,7 +413,7 @@ transform-origin: center;
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-  background: var(--lightGreen);
+  background: var(--lightGold);
   width: 2em;
   height: 3px;
   border-radius: 1em;
@@ -467,7 +489,7 @@ transform-origin: center;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--lightGreen);
+  background-color: var(--bg);
   transition: .4s;
   border-radius: 30px;
 }
@@ -475,13 +497,13 @@ transform-origin: center;
 .slider:before {
   position: absolute;
   content: "";
-  height: 27px;
-  width: 27px;
+  height: 28px;
+  width: 28px;
   border-radius: 20px;
   left: 2px;
   bottom: 2px;
   z-index: 2;
-  background-color: var(--white-2);
+  /* background-color: var(--jet); */
   /* filter: blur(3px); */
   transition: .4s;
 }
@@ -566,6 +588,7 @@ justify-content: center;
 align-items: center;
 position: relative;
 
+
 }
 .hero-container{
 display: flex;
@@ -616,13 +639,13 @@ line-height: 1.4;
 display: block;
 width: 18ch;
 white-space: nowrap;
-border-right: 2px solid var(--lightGreen);
+border-right: 2px solid var(--lightGold);
 overflow: hidden;
 font-style: italic;
 background-clip: text; 
 -webkit-background-clip: text; 
 color: transparent;
-background-image: linear-gradient(to right, rgb(239, 133, 71), #2bf3e6);
+background-image: linear-gradient(to right, rgb(124, 59, 20), #e5e842);
 animation: typing 2.5s steps(15)  infinite alternate;
 }
 @keyframes typing{
@@ -686,7 +709,7 @@ box-shadow: var(--shadow-4);
 border-radius: 50%;
 z-index: 2;
 transition: var(--transition-2);
-box-shadow: 0 0 20px var(--lightGreen);
+box-shadow: 0 0 20px var(--lightGold);
 animation: blink 2s linear infinite;
 }
 @keyframes blink {
@@ -835,7 +858,7 @@ color:var(--white-2) ;
 }
 .indicator title{
   background: none;
-  color: var(--lightGreen);
+  color: var(--lightGold);
   font-size: var(--fs-7);}
 .indicator a{
 color: var(--white-1);
@@ -895,6 +918,7 @@ transition: var(--transition-2);
   max-width: 90%;
   border: 1px solid var(--jet);
   border-radius: 20px;
+  
   }
 
 
@@ -981,7 +1005,7 @@ transition: var(--transition-2);
 
 
 .link-my-story:hover, .contact-me-link:hover{
-  color: var(--lightGreen);
+  color: var(--lightGold);
   box-shadow: var(--shadow-2);
   transition: var(--transition-1);
   background: var(--bg-gradient-yellow-1);
@@ -997,7 +1021,7 @@ transition: var(--transition-2);
   font-size: var(--fs-4);
   text-transform: capitalize;
   margin-bottom: 30px;
-  color: var(--lightGreen);
+  color: var(--lightGold);
 
 }
 
@@ -1227,7 +1251,7 @@ transition: var(--transition-2);
   position: relative;
   height: 100%;
   border-radius: inherit;
-  background: var(--lightGreen);
+  background: var(--lightGold);
   transform-origin: left;
   box-shadow: var(--shadow-1);
   animation: fill 5s forwards;
@@ -1403,7 +1427,7 @@ transition: var(--transition-2);
   
 }
 
-.select-item button:hover {background: var(--lightGreen); }
+.select-item button:hover {background: var(--lightGold); }
 
 .projects-list {
  position: relative;
@@ -1503,7 +1527,7 @@ position: relative;
   color: var(--light-gray);
 }
 .project-info p:hover {
-  color: var(--lightGreen);
+  color: var(--lightGold);
 }
 
 .project-links {
@@ -1530,7 +1554,7 @@ position: relative;
   transition: var(--transition-2);
 }
 .project-links a:hover {
-  color: var(--lightGreen);
+  color: var(--lightGold);
   background: var(--black-1);
 }
 
@@ -1720,7 +1744,7 @@ padding: 10px 15px;
   transition: var(--transition-1);}
 
 .contact-info :is(.contact-link, time, address):hover{
-color: var(--lightGreen);
+color: var(--lightGold);
 box-shadow: var(--shadow-2);
 transition: var(--transition-1);
 }
@@ -1822,7 +1846,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   font-weight: 500;
   text-align: center;
   margin-top: 20px;
-  color: var(--lightGreen);
+  color: var(--lightGold);
   animation: fadeOut 5s ease-in-out forwards;
 }
 

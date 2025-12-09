@@ -1,58 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { Loading } from "../../ui/Loading";
 
-import { Loading } from "./Loading";
-import { MoreInfo } from "./MoreInfo";
-export function Contact() {
-  return (
-   
-      <section id="contact">
-        <div className="contact">
-          <h2 className="section-title">Contact</h2>
-          <div className="address">
-            <MoreInfo/>
-            <Map />
-          </div>
-          <Form />
-        </div>
-      </section>
-  );
-}
-export function Map() {
-  const [isMapAvailable, setIsMapAvailable] = useState(true);
-
-  useEffect(() => {
-    if (!navigator.onLine) {
-      setIsMapAvailable(false);
-    }
-  }, []);
-
-  const handleMapError = () => {
-    setIsMapAvailable(false);
-  };
-
-  return isMapAvailable ? (
-    <div className="mapbox">
-      <figure>
-        <iframe title="map"
-          src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=petah%20tikva%20israel&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-          width="100%"
-          height="100%"
-          loading="lazy"
-          onError={handleMapError}
-        ></iframe>
-      </figure>
-    </div>
-  ) : (
-    <OfflineMap />
-  );
-}
-export function OfflineMap() {
-  return (
-    <div className="offline-map">
-      <p>Map is unavailable. Please check your internet connection.</p>
-    </div>
-  );
-}
 export function Form() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -83,7 +31,7 @@ export function Form() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-    
+
       const data = await response.json();
       if (!response.ok) throw new Error(data.message || "Something went wrong");
 
@@ -119,8 +67,7 @@ export function Form() {
             className="form-input"
             name="Fullname"
             placeholder="Full name"
-            required
-          />
+            required />
 
           <input
             type="email"
@@ -129,8 +76,7 @@ export function Form() {
             className="form-input"
             name="email"
             placeholder="Email address"
-            required
-          />
+            required />
 
           <input
             type="tel"
@@ -142,8 +88,7 @@ export function Form() {
             className="form-input"
             name="phone"
             placeholder="Phone"
-            required
-          />
+            required />
           {!isPhoneValid && <p className="error-message">Please enter a valid phone number.</p>}
         </div>
 
@@ -160,8 +105,7 @@ export function Form() {
           <span>{isSubmitting ? "Submitting..." : "Send Message"}</span>
         </button>
 
-      </form>
-      }
+      </form>}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { BigScreen } from "./BigScreen";
 import { SmallerScreen } from "./SmallerScreen";
 import { ProjectsList } from "./ProjectsList";
+import Section from "../../ui/Section";
 
 
 
@@ -18,16 +19,15 @@ export function Projects() {
 
   return (
    
-      <section id="projects">
-        <div className="projects">
-          <h2 className="section-title">Projects
-          </h2>
+      <Section title="Projects" sectionType="projects">
+        
+          
 
           <BigScreen />
           <SmallerScreen  />
           <ProjectsList />
-        </div>
-      </section>
+       
+      </Section>
   );
 }
 

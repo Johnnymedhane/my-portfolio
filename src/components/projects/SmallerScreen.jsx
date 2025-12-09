@@ -1,5 +1,6 @@
 import { SelectItem } from "./SelectItem";
-import { useProjects } from "../contexts/ProjectsContext";
+import { useProjects } from "../../contexts/ProjectsContext";
+import List from "../../ui/List";
 
 export function SmallerScreen() {
   const { projectsCategory, selectItem,  showList, setShowList } = useProjects();
@@ -14,12 +15,10 @@ export function SmallerScreen() {
           <i className="fa-solid fa-chevron-down"></i>
         </div>
       </button>
-      <ul className={showList ? "select-list" : "select-list-hide"}>
-        {projectsCategory.map((project) => <SelectItem key={project}
-          project={project}
-         
-          />)}
-      </ul>
+      <List item={`${showList ? "select-list" : "select-list-hide"}`} data={projectsCategory} renderItem={(project) => (
+        <SelectItem key={project} project={project} />
+      )} />
     </div>
   );
 }
+

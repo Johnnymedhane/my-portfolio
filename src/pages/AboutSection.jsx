@@ -1,16 +1,7 @@
-import { About } from "../components/AboutMe"
-import Footer from "../components/Footer"
-import Header from "../components/Header"
-
+import { About } from "../components/about/AboutMe";
 
 function AboutSection() {
-    return (
-        <div>
-            <Header />
-            <About />
-            <Footer />
-        </div>
-    )
+  return <About />;
 }
 
-export default AboutSection
+export default AboutSection;

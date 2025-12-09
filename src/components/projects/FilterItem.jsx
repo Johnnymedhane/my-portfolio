@@ -1,4 +1,4 @@
-import { useProjects } from "../contexts/ProjectsContext";
+import { useProjects } from "../../contexts/ProjectsContext";
 
 export function FilterItem({ project }) {
   const { selectItem, setSelectItem } = useProjects();

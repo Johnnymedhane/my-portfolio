@@ -1,14 +1,21 @@
+import { useLocation } from "react-router-dom";
+import { useAppContext } from "../../contexts/contextApi";
 import { Indicator } from "./Indicator";
 import { SocialMedia } from "./SocialMedia";
 // import intro from "./images/removed-bg.png";
 // import { a } from "react-router-dom";
 
-export function Hero({ showIndicator, setSelectedNav }) {
+export function Hero() {
+  const { setSelectedNav, showIndicator } = useAppContext();
+  const location = useLocation();
+  const isAllPagesRoute = location.pathname === '/allPages';
 
 const handleScroll = (sectionId) => {
     setSelectedNav(sectionId);
     // document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
   };
+
+  
 
   return (
 
@@ -43,7 +50,7 @@ const handleScroll = (sectionId) => {
         </div>
 
       </div>
-      {showIndicator && <Indicator />}
+      {showIndicator && isAllPagesRoute && <Indicator />}
       </section>
   );
 }
