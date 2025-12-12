@@ -1,111 +1,133 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Loading } from "../../ui/Loading";
+import { getClient, submitForm } from "../../api/apiClient";
+import toast from "react-hot-toast";
+import { useForm } from "react-hook-form";
 
 export function Form() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
-  const [isPhoneValid, setIsPhoneValid] = useState(true);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  // const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [phone, setPhone] = useState("");
+  // const [message, setMessage] = useState("");
+  // const [isPhoneValid, setIsPhoneValid] = useState(true);
+  // const [isSubmitting, setIsSubmitting] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
 
-  const timeoutRef = useRef(null);
 
   const phoneRegex = /^(\+972-?|0)([23489]|5[012345689]|77)-?\d{7}$/;
 
-  useEffect(() => {
-    return () => clearTimeout(timeoutRef.current);
-  }, []);
+  const { register, handleSubmit, reset,  formState } = useForm();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+
+  const { errors, isSubmitting } = formState;
+  
+  async function onSubmit(data) {
+    let timeout;
+    setResponseMessage("");
     if (isSubmitting) return;
-
-    setIsSubmitting(true);
-    const formData = { name, email, phone, message };
-
     try {
-      const response = await fetch("/.netlify/functions/submitForm", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const clientList = await getClient();
 
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.message || "Something went wrong");
+      // Check if email already exists
+      const isDuplicate = clientList.some((client) => client.email === data.email);
 
-      setResponseMessage(data.message);
-      setName("");
-      setEmail("");
-      setPhone("");
-      setMessage("");
+      if (isDuplicate) {
+        toast.error("You have already submitted a form with this email.");
+        return;
+      }
 
-      timeoutRef.current = setTimeout(() => setResponseMessage(""), 5000);
+      // Map form data to API format
+      const formData = {
+        clientName: data.name,
+        email: data.email,
+        phoneNumber: data.phone,
+        message: data.message || ""
+      };
+
+      await submitForm(formData);
+      setResponseMessage(`thank you for contacting me ${data.name.split(' ')[0]}!`);
+      toast.success("Form submitted successfully!");
+      timeout = setTimeout(() => setResponseMessage(""), 5000);
+      reset();
     } catch (error) {
       console.error("Error:", error);
-      setResponseMessage("Something went wrong. Please try again.");
-      timeoutRef.current = setTimeout(() => setResponseMessage(""), 5000);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+      // setResponseMessage("Something went wrong. Please try again.");
+      toast.error("Failed to submit the form. Please try again.");
+    } 
+  }
 
-  const isFormValid = name && email && isPhoneValid;
+  function onError(errors) {
+    console.log("Form errors:", errors);
+  }
+
+  // const isFormValid = name && email && isPhoneValid;
 
   return (
     <div className="contact-form">
       <h3 className="h3 form-title">Contact Form</h3>
       {isSubmitting && <Loading />}
-      {responseMessage && <p className="response-message">{responseMessage}</p>}
-      {!isSubmitting && !responseMessage && <form className="form" onSubmit={handleSubmit}>
+      {responseMessage && (
+        <span className="response-message">{responseMessage}</span>
+      )}
+      <form className="form" onSubmit={handleSubmit(onSubmit, onError)}>
         <div className="input-wrapper">
           <input
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            {...register("name", { required: "Name is required" })}
             className="form-input"
-            name="Fullname"
             placeholder="Full name"
-            required />
+            disabled={isSubmitting}
+          />
+          {errors.name && (
+            <span className="error-message">{errors.name.message}</span>
+          )}
 
           <input
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "Invalid email address",
+              },
+            })}
             className="form-input"
-            name="email"
             placeholder="Email address"
-            required />
-
+            disabled={isSubmitting}
+          />
+          {errors.email && (
+            <span className="error-message">{errors.email.message}</span>
+          )}
           <input
             type="tel"
-            value={phone}
-            onChange={(e) => {
-              setPhone(e.target.value);
-              setIsPhoneValid(e.target.value === "" || phoneRegex.test(e.target.value));
-            }}
+            {...register("phone", {
+              required: "Phone number is required",
+              pattern: {
+                value: phoneRegex,
+                message: "Please enter a valid phone number.",
+              },
+            })}
             className="form-input"
-            name="phone"
             placeholder="Phone"
-            required />
-          {!isPhoneValid && <p className="error-message">Please enter a valid phone number.</p>}
+            disabled={isSubmitting}
+          />
+          {errors.phone && (
+            <span className="error-message">{errors.phone.message}</span>
+          )}
         </div>
 
         <textarea
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          {...register("message")}
           className="form-input"
-          name="message"
           placeholder="Your Message"
+          disabled={isSubmitting}
         ></textarea>
 
-        <button className="form-btn" type="submit" disabled={!isFormValid}>
+        <button className="form-btn" type="submit" disabled={isSubmitting}>
           <i className="fa-regular fa-paper-plane"></i>
-          <span>{isSubmitting ? "Submitting..." : "Send Message"}</span>
+          <span>{isSubmitting ? "Submitting..." : "send message"}</span>
         </button>
-
-      </form>}
+      </form>
     </div>
   );
 }

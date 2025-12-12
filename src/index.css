@@ -173,7 +173,6 @@ img{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
   font-size: 2rem;
   font-family: var(--ffpoppins);
   color: var(--orange-1);
@@ -1757,8 +1756,10 @@ transition: var(--transition-1);
 
 
 /* form */
-.contact-form { margin-bottom: 10px; }
-
+.contact-form { margin-bottom: 3rem; }
+.form{
+  margin-top: 1rem;
+}
 .form-title { margin-bottom: 20px; }
 
 .input-wrapper {
@@ -1783,17 +1784,25 @@ transition: var(--transition-1);
 .form-input:focus { border: 1px solid var(--orange-2); }
 
 .error-message{
-  color:  hsl(0, 82%, 47%);
+  color:  hsl(0, 72%, 51%);
 }
+
 textarea.form-input {
   min-height: 100px;
   height: 120px;
   max-height: 200px;
   resize: vertical;
   margin-bottom: 30px;
+  margin-right: 1rem;
 }
 
 textarea.form-input::-webkit-resizer { display: none; }
+
+.form-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--light-gray-70);
+}
 
 .form-input:focus:invalid { border: 1px solid hsl(0, 43%, 51%); }
 
