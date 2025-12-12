@@ -5,24 +5,15 @@ import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 
 export function Form() {
-  // const [name, setName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [phone, setPhone] = useState("");
-  // const [message, setMessage] = useState("");
-  // const [isPhoneValid, setIsPhoneValid] = useState(true);
-  // const [isSubmitting, setIsSubmitting] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
-
 
   const phoneRegex = /^(\+972-?|0)([23489]|5[012345689]|77)-?\d{7}$/;
 
   const { register, handleSubmit, reset,  formState } = useForm();
 
-
   const { errors, isSubmitting } = formState;
   
   async function onSubmit(data) {
-    let timeout;
     setResponseMessage("");
     if (isSubmitting) return;
     try {
@@ -47,11 +38,10 @@ export function Form() {
       await submitForm(formData);
       setResponseMessage(`thank you for contacting me ${data.name.split(' ')[0]}!`);
       toast.success("Form submitted successfully!");
-      timeout = setTimeout(() => setResponseMessage(""), 5000);
+      setTimeout(() => setResponseMessage(""), 5000);
       reset();
     } catch (error) {
       console.error("Error:", error);
-      // setResponseMessage("Something went wrong. Please try again.");
       toast.error("Failed to submit the form. Please try again.");
     } 
   }
