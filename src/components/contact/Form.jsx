@@ -9,10 +9,10 @@ export function Form() {
 
   const phoneRegex = /^(\+972-?|0)([23489]|5[012345689]|77)-?\d{7}$/;
 
-  const { register, handleSubmit, reset,  formState } = useForm();
+  const { register, handleSubmit, reset, formState } = useForm();
 
   const { errors, isSubmitting } = formState;
-  
+
   async function onSubmit(data) {
     setResponseMessage("");
     if (isSubmitting) return;
@@ -20,30 +20,32 @@ export function Form() {
       const clientList = await getClient();
 
       // Check if email already exists
-      const isDuplicate = clientList.some((client) => client.email === data.email);
+      const isDuplicate = clientList.some(
+        (client) => client.email === data.email
+      );
 
       if (isDuplicate) {
         toast.error("You have already submitted a form with this email.");
-        return;
+        throw new Error("Duplicate submission");
       }
 
-      // Map form data to API format
       const formData = {
         clientName: data.name,
         email: data.email,
         phoneNumber: data.phone,
-        message: data.message || ""
+        message: data.message || "",
       };
 
       await submitForm(formData);
-      setResponseMessage(`thank you for contacting me ${data.name.split(' ')[0]}!`);
+      setResponseMessage(
+        `thank you for contacting me ${data.name.split(" ")[0]}!`
+      );
       toast.success("Form submitted successfully!");
       setTimeout(() => setResponseMessage(""), 5000);
       reset();
     } catch (error) {
       console.error("Error:", error);
-      toast.error("Failed to submit the form. Please try again.");
-    } 
+    }
   }
 
   function onError(errors) {
@@ -55,7 +57,7 @@ export function Form() {
   return (
     <div className="contact-form">
       <h3 className="h3 form-title">Contact Form</h3>
-      {isSubmitting && <Loading />}
+      {isSubmitting && <Loading className="form-loader" />}
       {responseMessage && (
         <span className="response-message">{responseMessage}</span>
       )}

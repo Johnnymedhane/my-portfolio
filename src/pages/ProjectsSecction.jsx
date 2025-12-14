@@ -1,14 +1,7 @@
-
-
-import { Projects } from "../components/projects/Projects"
-
+import { Projects } from "../components/projects/Projects";
 
 function ProjectsSecction() {
-    return (
-       
-            <Projects />
-        
-    )
+  return <Projects />;
 }
 
-export default ProjectsSecction
+export default ProjectsSecction;

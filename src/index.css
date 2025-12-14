@@ -173,10 +173,22 @@ img{
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   font-size: 2rem;
   font-family: var(--ffpoppins);
   color: var(--orange-1);
 }
+
+.form-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-size: 2rem;
+  font-family: var(--ffpoppins);
+  color: var(--orange-1);
+}
+
 .loading-icon{
   font-size: 2rem;
   color: var(--orange-1);
@@ -1021,6 +1033,8 @@ transition: var(--transition-2);
   text-transform: capitalize;
   margin-bottom: 30px;
   color: var(--lightGold);
+  font-family: var(--ffroboto);
+
 
 }
 
@@ -1344,7 +1358,7 @@ transition: var(--transition-2);
 .filter-select-box {
   position: relative;
   margin-bottom: 25px;
-  display: none;
+  /* display: none; */
 }
 .animate .filter-select-box{
   animation: filterBox 1s linear forwards;
@@ -1415,14 +1429,14 @@ transition: var(--transition-2);
   pointer-events: all;
 }
 .select-item button {
-  background: var(--black-2);
+  background: var(--jet);
   color:var(--light-gray);
   font-size: var(--fs-6);
   font-weight: 300;
   text-transform: capitalize;
   width: 100%;
   padding: 8px 10px;
-  border-radius: 8px;
+  border-bottom: 1px solid var(--black-1);
   
 }
 
@@ -2158,13 +2172,13 @@ padding: 10px;
   
   /* projects */
 
-   .filter-list{
+   /* .filter-list{
     display: none;
 
   }
   .filter-select-box {
     display: block;
-  }
+  } */
   /* contact */
 .address{
     flex-direction: column;

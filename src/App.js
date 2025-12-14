@@ -46,7 +46,7 @@ function App() {
         <Toaster 
    position="top-center" 
    gutter={12} 
-   containerStyle={{margin: "8px"}}
+   containerStyle={{margin: "25px"}}
    toastOptions={{
       success: {
         duration: 3000,
@@ -58,8 +58,8 @@ function App() {
         fontSize: '16px',
         maxWidth: '600px',
         padding: "16px 24px",
-        color: "var(--color-grey-700)",
-        backgroundColor: "var(--color-grey-0)",
+        color: "var(--white)",
+        backgroundColor: "var(--grey)",
        
       },
    }}
