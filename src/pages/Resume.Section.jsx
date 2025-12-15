@@ -1,15 +1,13 @@
-import Footer from "../components/Footer"
-import Header from "../components/Header"
-import { Resume } from "../components/Resume"
+
+
+import { Resume } from "../components/resume/Resume"
 
 
 function ResumeSection() {
     return (
-        <div>
-            <Header />
+        
             <Resume />
-            <Footer />
-        </div>
+
     )
 }
 

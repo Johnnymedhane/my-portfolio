@@ -1,4 +1,4 @@
-import { SocialMedia } from "./SocialMedia";
+import { SocialMedia } from "../hero/SocialMedia";
 
 
 export function MoreInfo() {

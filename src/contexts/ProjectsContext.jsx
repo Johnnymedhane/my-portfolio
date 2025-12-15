@@ -1,6 +1,6 @@
 
 
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
 
 const ProjectsContext = createContext();
@@ -174,24 +174,27 @@ const projects = [
      function handleSelectProject(project) {
        setSelectItem(project);
        setShowList(show => !show);
+   }
+
+   const SelectItem = useCallback(() => {
+     if (selectItem === 'All') {
+       setProjectsList(projects);
+     } else {
+       const filteredProjects = projects.filter(project => project.category === selectItem);
+       setProjectsList(filteredProjects);
      }
-    
+   }, [selectItem]);
+
        useEffect(() => {
           if (!selectItem) return;
           setIsLoading(true);
           setTimeout(() => {
-            if (selectItem === 'All') {
-              setProjectsList(projects);
-            } else {
-             
-              const filteredProjects = projects.filter(project => project.category === selectItem);
-              setProjectsList(filteredProjects);
-            }
+            SelectItem();
             setIsLoading(false);
           }, 500); // Simulate a loading delay
       
           return () => console.log('clean up');
-        }, [selectItem]);
+        }, [selectItem, SelectItem]);
       
 
 

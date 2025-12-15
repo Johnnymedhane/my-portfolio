@@ -1,41 +1,72 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-import HomePage from './pages/HomePage';
+import { lazy, Suspense } from 'react';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { AppProvider } from './contexts/contextApi';
-import { Mybackground } from './pages/myStory';
-import HeroSection from './pages/HeroSection';
-import ContactSection from './pages/ContactSection';
-import ProjectsSecction from './pages/ProjectsSecction';
-import ResumeSection from './pages/Resume.Section';
-import SkillsSection from './pages/SkillsSection';
-import AboutSection from './pages/AboutSection';
 import { ProjectsProvider } from './contexts/ProjectsContext';
+import { Loading } from './ui/Loading';
 
-export const navList = ['home', 'about', 'skills', 'projects', 'resume', 'contact'];
+// Eager loading for critical components
+import AppLayout from './ui/AppLayout';
+import { Toaster } from 'react-hot-toast';
+
+// Lazy loading for route components
+const HomePage = lazy(() => import('./pages/HomePage'));
+const HeroSection = lazy(() => import('./pages/HeroSection'));
+const AboutSection = lazy(() => import('./pages/AboutSection'));
+const SkillsSection = lazy(() => import('./pages/SkillsSection'));
+const ProjectsSecction = lazy(() => import('./pages/ProjectsSecction'));
+const ResumeSection = lazy(() => import('./pages/Resume.Section'));
+const ContactSection = lazy(() => import('./pages/ContactSection'));
+const Mybackground = lazy(() => import('./pages/myStory').then(module => ({ default: module.Mybackground })));
+
+
 
 function App() {
  
   return (
-    
     <AppProvider className="App">
       <ProjectsProvider>
+        <BrowserRouter>
+          <Suspense fallback={<Loading />}>
+            <Routes>
+              <Route path="/" element={<AppLayout />}>
+                <Route index element={<Navigate replace to="/allPages" />} />
+                <Route path="/allPages" element={<HomePage />} />
+                <Route path="/home" element={<HeroSection />} />
 
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<HomePage />} />
-          <Route path="home" element={<HeroSection />} />
-          <Route path="/about" element={<AboutSection />} />
-          <Route path="/skills" element={<SkillsSection />} />
-          <Route path="/projects" element={<ProjectsSecction />} />
-          <Route path="/resume" element={<ResumeSection />} />
-          <Route path="/contact" element={<ContactSection />} />
-          <Route path='/my-story' element={<Mybackground />} />
-      </Routes>
-      
-      </BrowserRouter>
+                <Route path="/about" element={<AboutSection />} />
+                <Route path="/skills" element={<SkillsSection />} />
+                <Route path="/projects" element={<ProjectsSecction />} />
+                <Route path="/resume" element={<ResumeSection />} />
+                <Route path="/contact" element={<ContactSection />} />
+                <Route path="/my-story" element={<Mybackground />} />
+              </Route>
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+        <Toaster 
+   position="top-center" 
+   gutter={12} 
+   containerStyle={{margin: "25px"}}
+   toastOptions={{
+      success: {
+        duration: 3000,
+      },
+      error: {
+        duration: 5000,
+      },
+      style: {
+        fontSize: '16px',
+        maxWidth: '600px',
+        padding: "16px 24px",
+        color: "var(--white)",
+        backgroundColor: "var(--grey)",
+       
+      },
+   }}
+  />
+        
       </ProjectsProvider>
-      </AppProvider>
-
+    </AppProvider>
   );
 }
 

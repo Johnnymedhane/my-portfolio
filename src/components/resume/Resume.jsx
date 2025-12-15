@@ -1,3 +1,5 @@
+import Section from "../../ui/Section";
+import { Timeline } from "./Timeline";
 
 
 
@@ -59,44 +61,16 @@ export function Resume() {
 
   return (
    
-      <section id="resume">
-        <div className="resume">
-          <h2 className="section-title">Resume</h2>
+      <Section title="Resume" sectionType="resume">
+       
 
-          <Timeline title="Education" list={educationList} />
+          <Timeline title="Education" list={educationList} icon="fa-book-open" />
 
-          <Timeline title="Experience" list={experienceList} />
-        </div>
-      </section>
+          <Timeline title="Experience" list={experienceList} icon="fa-briefcase" />
+
+      </Section>
     
   );
-}export function TimelineItem({ item }) {
-  return (
-
-    <li className="timeline-item">
-      <h4 className="h4 timeline-item-title">{item.name}</h4>
-      <p>{item.description}</p>
-      <time className="timeline-item-year">{item.year}</time>
-      {item.children}
-    </li>
-
-  );
 }
-export function Timeline({ title, list }) {
-  return (
-    <div className="timeline">
-      <div className="title-wrapper">
-        <div className="icon-box">
-          <i className="fa-solid fa-book-open"></i>
-        </div>
-        <h3 className="h3">{title}</h3>
-      </div>
-      <ul className="timeline-list">
-        {list.map((item, i) => (
-          <TimelineItem key={item.description} item={item} />
-        ))}
-      </ul>
-    </div>
-  );
-}
+
 

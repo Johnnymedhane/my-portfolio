@@ -4,10 +4,10 @@
     font-size: var(--fs-5);
     font-weight: 600;
     font-family:  var(--ffLeagueSpartan);
-    margin-top: 3rem;
+   width: 100%;
    color: var(--light-gray);
-    padding: 1rem;
-    padding-bottom: 3.5rem;
+    padding: 1.3rem 1rem;
+    /* padding-bottom: 3.5rem; */
     text-align: center;
     border-top: 1px solid var(--white-2);
     cursor: pointer;
