@@ -178,6 +178,32 @@ img{
   font-family: var(--ffpoppins);
   color: var(--orange-1);
 }
+.scroll-up{
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background: var(--bg-gradient-yellow-1);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-2);
+  cursor: pointer;
+  transition: var(--transition-2);
+  z-index: 100;
+}
+.scroll-up:hover{
+  background: var(--bg-gradient-yellow-2);
+  transform: translateY(-5px);
+}
+.scroll-up svg {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: var(--white-1);
+}
 
 .form-loader {
   display: flex;
@@ -1033,7 +1059,7 @@ transition: var(--transition-2);
   text-transform: capitalize;
   margin-bottom: 30px;
   color: var(--lightGold);
-  font-family: var(--ffroboto);
+  font-family: var(--ffLeagueSpartan);
 
 
 }
@@ -1186,6 +1212,10 @@ transition: var(--transition-2);
 .benefits-item:nth-child(9) {
   animation-delay: 4.5s;
 }
+.benefits-item:nth-child(10) {
+  animation-delay: 5s;
+}
+
 
 
 
@@ -1418,15 +1448,17 @@ transition: var(--transition-2);
   border: 1px solid var(--jet);
   border-radius: 14px;
   z-index: 2;
-  opacity: 0;
-  visibility:hidden;
-   pointer-events: none;
+  opacity: 1;
+  visibility: visible;
+   pointer-events: all;
   transition: 0.5s ease-in-out;
 }
  .select-list-hide{
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  display: none;
+  transition: 0.5s ease-in-out;
 }
 .select-item button {
   background: var(--jet);

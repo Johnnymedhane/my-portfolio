@@ -2,8 +2,10 @@ import { SelectItem } from "./SelectItem";
 import { useProjects } from "../../contexts/ProjectsContext";
 import List from "../../ui/List";
 
+
 export function SmallerScreen() {
-  const { projectsCategory, selectItem,  showList, setShowList } = useProjects();
+  
+  const { projectsCategory, selectItem, showList, setShowList } = useProjects();
 
 
 

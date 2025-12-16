@@ -33,13 +33,12 @@ export function Service() {
         </ServiceCard>
         <ServiceCard title="UI/UX Design" icon={<MdDesignServices />}>
           <p>
-            I design clean and user-friendly interfaces, focusing on intuitive
-            user experience and modern layout structure.
+            I design intuitive and visually appealing user interfaces (UI) and {""}
+            user experiences (UX) for web applications.
           </p>
           <p>
-            I have hands-on experience using Figma to create wireframes, UI
-            components, prototypes, and visual layouts for websites and
-            applications.
+            I have basic knowledge of Figma to create wireframes, UI components,
+            prototypes, and visual layouts for websites and applications.
           </p>
         </ServiceCard>
       </div>

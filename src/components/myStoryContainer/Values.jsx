@@ -24,17 +24,15 @@ const values = [
             },
             {
                  title: 'Ambition & Purpose',
-                text: 'I aim not only to succeed for yourself but also to inspire and serve as a prime exmple  for asylum seekers and refugees like me, proving that obstacles can be overcome with determination.'
+                text: 'I aim not only to succeed for myself but also to inspire and serve as a prime example for asylum seekers and refugees like me, proving that obstacles can be overcome with determination.'
             },
               {
                 title: 'Responsibility & Independence',
-                text: 'Since the age of 14, I have taken ownership of my life—setting new goals, working hard to sustain myself, and making conscious decisions to improve my situation without relying on external support.'
-
+                text: 'Since the age of 14, I have taken ownership of my life—setting goals, working hard to sustain myself, and making conscious decisions to improve my situation through self-reliance.'
             },
               {
                 title: 'Empathy & Community',
-                text: 'I have faced numerous challenges, from being forced into exile at an early age to struggling financially and overcoming difficult personal circumstances.'
-
+                text: 'My experiences have given me deep empathy for others facing similar struggles. I believe in supporting and uplifting my community, creating opportunities for those who need them most.'
             }
         ]
     }
