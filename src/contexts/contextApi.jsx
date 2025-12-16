@@ -9,7 +9,6 @@ function AppProvider({ children }) {
     const [selectedNav, setSelectedNav] = useState("home");
   const [isLightMode, setIsLightMode] = useState(() => {
       const savedMode = localStorage.getItem('isLightMode');
-      console.log('savedMode', savedMode);
     return savedMode ? JSON.parse(savedMode) : false;
   });
 

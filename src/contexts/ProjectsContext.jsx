@@ -166,7 +166,7 @@ const projects = [
  const ProjectsProvider = ({ children }) => {
     const projectsCategory = ['All', 'Web development', 'Python data-analist', 'QA'];
      const [selectItem, setSelectItem] = useState('');
-     const [showList, setShowList] = useState(true);
+     const [showList, setShowList] = useState(false);
      const [projectsList, setProjectsList] = useState(projects.slice(8));
      const [isLoading, setIsLoading] = useState(false);
 
