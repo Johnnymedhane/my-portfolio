@@ -1,6 +1,6 @@
 import { Main } from "../components/Main";
 import { Hero } from "../components/hero/Hero";
-import { useIntersectionObserver } from "../useIntersectionObserver";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import { About } from "../components/about/AboutMe";
 import { Projects } from "../components/projects/Projects";
 import { Resume } from "../components/resume/Resume";

@@ -1,9 +1,10 @@
 
 import Logo from "./Logo";
-import ButtonMode from "./ButtonMode";
+
 import Hamburger from "./Hamburger";
 import PagesNav from "./PagesNav";
 import List from "./List";
+import DarkModeToggle from "./DarkModeToggle";
 
 export function Header() {
  
@@ -22,7 +23,7 @@ export function Header() {
      <Logo />
      <Hamburger />
 
-    <ButtonMode />
+    <DarkModeToggle />
       <nav className="nav">
        <List item="nav" data={navList} renderItem={(nav, index) => (
          <PagesNav item={nav} key={index} />
