@@ -8,8 +8,8 @@ export const useIntersectionObserver = (options) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("animate");
-        } else {
-          entry.target.classList.remove("animate");
+          // Stop observing after first animation
+          observer.unobserve(entry.target);
         }
       });
     }, options);

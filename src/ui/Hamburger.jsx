@@ -2,9 +2,9 @@ import { useAppContext } from "../contexts/contextApi";
 
 
 function Hamburger() {
-    const { handleOpenNav } = useAppContext();
+    const { handleOpenMenu } = useAppContext();
     return (
-        <button className="nav-toggle" aria-label="Toggle navigation" onClick={handleOpenNav}>
+        <button className="nav-toggle" aria-label="Toggle navigation" onClick={handleOpenMenu}>
         <span className="hamburger"> </span>
       </button>
     )
