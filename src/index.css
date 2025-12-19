@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap");
 
 *,
@@ -216,8 +216,8 @@ img {
 }
 
 section {
-  padding: 1.5rem 1rem;
-  transition: var(--transition-2);
+  padding: 1.5rem 0;
+  /* transition: var(--transition-2); */
 }
 
 .section-title {
@@ -307,6 +307,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  /* background: var(--bg-gradient-onyx); */
 }
 
 .main-container {
@@ -347,7 +348,6 @@ body {
   animation: logoFadeIn 1s linear;
   /* transform-style: preserve-3d;
   backface-visibility: hidden; */
-  
 }
 @keyframes logoFadeIn {
   0% {
@@ -359,8 +359,6 @@ body {
     transform: translateY(0);
   }
 }
-
-
 
 .logo span {
   display: inline-block;
@@ -529,11 +527,11 @@ body {
 .slider:before {
   position: absolute;
   content: "";
-  height: 28px;
-  width: 28px;
+  height: 32px;
+  width: 32px;
   border-radius: 20px;
   left: 2px;
-  bottom: 2px;
+  /* bottom: 2px; */
   z-index: 2;
   background-color: var(--jet);
   filter: blur(3px);
@@ -614,10 +612,9 @@ body {
 
 /* home */
 .hero {
-  background: var(--bg-gradient-jet);
+  /* background: var(--bg-gradient-jet); */
   min-height: calc(100vh - 5px);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -723,21 +720,30 @@ body {
   margin-right: 5px;
 }
 .hero-image {
-  height: 450px;
+  max-width: 400px;
+  max-height: 450px;
+  width: 100%;
   aspect-ratio: 2/3;
+  border-radius: 50%;
+
   position: relative;
   animation: image 1s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 10px var(--lightGold), inset 0 0 20px var(--lightGold);
 }
 .hero-image img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  box-shadow: var(--shadow-4);
+  object-fit: contain;
+  object-position: center;
+  aspect-ratio: 1;
   border-radius: 50%;
-  z-index: 2;
-  transition: var(--transition-2);
-  box-shadow: 0 0 20px var(--lightGold);
+  z-index: 10;
+  transition: var(--transition-4);
+
   animation: blink 2s linear infinite;
 }
 @keyframes blink {
@@ -769,7 +775,8 @@ body {
   display: block;
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -5px;
+
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 0.8),
@@ -1894,12 +1901,29 @@ textarea.form-input::-webkit-resizer {
 }
 
 /* Responsive Design */
+@media screen and (max-width: 1024px) {
+  section {
+    padding: 1.5rem 1rem;
+    /* transition: var(--transition-2); */
+  }
+  .hero-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .hero-image {
+    max-width: 300px;
+    max-height: 350px;
+    margin: 1rem;
+    /* box-shadow: inset 0 0  12px  var(--orange-1); */
+  }
+  .hero h1,
+  .hero h2,
+  .hero {
+    text-align: center;
+  }
+}
 
 @media screen and (max-width: 768px) {
-  section {
-    padding: 1rem 0.5rem 0;
-  }
-
   /* .head{
     padding: 12px 5px;
    
@@ -1947,12 +1971,10 @@ textarea.form-input::-webkit-resizer {
   /* home */
 
   .hero-container {
-    gap: 1.8rem;
+    gap: 2rem;
     flex-direction: column;
   }
-  .hero-image {
-    max-height: 250px;
-  }
+
   .hero-content h1 {
     line-height: 1.1;
     margin-bottom: 10px;
@@ -1964,7 +1986,7 @@ textarea.form-input::-webkit-resizer {
 
   .btn {
     padding: 8px 15px;
-    /* font-size: var(--fs-7); */
+    font-size: var(--fs-7);
   }
 
   /* indicator */
@@ -2063,13 +2085,13 @@ textarea.form-input::-webkit-resizer {
 
   .hero-container {
     flex-direction: column;
-    gap: 1.8rem;
+    gap: 1rem;
     padding: 15px;
-    margin-bottom: auto;
-    margin-top: 3rem;
   }
   .hero-image {
-    max-height: 150px;
+    max-width: 200px;
+    max-height: 230px;
+    margin: 1.3rem;
   }
 
   .hero-content h1 {
@@ -2079,20 +2101,18 @@ textarea.form-input::-webkit-resizer {
   }
 
   .hero-content h2 {
-    margin-bottom: 10px;
     font-size: var(--fs-4);
-    text-align: center;
   }
   .hero-content h2 span {
     width: 16ch;
     margin: auto;
   }
   .hero-content p {
-    margin-bottom: 25px;
+    margin-bottom: 1.5rem;
   }
 
   .cta-buttons {
-    margin-bottom: 1.8rem;
+    margin-bottom: 2rem;
   }
 
   .media {
@@ -2109,7 +2129,7 @@ textarea.form-input::-webkit-resizer {
 
   article {
     margin-top: 0.5rem;
-    padding: 10px;
+    padding: 0.75rem;
   }
 
   /* resume */
@@ -2136,16 +2156,6 @@ textarea.form-input::-webkit-resizer {
     font-size: var(--fs-8);
   }
 
-  /* projects */
-
-  /* .filter-list{
-    display: none;
-
-  }
-  .filter-select-box {
-    display: block;
-  } */
-  /* contact */
   .address {
     flex-direction: column;
   }
@@ -2177,18 +2187,38 @@ textarea.form-input::-webkit-resizer {
   }
 }
 
-@media screen and (max-width: 390px) {
-  .hero-content h1 {
-    font-size: var(--fs-4);
-  }
+@media screen and (max-width: 480px) {
   .hero-content h2 {
     font-size: var(--fs-5);
   }
+  .hero-content h1 {
+    font-size: var(--fs-4);
+  }
+  .hero-container {
+    gap: 0.2rem;
+  }
+  .hero-image {
+    box-shadow: inset 0 0 0 8px var(--orange-1);
+  }
+
+  .hero-content p {
+    font-size: var(--fs-8);
+    text-align: center;
+  }
+
   .hero-content p {
     font-size: var(--fs-7);
   }
+  .cta-buttons a {
+    font-size: var(--fs-7);
+    padding: 8px 12px;
+  }
+}
+@media screen and (max-width: 385px) {
   .hero-image {
-    max-height: 140px;
+    max-width: 150px;
+    max-height: 180px;
+    box-shadow: inset 0 0 0 5px var(--orange-1);
   }
 }
 
@@ -2222,15 +2252,14 @@ textarea.form-input::-webkit-resizer {
   }
 
   body::-webkit-scrollbar-track {
-    background: var(--black-1);
+    background: var(--light-gray-70);
   }
 
   body::-webkit-scrollbar-thumb {
-    border: 5px solid var(--black-1);
+    border: 10px solid var(--light-gray);
     background: hsla(0, 0%, 100%, 0.1);
-    border-radius: 20px;
-    box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
-      inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+    border-radius: 5px;
+   
   }
 
   body::-webkit-scrollbar-thumb:hover {
@@ -2245,7 +2274,7 @@ textarea.form-input::-webkit-resizer {
    * REUSED STYLE
    */
   article {
-    width: 950px;
+    
     box-shadow: var(--shadow-5);
   }
 
