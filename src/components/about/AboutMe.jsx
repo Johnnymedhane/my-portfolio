@@ -69,13 +69,21 @@ export function About() {
         </p>
         <p>
           Through my coding journey, I've learned more than just programming —
-          I've mastered
-          <strong> how to learn anything </strong>, developed strong
-          <strong> self-discipline </strong>, enhanced my
-          <strong> research skills </strong>, and become highly effective at{" "}
-          <strong> problem-solving under pressure </strong>. When I encounter
-          new technologies, I don't panic — I'm confident in my ability to
-          figure things out and adapt quickly.
+          I've mastered:
+          <div>
+            <strong> how to learn effectively </strong>,
+            <strong> developed strong self-discipline </strong>,
+            <strong>enhanced my research skills </strong>,
+            <strong>
+              and become highly effective at problem-solving under pressure.
+            </strong>{" "}
+            Coding has actually taught me that happiness comes from solving
+            problems!
+          </div>
+        </p>
+        <p>
+          When I encounter new technologies, I don't panic — I'm confident in my
+          ability to figure things out and adapt quickly.
         </p>
         <p>
           {" "}
