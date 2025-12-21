@@ -56,9 +56,9 @@ export function About() {
         <p>
           Hello, I'm <span> Johnny Medhane</span> — a self-taught Front-end
           Developer with a passion for building beautiful, responsive, and
-          user-friendly websites. I have a solid foundation in <b> HTML </b>,{" "}
-          <b> CSS, </b> <b> JavaScript, </b>
-          <b> React, </b> and <b> Python </b>
+          user-friendly websites. I have a solid foundation in
+          <b> HTML, </b> <b> CSS, </b> <b> JavaScript, </b> <b> React, </b> and
+          <b> Python </b>
           and I'm constantly exploring new technologies to sharpen my skills and
           stay up-to-date.
         </p>
@@ -69,13 +69,21 @@ export function About() {
         </p>
         <p>
           Through my coding journey, I've learned more than just programming —
-          I've mastered
-          <strong> how to learn anything </strong>, developed strong
-          <strong> self-discipline </strong>, enhanced my
-          <strong> research skills </strong>, and become highly effective at{" "}
-          <strong> problem-solving under pressure </strong>. When I encounter
-          new technologies, I don't panic — I'm confident in my ability to
-          figure things out and adapt quickly.
+          I've mastered:
+          <>
+            <strong> how to learn effectively </strong>,
+            <strong> developed strong self-discipline </strong>,
+            <strong>enhanced my research skills </strong>,
+            <strong>
+              and become highly effective at problem-solving under pressure.
+            </strong>{" "}
+            Coding has actually taught me that happiness comes from solving
+            problems!
+          </>
+        </p>
+        <p>
+          When I encounter new technologies, I don't panic — I'm confident in my
+          ability to figure things out and adapt quickly.
         </p>
         <p>
           {" "}
