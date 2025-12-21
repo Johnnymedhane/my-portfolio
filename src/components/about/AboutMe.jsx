@@ -70,7 +70,7 @@ export function About() {
         <p>
           Through my coding journey, I've learned more than just programming —
           I've mastered:
-          <div>
+          <>
             <strong> how to learn effectively </strong>,
             <strong> developed strong self-discipline </strong>,
             <strong>enhanced my research skills </strong>,
@@ -79,7 +79,7 @@ export function About() {
             </strong>{" "}
             Coding has actually taught me that happiness comes from solving
             problems!
-          </div>
+          </>
         </p>
         <p>
           When I encounter new technologies, I don't panic — I'm confident in my

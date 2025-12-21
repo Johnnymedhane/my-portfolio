@@ -6,11 +6,12 @@ import { Projects } from "../components/projects/Projects";
 import { Resume } from "../components/resume/Resume";
 import { Skills } from "../components/skills/Skills";
 import { Contact } from "../components/contact/Contact";
-import Scrollup from "../ui/Scrollup";
+import Scrollup from "../ui/ScrollingPage";
 import { useEffect, useState } from "react";
 
 function HomePage() {
-  const [windowScrollY, setWindowScrollY] =  useState(window.scrollY);
+  const [windowScrollY, setWindowScrollY] = useState(window.scrollY);
+  // const [direction, setDirection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +22,7 @@ function HomePage() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+ 
 
   const articleRef = useIntersectionObserver({
     threshold: 0.1,
@@ -29,7 +31,7 @@ function HomePage() {
 
   return (
     <>
-   {windowScrollY > 400 && <Scrollup />}
+      <Scrollup scrollDirection={windowScrollY >  400 && windowScrollY < 2000 ? "down" : windowScrollY > 6000 ? "up" : ""} />
       <Hero />
       <Main className="main">
         <article ref={(el) => (articleRef.current[0] = el)}>
