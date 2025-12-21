@@ -56,9 +56,9 @@ export function About() {
         <p>
           Hello, I'm <span> Johnny Medhane</span> — a self-taught Front-end
           Developer with a passion for building beautiful, responsive, and
-          user-friendly websites. I have a solid foundation in <b> HTML </b>,{" "}
-          <b> CSS, </b> <b> JavaScript, </b>
-          <b> React, </b> and <b> Python </b>
+          user-friendly websites. I have a solid foundation in
+          <b> HTML, </b> <b> CSS, </b> <b> JavaScript, </b> <b> React, </b> and
+          <b> Python </b>
           and I'm constantly exploring new technologies to sharpen my skills and
           stay up-to-date.
         </p>
