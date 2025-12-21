@@ -85,7 +85,7 @@
   --fs-3: clamp(1.488rem, 1.3rem + 1.4vw, 2.525rem);
   --fs-4: clamp(1.163rem, 1rem + 1.06vw, 1.9rem);
   --fs-5: clamp(0.93rem, 0.85rem + 0.56vw, 1.2rem);
-  --fs-6: clamp(0.98rem, 0.80rem + 0.29vw, 1rem);
+  --fs-6: clamp(0.92rem, 0.80rem + 0.29vw, 1rem);
   --fs-7: clamp(0.900rem, 0.75rem + 0.13vw, 0.938rem);
   --fs-8: clamp(0.788rem, 0.70rem + 0.09vw, 0.75rem);
 
