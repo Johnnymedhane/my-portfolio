@@ -1693,7 +1693,7 @@ article.animate {
 
 .mapbox iframe {
   max-width: 500px;
-  max-height: 90%;
+  max-height: 100%;
   border: none;
   filter: grayscale(1) invert(1);
 }
@@ -1703,7 +1703,7 @@ article.animate {
   justify-content: center;
   align-items: center;
   height: 100%;
-  /* padding: 20px; */
+  padding: 15px;
   background-color: var(--background-color);
   border: 2px solid var(--jet);
   border-radius: 10px;
@@ -1941,25 +1941,7 @@ textarea.form-input::-webkit-resizer {
   .hero p {
     text-align: center;
   }
-    /* contact */
 
-  /* .contact-icon {
-    font-size: var(--fs-7);
-  }
-  .contact-title {
-    font-size: var(--fs-7);
-  }
-  .contact-info :is(.contact-link, time, address) {
-    font-size: var(--fs-8);
-    font-family: var(--ffroboto);
-  }
-  .input-wrapper {
-    margin-bottom: 25px;
-  }
-  .mapbox iframe {
-    width: 100%;
-    height: 100%;
-  } */
 }
 
 @media screen and (max-width: 768px) {
@@ -2154,14 +2136,24 @@ textarea.form-input::-webkit-resizer {
     left: -30px;
   }
 
-  
+      /* contact */
+
 
   .address {
     flex-direction: column;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
   }
 
   .mapbox {
     height: 300px;
+    width: 95%;
+    /* border: 1px solid red; */
+  }
+  .mapbox iframe {
+    max-width: 100%;
+    max-height: 100%;
   }
 
   
@@ -2171,11 +2163,13 @@ textarea.form-input::-webkit-resizer {
   .contact-info :is(.contact-link, time, address) {
     font-size: var(--fs-7);
     width: 100%;
-    text-wrap: wrap;
+    text-wrap: normal;
   }
-  .more-info {
-    font-size: var(--fs-7);
-  }
+ .contact-list{
+    gap: 15px;
+    overflow-wrap: normal;
+    word-break: normal;
+ }
 
   .separator {
     margin-top: 1.5rem;
