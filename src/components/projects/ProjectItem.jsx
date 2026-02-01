@@ -10,7 +10,7 @@ export function ProjectItem({ project }) {
           <div className="project-item-icon-box">
             <i className="fa-solid fa-eye"></i>
           </div>
-          <img src={project.img} alt={project.name} />
+          <img src={project.img} alt={project.name} loading="lazy" />
         </div>
       </a>
       <div className="project-info">

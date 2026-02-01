@@ -28,9 +28,9 @@ function App() {
         <BrowserRouter>
           <Suspense fallback={<Loading />}>
             <Routes>
-              <Route path="/" element={<AppLayout />}>
-                <Route index element={<Navigate replace to="/allPages" />} />
-                <Route path="/allPages" element={<HomePage />} />
+              <Route  element={<AppLayout />}>
+          
+                <Route path="/" element={<HomePage />} />
                 <Route path="/home" element={<HeroSection />} />
 
                 <Route path="/about" element={<AboutSection />} />

@@ -2,13 +2,11 @@ import { useLocation } from "react-router-dom";
 import { useAppContext } from "../../contexts/contextApi";
 import { Indicator } from "./Indicator";
 import { SocialMedia } from "./SocialMedia";
-// import intro from "./images/removed-bg.png";
-// import { a } from "react-router-dom";
 
 export function Hero() {
   const { setSelectedNav, showIndicator } = useAppContext();
   const location = useLocation();
-  const isAllPagesRoute = location.pathname === '/allPages';
+  const isRootRoute = location.pathname === '/';
 
 const handleScroll = (sectionId) => {
     setSelectedNav(sectionId);
@@ -19,7 +17,7 @@ const handleScroll = (sectionId) => {
 
   return (
 
-    <section id="home" className="hero">
+    <div id="home" className="hero">
       <div className="hero-container">
         <div className="hero-image">
        <img src={`${process.env.PUBLIC_URL}/images/removed-bg.png`} alt="my-pic" />
@@ -50,8 +48,8 @@ const handleScroll = (sectionId) => {
         </div>
 
       </div>
-      {showIndicator && isAllPagesRoute && <Indicator />}
-      </section>
+      {showIndicator && isRootRoute && <Indicator />}
+      </div>
   );
 }
 

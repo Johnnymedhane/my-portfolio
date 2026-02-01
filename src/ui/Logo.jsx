@@ -1,13 +1,20 @@
-import { Link } from "react-router-dom"
-import styles from "./Logo.module.css"
+import { useNavigate } from "react-router-dom";
+
+import { useAppContext } from "../contexts/contextApi";
 function Logo() {
-    return (
-        <div className="logo">
-            <Link to="/" className={styles.link}>
-                <span> JM</span>
-            </Link>
-        </div>
-    )
+  const navigate = useNavigate();
+  const { setSelectedNav } = useAppContext();
+  function handleClick() {
+    setSelectedNav("");
+    navigate("/");
+  }
+  return (
+    <div className="logo">
+      <div onClick={handleClick}>
+        <span> JM</span>
+      </div>
+    </div>
+  );
 }
 
-export default Logo
+export default Logo;

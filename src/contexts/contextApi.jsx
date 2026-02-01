@@ -5,7 +5,8 @@ const AppContext = createContext();
 
 function AppProvider({ children }) {
   const [showIndicator, setShowIndicator] = useState(true);
-  const [selectedNav, setSelectedNav] = useState("home");
+  const [selectedNav, setSelectedNav] = useState("");
+ 
   const [isDarkMode, setIsDarkMode] = useLocalStorage(false, "isDarkMode");
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
