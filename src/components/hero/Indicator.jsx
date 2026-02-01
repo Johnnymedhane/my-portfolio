@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
 import useScrollingThrottling from "../../hooks/useScrollingThrottling";
 
 export function Indicator() {
-  const { windowHeight } = useScrollingThrottling( 600 );
+  const { windowHeight } = useScrollingThrottling(600);
 
-  if (windowHeight > 100)   return null;
- 
+  if (windowHeight > 100) return null;
+
   return (
     <div className="indicator" data-title="Explore">
       <a href="#about">
@@ -14,6 +13,5 @@ export function Indicator() {
         </span>
       </a>
     </div>
-
   );
 }

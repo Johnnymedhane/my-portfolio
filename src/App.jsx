@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter,  Route, Routes } from 'react-router-dom';
 import { AppProvider } from './contexts/contextApi';
 import { ProjectsProvider } from './contexts/ProjectsContext';
 import { Loading } from './ui/Loading';

@@ -1787,7 +1787,7 @@ article.animate {
   font-size: var(--fs-6);
 }
 .contact-title {
-  color: var(--light-gray);
+  color: var(--light-gray-70);
   text-transform: uppercase;
   margin-bottom: 2px;
   font-size: var(--fs-7);
@@ -1796,6 +1796,7 @@ article.animate {
 .contact-info :is(.contact-link, time, address) {
   display: block;
   font-size: var(--fs-8);
+  color: var(--light-gray);
   font-weight: bold;
   text-decoration: none;
   transition: var(--transition-1);
@@ -1809,8 +1810,8 @@ article.animate {
 .separator {
   margin-top: 2rem;
   width: 100%;
-  background: var(--light-gray);
-  height: 1px;
+ background:  var(--light-gray-70);
+  height: 2px;
 }
 
 /* form */
@@ -2212,9 +2213,7 @@ textarea.form-input::-webkit-resizer {
   .hero-container {
     gap: 0.2rem;
   }
-  .hero-image {
-    box-shadow: inset 0 0 0 8px var(--orange-1);
-  }
+ 
 
   .hero-content p {
     font-size: var(--fs-6);
@@ -2244,11 +2243,7 @@ textarea.form-input::-webkit-resizer {
     --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
   }
 
-  /* .media{
-  font-size: var(--fs-4);
-  width: 50px;
-  height: 50px;
-} */
+
 
   /**
    * RESET
@@ -2273,7 +2268,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   body::-webkit-scrollbar-button {
-    height: 60px;
+    height: 30px;
   }
 
   /**
@@ -2346,13 +2341,7 @@ textarea.form-input::-webkit-resizer {
   .social-media {
     gap: 2rem;
   }
-}
 
-/**
- * responsive larger than 1250px screen
- */
-
-@media (min-width: 1250px) {
   .contact-list {
     gap: 24px;
     font-size: var(--fs-5);
@@ -2369,72 +2358,22 @@ textarea.form-input::-webkit-resizer {
     font-size: var(--fs-4);
   }
   .contact-title {
-    color: var(--light-gray);
     text-transform: uppercase;
     margin-bottom: 2px;
     font-size: var(--fs-5);
   }
 
   .contact-info :is(.contact-link, time, address) {
-    color: var(--white-1);
     font-size: var(--fs-5);
     font-weight: bold;
     text-decoration: none;
   }
-
-  /**
-   * RESET
-
 }
 
+/**
+ * responsive larger than 1250px screen
+ */
 
-  body::-webkit-scrollbar { width: 40px; }
-
-  body::-webkit-scrollbar-track { background:yellow; }
-
-  body::-webkit-scrollbar-thumb {
-    border: 15px solid yellow;
-    background: hsla(0, 0%, 100%, 0.1);
-    border-radius: 20px;
-    box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
-                inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
-  }
-
-  body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
-
-  body::-webkit-scrollbar-button { height: 60px; }
-
-
-
-  /**
-   * REUSED STYLE
-   */
-
-  article {
-    width: auto;
-  }
-
-  article {
-    min-height: 100%;
-  }
-
-  /**
-   * MAIN
-   */
-
-  main {
-    max-width: 1200px;
-    margin-inline: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    gap: 25px;
-  }
-
-  .main-content {
-    min-width: 75%;
-    width: 75%;
-    margin: 0;
-  }
+@media (min-width: 1250px) {
+  
 }
