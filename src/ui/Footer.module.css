@@ -98,7 +98,8 @@
 @media screen and (max-width: 640px) {
   .footer {
      padding: 0.5rem 1rem;
-     flex-direction: column;
+     /* flex-direction: column; */
+     justify-content: space-between;
     font-size: var(--fs-7);
     gap: 0.5rem;
   }
