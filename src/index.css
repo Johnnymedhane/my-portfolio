@@ -688,7 +688,8 @@ body {
 }
 .hero-content h1 {
   font-size: var(--fs-1);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
   color: var(--light-gray);
   font-family: var(--ffLeagueSpartan);
   line-height: 1.2;
@@ -701,11 +702,11 @@ body {
 }
 .hero-content h2 {
   font-size: var(--fs-2);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   font-weight: 600;
   font-family: var(--ffLeagueSpartan);
   color: var(--light-gray-70);
-  line-height: 1.2;
+  line-height: 1.1;
 }
 .hero-content h2 span {
   display: block;
@@ -728,7 +729,7 @@ body {
 
 .hero p {
   font-size: var(--fs-6);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   color: var(--light-gray-70);
   animation: fade 4s ease-in-out;
 }
@@ -736,7 +737,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .btn {
@@ -766,8 +767,8 @@ body {
   margin-right: 5px;
 }
 .hero-image {
-  max-width: 400px;
-  max-height: 450px;
+  max-width: 380px;
+  max-height: 430px;
   width: 100%;
   aspect-ratio: 2/3;
   border-radius: 50%;
@@ -777,7 +778,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* align-self: flex-start; */
+  align-self: self-start;
+ margin-top: 1rem;
   box-shadow:
     inset 0 0 10px var(--lightGold),
     inset 0 0 20px var(--lightGold);
@@ -954,10 +956,10 @@ body {
     transform: translateY(0);
   }
   40% {
-    transform: translateY(-10px);
+    transform: translateY(-20px);
   }
   60% {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
   }
 }
 .indicator:hover::after {
@@ -1810,7 +1812,7 @@ article.animate {
 .separator {
   margin-top: 2rem;
   width: 100%;
- background:  var(--light-gray-70);
+  background: var(--light-gray-70);
   height: 2px;
 }
 
@@ -1960,15 +1962,27 @@ textarea.form-input::-webkit-resizer {
   section {
     padding: 1.5rem 0.3rem;
   }
+  .hero {
+    margin-top: 3rem;
+  }
   .hero-container {
     flex-direction: column;
+    justify-content: space-between;
     gap: 2rem;
   }
   .hero-image {
     max-width: 300px;
     max-height: 350px;
     margin: 1rem;
-    /* box-shadow: inset 0 0  12px  var(--orange-1); */
+    align-self: center;
+    justify-self: self-start;
+  }
+
+  .hero-content h1 {
+    line-height: 1.3;
+  }
+  .hero-content h2 {
+    line-height: 1.3;
   }
   .hero h1,
   .hero h2,
@@ -2020,20 +2034,6 @@ textarea.form-input::-webkit-resizer {
   }
   /* home */
 
-  .hero-container {
-    gap: 2rem;
-    flex-direction: column;
-  }
-
-  .hero-content h1 {
-    line-height: 1.1;
-    margin-bottom: 10px;
-  }
-  .hero-content h2 {
-    margin-bottom: 15px;
-    line-height: 1.1;
-  }
-
   .btn {
     padding: 10px 18px;
     font-size: var(--fs-5);
@@ -2084,8 +2084,11 @@ textarea.form-input::-webkit-resizer {
 @media screen and (max-width: 640px) {
   .head {
     /* padding: 15px 20px; */
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .logo span {
+    padding: 0.2rem 1.5rem;
   }
 
   .nav-toggle {
@@ -2093,24 +2096,26 @@ textarea.form-input::-webkit-resizer {
     position: fixed;
     z-index: 9000;
   }
-  .hero {
+.hero {
     margin-top: 2rem;
   }
-
   .hero-container {
     flex-direction: column;
+    justify-content: center;
     gap: 1rem;
     padding: 15px;
   }
   .hero-image {
     max-width: 200px;
     max-height: 230px;
-    margin: 1.3rem;
   }
 
   .hero-content h1 {
-    margin-bottom: 15px;
-    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+  .hero-content h2 {
+    margin-bottom: 1rem;
   }
 
   .hero-content h2 span {
@@ -2136,7 +2141,7 @@ textarea.form-input::-webkit-resizer {
     font-size: 30px;
   }
   .indicator {
-    bottom: 5px;
+    bottom: 8px;
   }
 
   main {
@@ -2210,21 +2215,13 @@ textarea.form-input::-webkit-resizer {
 }
 
 @media screen and (max-width: 480px) {
-  .hero-container {
-    gap: 0.2rem;
-  }
- 
-
-  .hero-content p {
-    font-size: var(--fs-6);
-    text-align: center;
-  }
 }
-@media screen and (max-width: 385px) {
+ 
+@media screen and (max-width: 360px) {
   .hero-image {
     max-width: 150px;
     max-height: 180px;
-    box-shadow: inset 0 0 0 5px var(--orange-1);
+    /* box-shadow: inset 0 0 0 1px var(--orange-1); */
   }
 }
 
@@ -2242,8 +2239,6 @@ textarea.form-input::-webkit-resizer {
     --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
     --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
   }
-
-
 
   /**
    * RESET
@@ -2375,5 +2370,4 @@ textarea.form-input::-webkit-resizer {
  */
 
 @media (min-width: 1250px) {
-  
 }
