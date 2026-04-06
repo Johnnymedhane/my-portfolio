@@ -1,12 +1,14 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import useLocalStorage from "../hooks/useLocalStorage";
+// import useLocalStorage from "../hooks/useLocalStorage";
 
 const AppContext = createContext();
 
 function AppProvider({ children }) {
   const [showIndicator, setShowIndicator] = useState(true);
-  const [selectedNav, setSelectedNav] = useState("home");
-  const [isDarkMode, setIsDarkMode] = useLocalStorage(false, "isDarkMode");
+  const [selectedNav, setSelectedNav] = useState("");
+
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  // useLocalStorage(false, "isDarkMode");
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   const title = "JohnnyMe";
@@ -37,31 +39,35 @@ function AppProvider({ children }) {
     };
   }, [selectedNav]);
 
-
-  useEffect(function () { 
-    const root = document.documentElement;
-    if (isDarkMode) {
-      root.classList.add("dark-mode");
-      root.classList.remove("light-mode");
-    } else {
-      root.classList.add("light-mode");
-      root.classList.remove("dark-mode");
-    }
-  }, [isDarkMode]);
-  useEffect(function () {
-    const body = document.body;
-    if (isMobileNavOpen) {
-      body.classList.add("nav-open");
-    } else {
-      body.classList.remove("nav-open");
-    }
-  },[isMobileNavOpen])
+  useEffect(
+    function () {
+      const root = document.documentElement;
+      if (isDarkMode) {
+        root.classList.add("dark-mode");
+        root.classList.remove("light-mode");
+      } else {
+        root.classList.add("light-mode");
+        root.classList.remove("dark-mode");
+      }
+    },
+    [isDarkMode],
+  );
+  useEffect(
+    function () {
+      const body = document.body;
+      if (isMobileNavOpen) {
+        body.classList.add("nav-open");
+      } else {
+        body.classList.remove("nav-open");
+      }
+    },
+    [isMobileNavOpen],
+  );
 
   function closeNavBar(item) {
     setSelectedNav(item);
     setIsMobileNavOpen(false);
   }
-
 
   function handleOpenMenu() {
     setIsMobileNavOpen((prev) => !prev);

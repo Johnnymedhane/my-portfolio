@@ -1,16 +1,3 @@
-
-
-
 export function Main({ children }) {
- 
-
-
-  return (
-    <main className="main">
-      {children}
-    </main>
-  );
+  return <main className="main">{children}</main>;
 }
-
-
-

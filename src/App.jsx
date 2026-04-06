@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter,  Route, Routes } from 'react-router-dom';
 import { AppProvider } from './contexts/contextApi';
 import { ProjectsProvider } from './contexts/ProjectsContext';
 import { Loading } from './ui/Loading';
@@ -28,9 +28,9 @@ function App() {
         <BrowserRouter>
           <Suspense fallback={<Loading />}>
             <Routes>
-              <Route path="/" element={<AppLayout />}>
-                <Route index element={<Navigate replace to="/allPages" />} />
-                <Route path="/allPages" element={<HomePage />} />
+              <Route  element={<AppLayout />}>
+          
+                <Route path="/" element={<HomePage />} />
                 <Route path="/home" element={<HeroSection />} />
 
                 <Route path="/about" element={<AboutSection />} />

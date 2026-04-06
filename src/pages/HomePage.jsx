@@ -7,22 +7,10 @@ import { Resume } from "../components/resume/Resume";
 import { Skills } from "../components/skills/Skills";
 import { Contact } from "../components/contact/Contact";
 import Scrollup from "../ui/ScrollingPage";
-import { useEffect, useState } from "react";
+import useScrollingThrottling from "../hooks/useScrollingThrottling";
 
 function HomePage() {
-  const [windowScrollY, setWindowScrollY] = useState(window.scrollY);
-  // const [direction, setDirection] = useState("");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setWindowScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
- 
+  const { windowHeight } = useScrollingThrottling(600);
 
   const articleRef = useIntersectionObserver({
     threshold: 0.1,
@@ -30,8 +18,16 @@ function HomePage() {
   });
 
   return (
-    <>
-      <Scrollup scrollDirection={windowScrollY >  400 && windowScrollY < 2000 ? "down" : windowScrollY > 6000 ? "up" : ""} />
+    <div className="home-page">
+      <Scrollup
+        scrollDirection={
+          windowHeight > 400 && windowHeight < 2000
+            ? "down"
+            : windowHeight > 6000
+              ? "up"
+              : ""
+        }
+      />
       <Hero />
       <Main className="main">
         <article ref={(el) => (articleRef.current[0] = el)}>
@@ -50,7 +46,7 @@ function HomePage() {
           <Contact />
         </article>
       </Main>
-    </>
+    </div>
   );
 }
 

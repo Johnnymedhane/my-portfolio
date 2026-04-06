@@ -1,11 +1,12 @@
 import { HiArrowDown, HiArrowUp } from "react-icons/hi";
 
 function Scrollup({ scrollDirection }) {
+  const ele = document.querySelector(".main-wrapper");
   const handlescrollDown = () => {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    ele.scrollTo({ top: ele.scrollHeight, behavior: "smooth" });
   }
   const handleScrollUp = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    ele.scrollTo({ top: 0, behavior: "smooth" });
   }
   if (!scrollDirection || scrollDirection === "") return ;
   return (
