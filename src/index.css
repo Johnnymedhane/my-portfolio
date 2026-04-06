@@ -1095,7 +1095,7 @@ article.animate {
 .service-title,
 .benefits-title,
 .contact-me-title {
-  font-size: var(--fs-3);
+  font-size: var(--fs-4);
   text-transform: capitalize;
   margin-bottom: 30px;
   color: var(--lightGold);
