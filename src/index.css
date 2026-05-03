@@ -96,57 +96,66 @@
   --transition-2: 0.5s ease-in-out;
 }
 
+
+
 .light-mode {
   --bg-gradient-jet:
     linear-gradient(
       to bottom right,
-      hsla(0, 0%, 98%, 0.9) 0%,
-      hsla(0, 0%, 90%, 0) 100%
+      hsla(0, 0%, 100%, 0.96) 0%,
+      hsla(160, 35%, 96%, 0.9) 100%
     ),
-    hsl(0, 0%, 95%);
+    hsl(160, 30%, 98%);
+
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right,
-    hsl(45, 100%, 85%) 0%,
-    hsla(45, 100%, 78%, 0) 50%
+    hsl(168, 76%, 42%) 0%,
+    hsla(168, 76%, 42%, 0) 55%
   );
+
   --bg-gradient-yellow-2:
     linear-gradient(
       135deg,
-      hsla(45, 100%, 85%, 0.7) 0%,
-      hsla(45, 100%, 75%, 0) 60%
+      hsla(168, 76%, 42%, 0.14) 0%,
+      hsla(168, 76%, 42%, 0) 60%
     ),
-    hsl(0, 0%, 95%);
+    hsl(0, 0%, 100%);
+
   --bg-gradient-onyx: linear-gradient(
     to bottom right,
-    hsl(0, 0%, 90%) 3%,
-    hsl(0, 0%, 85%) 97%
+    hsl(0, 0%, 100%) 0%,
+    hsl(160, 30%, 96%) 100%
   );
 
-  --bg: hsl(0, 0%, 100%);
-  --tbg: hsla(0, 0%, 98%, 0.75);
-  --black-1: hsl(0, 0%, 98%);
-  --black-2: hsl(0, 0%, 95%);
-  --white-1: hsl(0, 0%, 10%);
-  --white-2: hsl(0, 0%, 15%);
+  --bg: hsl(160, 30%, 98%);
+  --tbg: hsla(0, 0%, 100%, 0.9);
 
-  --light-gray: hsl(0, 0%, 30%);
-  --light-gray-70: hsla(0, 0%, 90%, 0.7);
-  --orange-1: hsl(45, 87%, 56%);
-  --orange-2: hsl(45, 79%, 56%);
-  --jet: hsl(0, 0%, 80%);
-  --lightGold: hsl(51, 48%, 61%);
+  --black-1: hsl(0, 0%, 100%);
+  --black-2: hsl(160, 25%, 96%);
+
+  --white-1: hsl(222, 28%, 12%);
+  --white-2: hsl(222, 18%, 25%);
+
+  --light-gray: hsl(220, 9%, 43%);
+  --light-gray-70: hsla(220, 9%, 43%, 0.7);
+
+  --orange-1: hsl(168, 76%, 36%);
+  --orange-2: hsl(174, 72%, 32%);
+
+  --jet: hsl(160, 18%, 90%);
+  --lightGold: hsl(168, 76%, 36%);
 
   --text-gradient-yellow: linear-gradient(
     to right,
-    hsl(45, 100%, 72%),
-    hsl(45, 90%, 68%)
+    hsl(168, 76%, 36%),
+    hsl(190, 78%, 38%)
   );
 
-  --shadow-1: -4px 8px 24px hsla(0, 0%, 100%, 0.25);
-  --shadow-2: 0 16px 30px hsla(0, 0%, 100%, 0.25);
-  --shadow-3: 0 16px 40px hsla(0, 0%, 100%, 0.25);
-  --shadow-4: 0 25px 50px hsla(0, 0%, 100%, 0.15);
-  --shadow-5: 0 24px 80px hsla(0, 0%, 100%, 0.25);
+  --shadow-1: 0 8px 24px hsla(180, 20%, 20%, 0.08);
+  --shadow-2: 0 16px 30px hsla(180, 20%, 20%, 0.1);
+  --shadow-3: 0 16px 40px hsla(180, 20%, 20%, 0.12);
+  --shadow-4: 0 25px 50px hsla(180, 20%, 20%, 0.1);
+  --shadow-5: 0 24px 80px hsla(180, 20%, 20%, 0.12);
 }
 
 a {
@@ -234,7 +243,7 @@ section {
   margin: 2rem auto;
   animation: fade linear;
   animation-timeline: view();
-  animation-range: entry 0% cover 40%;
+  animation-range: entry 0% cover 20%;
 }
 @keyframes fade {
   0% {
@@ -1311,6 +1320,7 @@ article.animate {
   transition: var(--transition-2);
   background: none;
   border: none;
+  z-index: 10;
 }
 .filter-item .active {
   color: var(--orange-1);

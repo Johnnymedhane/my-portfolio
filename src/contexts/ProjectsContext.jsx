@@ -11,7 +11,7 @@ const ProjectsContext = createContext();
 const projects = [
   {
     name: "the-wild-oasis",
-    category: "Web development",
+    category: "Full-Stack development",
     img: `${process.env.PUBLIC_URL}/images/the-wild-oasis.png`,
     webLink: "https://the-wild-oasis-jme.netlify.app/",
     github: "https://github.com/Johnnymedhane/the-wild-aosis",
@@ -19,7 +19,7 @@ const projects = [
 
   {
     name: "primeTech",
-    category: "Web development",
+    category: "Frontend development",
     img: `${process.env.PUBLIC_URL}/images/primetech.png`,
     webLink: "https://primete.netlify.app/",
     github: "https://github.com/Johnnymedhane/primeTech",
@@ -27,7 +27,7 @@ const projects = [
 
   {
     name: "fast-pizza",
-    category: "Web development",
+    category: "Frontend development",
     img: `${process.env.PUBLIC_URL}/images/fast-pizza.png`,
     webLink: "https://fast-pizza-deli.netlify.app",
     github: "https://github.com/Johnnymedhane/Fast-React-Pizza",
@@ -35,7 +35,7 @@ const projects = [
 
   {
     name: "Pizza-page",
-    category: "Web development",
+    category: "Frontend development",
     img: `${process.env.PUBLIC_URL}/images/pizza-image.png`,
     webLink: "https://strong-trifle-c1690d.netlify.app",
     github: "https://github.com/Johnnymedhane/Pizza-page",
@@ -43,7 +43,7 @@ const projects = [
 
   {
     name: "Worldwise",
-    category: "Web development",
+    category: "Full-Stack development",
     img: `${process.env.PUBLIC_URL}/images/worldwise.png`,
     webLink: "https://world-wise-cities.netlify.app/",
     github: "https://github.com/Johnnymedhane/World-Wise",
@@ -51,7 +51,7 @@ const projects = [
 
   {
     name: "React-quizs",
-    category: "Web development",
+    category: "Frontend development",
     img: `${process.env.PUBLIC_URL}/images/quizs.png`,
     webLink: "https://react-quizss.netlify.app",
     github: "https://github.com/Johnnymedhane/React-Quizs",
@@ -59,7 +59,7 @@ const projects = [
 
   {
     name: "PopCorn",
-    category: "Web development",
+    category: "Frontend development",
     img: `${process.env.PUBLIC_URL}/images/movies.png`,
     webLink: "https://johnnymedhane.github.io/usePopCorn/",
     github: "https://github.com/Johnnymedhane/usePopCorn",
@@ -67,7 +67,7 @@ const projects = [
 
   {
     name: "Workout Timer",
-    category: "Web development",
+    category: "Frontend development",
     img: `${process.env.PUBLIC_URL}/images/work-out.png`,
     webLink: "https://workouts-timer.netlify.app/",
     github: "https://github.com/Johnnymedhane/workout-timer",
@@ -75,7 +75,7 @@ const projects = [
 
   {
     name: "Job Tracker",
-    category: "Web development",
+    category: "Full-Stack development",
     img: `${process.env.PUBLIC_URL}/images/job-tracker.png`,
     webLink: "https://track-your-jobs.netlify.app/",
     github: "https://github.com/Johnnymedhane/job-tracker/tree/main",
@@ -83,7 +83,7 @@ const projects = [
 
   {
     name: "Redux-Bank",
-    category: "Web development",
+    category: "Frontend development",
     img: `${process.env.PUBLIC_URL}/images/redux-bank.png`,
     webLink: " https://johnnymedhane.github.io/react-redux-bank/",
     github: "https://github.com/Johnnymedhane/react-redux-bank",
@@ -91,7 +91,7 @@ const projects = [
 
   {
     name: "Calculator",
-    category: "Web development",
+    category: "Frontend development",
     img: `${process.env.PUBLIC_URL}/images/calculator2.png`,
     webLink: "https://myclculatorproject.netlify.app",
     github: "https://github.com/Johnnymedhane/Calculator",
@@ -99,7 +99,7 @@ const projects = [
 
   {
     name: "River-Puzzle",
-    category: "Web development",
+    category: "Frontend development",
     img: `${process.env.PUBLIC_URL}/images/river-puzzle.png`,
     webLink: "https://johnnymedhane.github.io/river-puzzle/",
     github: "https://github.com/Johnnymedhane/river-puzzle",
@@ -107,7 +107,7 @@ const projects = [
 
   {
     name: "Saving-Planer",
-    category: "Web development",
+    category: "Frontend development",
     img: `${process.env.PUBLIC_URL}/images/saving-planer.png`,
     webLink: "https://app.netlify.com/teams/johnnymedhane",
     github: "https://github.com/Johnnymedhane/Saving-Planer",
@@ -115,7 +115,7 @@ const projects = [
 
   {
     name: "eat-n-split",
-    category: "Web development",
+    category: "Frontend development",
     img: `${process.env.PUBLIC_URL}/images/bill-split.png`,
     webLink: "https://app.netlify.com/teams/johnnymedhane",
     github: "https://github.com/Johnnymedhane/06-eat-n-split",
@@ -123,7 +123,7 @@ const projects = [
 
   {
     name: "Travel-List",
-    category: "Web development",
+    category: "Frontend development",
     img: `${process.env.PUBLIC_URL}/images/to-do-list.png`,
     webLink: "https://dazzling-tulumba-2334c5.netlify.app/",
     github: "https://github.com/Johnnymedhane/Travel-List",
@@ -131,7 +131,7 @@ const projects = [
 
   {
     name: "Classy-Weather",
-    category: "Web development",
+    category: "Frontend development",
     img: `${process.env.PUBLIC_URL}/images/classy-weather.png`,
     webLink: "https://johnnymedhane.github.io/classy-weather/",
     github: "https://github.com/Johnnymedhane/classy-weather",
@@ -185,9 +185,11 @@ const projects = [
 const ProjectsProvider = ({ children }) => {
   const projectsCategory = [
     "All",
-    "Web development",
+    "Full-Stack development",
+    "Frontend development",
     "Python data-analist",
     "QA",
+   
   ];
   const [selectItem, setSelectItem] = useState("");
   const [showList, setShowList] = useState(false);
