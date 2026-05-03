@@ -8,44 +8,40 @@ import Text from "../../ui/Text";
 // import { Link } from 'react-router-dom';
 export const values = [
   {
-    title: "Advanced React Ecosystem Skills",
-    text: `Proficient in React with advanced patterns (Compound Components, Render Props), React Query for server state, React Router v6 (loaders/actions), Redux, Context API, and performance optimization techniques. Built 20+ production-ready applications.`,
+    title: "Advanced React Development",
+    text: `Skilled in building modern React applications using hooks, React Router, React Query, Context API, Redux, and reusable component patterns. I focus on clean structure, maintainability, and scalable frontend architecture.`,
   },
   {
     title: "Full-Stack Capable",
-    text: `Beyond frontend, I work with Supabase (authentication, real-time DB, PostgreSQL), Node.js, Express.js, and RESTful APIs. I understand how data flows from backend to UI and can build complete features independently.`,
+    text: `I can build complete features from database to UI using Supabase, PostgreSQL, authentication, Node.js, Express.js, and REST APIs. I understand how frontend and backend systems connect in real-world applications.`,
   },
   {
-    title: "Quality-Focused Developer",
-    text: `My QA background ensures I write clean   and maintainable code. Experienced with Chrome DevTools, React DevTools, Redux DevTools, and React Profiler. I catch bugs before they reach production.`,
+    title: "Performance-Focused",
+    text: `Experienced in improving React performance through code splitting, lazy loading, memoization, optimized rendering, and better state management. I care about fast load times and smooth user interactions.`,
   },
   {
-    title: "Performance & Optimization Expert",
-    text: `Experienced in optimizing React apps through code-splitting, lazy loading, React.memo, useMemo/useCallback. I reduce bundle sizes, improve load times, and ensure smooth  interactions.`,
+    title: "Quality-Driven Mindset",
+    text: `My QA background helps me think beyond writing code. I test carefully, debug effectively, and build reliable features with attention to edge cases, user experience, and production readiness.`,
   },
   {
-    title: "Modern Styling & Design Systems",
-    text: `Comfortable  with multiple styling approaches: Tailwind CSS, Styled Components, and CSS Modules. I build responsive, accessible UIs with dark/light theming, and understand design principles using Figma.`,
+    title: "Modern UI & Styling",
+    text: `Comfortable working with CSS Modules, Tailwind CSS, Styled Components, responsive layouts, dark/light modes, and accessible UI patterns. I aim to create interfaces that are clean, usable, and visually polished.`,
   },
   {
-    title: "Proven Self-Learner with Real Output",
-    text: `Independently mastered the React ecosystem in under 12 months while working full-time. Delivered 20+ deployed projects demonstrating rapid learning, strong execution, and real-world problem solving.`,
+    title: "Self-Taught & Consistent",
+    text: `I taught myself frontend development while working full-time, completing many real projects and continuously improving through practice, problem-solving, and hands-on learning.`,
   },
   {
-    title: "Strong Problem-Solving Skills",
-    text: `Analytical thinker who breaks complex challenges into clear, manageable steps. Whether dealing with performance bottlenecks, API issues, or complex state logic, I deliver efficient and reliable solutions.`,
+    title: "Strong Problem Solver",
+    text: `I break complex problems into clear steps and work through them with patience and focus. Whether it’s UI logic, API issues, authentication, or performance bugs, I stay committed until I find a solution.`,
   },
   {
-    title: "Collaboration & Team Readiness",
-    text: `Experience working with distributed teams through QA projects and open-source contributions across 10+ countries. Clear communicator who bridges technical and non-technical perspectives.`,
+    title: "Team-Ready Communicator",
+    text: `I communicate clearly, ask thoughtful questions, and enjoy working with others. My QA and freelance experience helped me collaborate with people from different backgrounds and understand product needs.`,
   },
   {
     title: "Resilient & Mission-Driven",
-    text: `As an Eritrean asylum seeker building a career in Israel’s tech industry, I bring resilience, adaptability, and a strong sense of purpose. I value growth, impact, and meaningful contribution.`,
-  },
-  {
-    title: "Discipline & Persistence",
-    text: `Highly disciplined and goal-oriented. I plan clearly, stay committed through challenges, and complete what I start. I don’t stop when things get difficult—I push through until the job is done.`,
+    text: `My journey has built strong resilience, discipline, and adaptability. I bring purpose, persistence, and a deep motivation to grow, contribute, and create meaningful work through technology.`,
   },
 ];
 
@@ -54,42 +50,33 @@ export function About() {
     <Section title="About Me" sectionType="about">
       <Text content="about" className="about-text">
         <p>
-          Hello, I'm <span> Johnny Medhane</span> — a self-taught Front-end
-          Developer with a passion for building beautiful, responsive, and
-          user-friendly websites. I have a solid foundation in
-          <b> HTML, </b> <b> CSS, </b> <b> JavaScript, </b> <b> React, </b> and
-          <b> Python </b>
-          and I'm constantly exploring new technologies to sharpen my skills and
-          stay up-to-date.
+          Hello, I'm <span>Johnny Medhane</span> — a self-taught Frontend
+          Developer focused on building responsive, accessible, and
+          user-friendly web applications.
         </p>
         <p>
-          Programming is a creative outlet and a source of inspiration for me. I
-          enjoy every part of the development process — Designing, Coding,
-          debugging, testing, and exploring new solutions.
+          I work mainly with <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>,{" "}
+          <b>React</b>, and <b>Python</b>, and I’m continuously improving my
+          skills through real-world projects, problem-solving, and hands-on
+          learning.
+        </p>
+
+        <p>
+          Programming is both a creative outlet and a discipline for me. I enjoy
+          the full development process — planning, designing, coding, debugging,
+          testing, and improving the user experience.
         </p>
         <p>
-          Through my coding journey, I've learned more than just programming —
-          I've mastered:
-          <>
-            <strong> how to learn effectively </strong>,
-            <strong> developed strong self-discipline </strong>,
-            <strong>enhanced my research skills </strong>,
-            <strong>
-              and become highly effective at problem-solving under pressure.
-            </strong>{" "}
-            Coding has actually taught me that happiness comes from solving
-            problems!
-          </>
+          My journey has taught me how to learn effectively, stay disciplined,
+          research deeply, and solve problems under pressure. I don’t panic when
+          facing new technologies — I break things down, learn what I need, and
+          keep moving forward.
         </p>
+
         <p>
-          When I encounter new technologies, I don't panic — I'm confident in my
-          ability to figure things out and adapt quickly.
-        </p>
-        <p>
-          {" "}
-          I invite you to take a look at my projects and resume - and if you're
-          curious or want to collaborate, feel free to reach out. I'd love to
-          connect!
+          I invite you to explore my projects and resume. If you’re looking for
+          a dedicated developer who learns fast, solves problems, and builds
+          with care, feel free to reach out.
           <Link className="link-my-story" to="/my-story">
             Read my story &rarr;
           </Link>

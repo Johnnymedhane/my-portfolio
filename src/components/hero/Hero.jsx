@@ -31,7 +31,7 @@ const handleScroll = (sectionId) => {
             <a href="#projects" onClick={() => handleScroll('projects')} className="btn">
               View My Work
             </a>
-            <a href={`${process.env.PUBLIC_URL}/cv/Johnny_Medhane_CV.pdf`} rel="noopener noreferrer"
+            <a href={`${process.env.PUBLIC_URL}/cv/Johnny_Medhane_CV_Frontend.pdf`} rel="noopener noreferrer"
               target="_blank"
               className="btn btn-outline">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px"
