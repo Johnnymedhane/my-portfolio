@@ -96,8 +96,6 @@
   --transition-2: 0.5s ease-in-out;
 }
 
-
-
 .light-mode {
   --bg-gradient-jet:
     linear-gradient(
@@ -788,7 +786,7 @@ body {
   justify-content: center;
   align-items: center;
   align-self: self-start;
- margin-top: 1rem;
+  margin-top: 1rem;
   box-shadow:
     inset 0 0 10px var(--lightGold),
     inset 0 0 20px var(--lightGold);
@@ -1633,88 +1631,11 @@ article.animate {
 /* skill */
 .skills-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
   padding: 20px;
-}
-.skills-item {
-  background: var(--black-1);
-  padding: 10px 10px 20px;
-  border-radius: 10px;
-  box-shadow: var(--shadow-1);
-  border: 1px solid var(--jet);
-}
-.skills-item h3 {
-  font-size: var(--fs-4);
-  font-family: var(--ffroboto);
-  color: var(--light-gray);
-  font-weight: 500;
-  text-transform: capitalize;
-}
-.skill .title-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 10px;
-}
-
-.skills-item:hover {
-  box-shadow: var(--shadow-2);
-  transform: translate(0, -5px);
-  transition: var(--transition-1);
-}
-.bar {
   position: relative;
-  height: 10px;
-  border-radius: 10px;
-  background: var(--jet);
-  transition: var(--transition-1);
-}
-
-.bar-fill {
-  position: relative;
-  height: 100%;
-  border-radius: inherit;
-  background: var(--lightGold);
-  transform-origin: left;
-  box-shadow: var(--shadow-1);
-  animation: fill 5s forwards;
-  transform: scale(0);
-  transition: transform 4s linear;
-}
-.animate .bar-fill {
-  transform: scale(1);
-}
-
-@keyframes fill {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.bar-fill::after {
-  content: attr(data-label);
-  position: absolute;
-  right: 5px;
-  bottom: 120%;
-  padding: 3px;
-  background: var(--orange-1);
-  color: var(--black-2);
-  border-radius: 5px;
-  font-size: var(--fs-8);
-
-  box-shadow: var(--shadow-1);
-  transform: translate(20px);
-  transition: var(--transition-1);
-  display: none;
-}
-
-.skills-item:hover .bar-fill::after {
-  display: block;
-  transform: translateX(0);
+  overflow: hidden;
 }
 
 /* contact */
@@ -2106,7 +2027,7 @@ textarea.form-input::-webkit-resizer {
     position: fixed;
     z-index: 9000;
   }
-.hero {
+  .hero {
     margin-top: 2rem;
   }
   .hero-container {
@@ -2226,7 +2147,7 @@ textarea.form-input::-webkit-resizer {
 
 @media screen and (max-width: 480px) {
 }
- 
+
 @media screen and (max-width: 360px) {
   .hero-image {
     max-width: 150px;

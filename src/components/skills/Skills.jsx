@@ -1,50 +1,87 @@
 import Section from "../../ui/Section";
 import List from "../../ui/List";
 import { SkillsItem } from "./SkillsItem";
+import { useEffect, useRef, useState } from "react";
 
 const skills = [
   {
-    name: "GitHub",
-    width: "100",
-    img: "https://th.bing.com/th/id/OIP.jaHwmagXkJZBZXWOOBlfjAHaD4?rs=1&pid=ImgDetMain",
-  },
-  {
-    name: "Sql",
-    width: "100",
-    img: "https://static.frontendmasters.com/resources/2018-03-27-sql/thumb.jpg",
-  },
-  {
-    name: "HTML5",
-    width: "90",
-    img: "https://th.bing.com/th/id/OIP.fbso8uQcHJtJfO_G8bMacQHaDr?rs=1&pid=ImgDetMain",
-  },
-  {
-    name: "CSS",
-    width: "80",
-    img: "https://logospng.org/download/css-3/logo-css-3-2048.png",
+    name: "React",
+    img: "/skill-icons/react.svg",
   },
   {
     name: "JavaScript",
+    width: "90",
+    img: "/skill-icons/javascript.svg",
+  },
+  {
+    name: "Next.js",
     width: "80",
-    img: "https://logos-download.com/wp-content/uploads/2019/01/JavaScript_Logo.png",
+    img: "/skill-icons/nextjs.svg",
   },
   {
-    name: "React",
+    name: "HTML5",
+    width: "85",
+    img: "/skill-icons/html5.svg",
+  },
+  {
+    name: "CSS3",
+    width: "85",
+    img: "/skill-icons/css3.svg",
+  },
+  {
+    name: "Tailwind CSS",
+    width: "75",
+    img: "/skill-icons/tailwind.svg",
+  },
+  {
+    name: "Styled Components",
+    img: "/skill-icons/styled-components-1.svg",
+  },
+  {
+    name: "React Query",
+    width: "75",
+    img: "/skill-icons/react-query.svg",
+  },
+  {
+    name: "Redux Toolkit",
     width: "70",
-    img: "https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-png-transparent.png",
+    img: "/skill-icons/redux.svg",
   },
   {
-    name: "Python",
-    width: "60",
-    img: "https://anturis.com/wp-content/uploads/2022/09/Python-Logo-1.png",
+    name: "Node.js",
+    width: "70",
+    img: "/skill-icons/node-js-icon.svg",
+  },
+  {
+    name: "Express.js",
+    width: "65",
+    img: "/skill-icons/express.svg",
+    className: "express-logo",
+  },
+  {
+    name: "Supabase",
+    img: "/skill-icons/supabase.svg",
+  },
+  {
+    name: "MongoDB",
+    img: "/skill-icons/mongodb.svg",
   },
   {
     name: "Git",
-    width: 60,
-    img: "https://miro.medium.com/max/3840/1*fDwzjCH3qzhosC6DVel4ng.jpeg",
+    img: "/skill-icons/git.svg",
+  },
+  {
+    name: "GitHub",
+    img: "/skill-icons/github-white.svg",
   },
 ];
+
+function shuffleArray(array) {
+  return [...array].sort(() => Math.random() - 0.5);
+}
 export function Skills() {
+
+  
   return (
     <Section title="Skills" sectionType="skills">
       <List
@@ -58,7 +95,3 @@ export function Skills() {
   );
 }
 
-//  <ul className="skills-list">
-//             {skills.map((skill, i) => <SkillsItem key={skill.name} skill={skill} i={i} />)}
-//           </ul>
-//         </Section>
