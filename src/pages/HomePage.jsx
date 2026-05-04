@@ -36,11 +36,11 @@ function HomePage() {
         <article ref={(el) => (articleRef.current[1] = el)}>
           <Projects />
         </article>
-        <article ref={(el) => (articleRef.current[2] = el)}>
-          <Resume />
-        </article>
         <article ref={(el) => (articleRef.current[3] = el)}>
           <Skills />
+        </article>
+        <article ref={(el) => (articleRef.current[2] = el)}>
+          <Resume />
         </article>
         <article ref={(el) => (articleRef.current[4] = el)}>
           <Contact />
