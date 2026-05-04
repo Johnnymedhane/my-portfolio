@@ -1,7 +1,6 @@
 import Section from "../../ui/Section";
 import List from "../../ui/List";
 import { SkillsItem } from "./SkillsItem";
-import { useEffect, useRef, useState } from "react";
 
 const skills = [
   {
