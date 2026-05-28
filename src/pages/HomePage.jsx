@@ -10,7 +10,7 @@ import Scrollup from "../ui/ScrollingPage";
 import useScrollingThrottling from "../hooks/useScrollingThrottling";
 
 function HomePage() {
-  const { windowHeight } = useScrollingThrottling(600);
+  const { windowHeight } = useScrollingThrottling({ delay: 600 });
 
   const articleRef = useIntersectionObserver({
     threshold: 0.1,
