@@ -55,10 +55,10 @@ export function About() {
           user-friendly web applications.
         </p>
         <p>
-          I work mainly with <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>,{" "}
-          <b>React</b>, and <b>Python</b>, and I’m continuously improving my
-          skills through real-world projects, problem-solving, and hands-on
-          learning.
+          I work mainly with <b>React</b>, <b>Next.js</b>, <b>JavaScript</b>,{" "}
+          <b>Node.js</b>, and <b>Supabase</b>, styling with <b>Tailwind CSS</b>{" "}
+          and <b>CSS Modules</b>, and I’m continuously improving my skills
+          through real-world projects, problem-solving, and hands-on learning.
         </p>
 
         <p>
