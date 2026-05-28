@@ -72,7 +72,7 @@ export function Resume() {
 
    {
      name: "Freelance QA Tester",
-     year: "2021 - Present",
+     year: "2021 - 2024",
      description: "uTest",
      children: (
        <p className="timeline-text">
