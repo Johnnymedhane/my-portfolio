@@ -10,11 +10,26 @@ const ProjectsContext = createContext();
 
 const projects = [
   {
-    name: "the-wild-oasis",
+    name: "Anibinge",
+    category: "Full-Stack development",
+    img: `${process.env.PUBLIC_URL}/images/anibinge.png`,
+    webLink: "https://anibinge.com/",
+    github: null,
+  },
+
+  {
+    name: "the-wild-oasis-external",
+    category: "Full-Stack development",
+    img: `${process.env.PUBLIC_URL}/images/the-wild-oasis-external.png`,
+    webLink: "https://the-wild-oasis-website-sand-eight.vercel.app/",
+    github: "https://github.com/Johnnymedhane/the-wild-oasis-website",
+  },
+  {
+    name: "the-wild-oasis-internal",
     category: "Full-Stack development",
     img: `${process.env.PUBLIC_URL}/images/the-wild-oasis.png`,
     webLink: "https://the-wild-oasis-jme.netlify.app/",
-    github: "https://github.com/Johnnymedhane/the-wild-aosis",
+    github: "https://github.com/Johnnymedhane/the-wild-oasis-internal",
   },
 
   {

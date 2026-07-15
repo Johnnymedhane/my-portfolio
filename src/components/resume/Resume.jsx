@@ -7,13 +7,13 @@ export function Resume() {
   const educationList = [
     {
       name: "Frontend Development",
-      year: "2024 - Present",
+      year: "2024 - 2026",
       description: "Self-Study",
       children: (
         <p className="timeline-text">
-          Studying modern frontend development with React, Next.js, JavaScript,
-          routing, state management, performance optimization, and responsive
-          UI.
+          Structured self-directed learning in modern frontend development with
+          a focus on React, Next.js, and JavaScript, applied through real-world,
+          production-ready projects.
         </p>
       ),
     },
@@ -65,7 +65,12 @@ export function Resume() {
          Building modern web applications with React and Next.js, focusing on
          performance, scalability, and user experience.
          <br />
-         <span>Built and deployed 20+ responsive web applications</span>
+         <span>
+           Developed and deployed 20+ production-ready projects, including
+           authentication systems, payment integrations,  and
+           real-time applications using React, Node.js, Supabase, and modern web
+           technologies.
+         </span>
        </p>
      ),
    },

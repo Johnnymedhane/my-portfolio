@@ -1431,7 +1431,7 @@ article.animate {
   border-radius: 16px;
   overflow: hidden;
   transition: var(--transition-2);
-  background: var(--black-2);
+  background: var(--bg-gradient-yellow-2);
   border: 1px solid var(--jet);
   animation: scaleUp linear;
   animation-timeline: view();
@@ -1449,6 +1449,7 @@ article.animate {
 
 .project-item > a {
   width: 100%;
+
 }
 
 .project-img {
@@ -1504,6 +1505,7 @@ article.animate {
 }
 
 .project-info {
+ 
   position: relative;
   /* text-align: center; */
   padding: 0.4rem 1.3rem;
@@ -1526,25 +1528,25 @@ article.animate {
 
 .project-links {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
-  bottom: 0;
   gap: 10px;
   padding: 10px 0;
   margin-top: 10px;
-
-  background: var(--black-1);
   border-radius: 0 0 16px 16px;
   transition: var(--transition-1);
 }
 
+
 .project-links .btn {
   display: flex;
   gap: 8px;
-  background: none;
+  background: var(--bg-gradient-yellow-1);
   border: 1px solid var(--jet);
   border-radius: 10px;
   font-size: var(--fs-6);
-  color: var(--orange-1);
+  color: var(--light-gray-70);
   transition: var(--transition-2);
 }
 .project-links a:hover {
