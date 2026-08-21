@@ -1051,7 +1051,7 @@ article.animate {
 .about-text b {
   color: var(--lightGold);
   font-weight: 500;
-  background: var(--bg-gradient-jet);
+  /* background: var(--bg-gradient-jet); */
   padding: 2px;
   margin-right: 5px;
   border-radius: 5px;
