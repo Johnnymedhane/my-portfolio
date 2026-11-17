@@ -1,64 +1,62 @@
 import List from "../../ui/List";
 import { ServiceCard } from "./ServiceCard";
-import { FaFileContract, FaLaptopCode, FaTools } from "react-icons/fa";
-import { MdDesignServices } from "react-icons/md";
+import {
+  FaFileContract,
+  FaLaptopCode,
+  FaServer,
+  FaPaintBrush,
+} from "react-icons/fa";
 
 export function Service() {
   return (
     <List item="service" title="What I do">
       <div className="service-list">
-        <ServiceCard icon={<FaFileContract />} title="QA Testing">
-          <p>
-            Writing professional documentation (STP, STD, STR), identifying
-            bugs, performing test cases and bug reporting.
-          </p>
-          <p>
-            Tools: Jira, Chrome DevTools, Charles Proxy, Fiddler, ScreenPal,
-            VPNs, Fake GPS, AVD — across web and mobile platforms.
-          </p>
-        </ServiceCard>
-
         <ServiceCard icon={<FaLaptopCode />} title="Frontend Development">
           <p>
-            Building fast, responsive web applications with React, Next.js,
-            React Query, Redux Toolkit, React Hook Form, and React Router v6.
+            Building responsive, high-performance web applications with React,
+            Next.js, and TypeScript, covering data fetching, state management,
+            forms, and routing.
           </p>
           <p>
-            Experienced in clean architecture, reusable components, performance
-            optimization (memoization, code splitting, lazy loading), and
-            full-stack integration with Node.js and Supabase.
-          </p>
-        </ServiceCard>
-
-        <ServiceCard title="UI/UX Design" icon={<MdDesignServices />}>
-          <p>
-            I design intuitive and visually appealing interfaces using Figma for
-            wireframes, UI components, prototypes, and visual layouts.
-          </p>
-          <p>
-            Comfortable with Tailwind CSS, Styled Components, CSS Modules,
-            responsive design, and dark/light mode implementations.
+            Focused on reusable components, maintainable architecture, and
+            performance optimization through memoization, code splitting, and
+            lazy loading.
           </p>
         </ServiceCard>
 
-        <ServiceCard title="Tools & Workflow" icon={<FaTools />}>
+        <ServiceCard icon={<FaServer />} title="Full-Stack Development">
           <p>
-            <b>Backend & API:</b> Node.js, Express.js, RESTful APIs,
-            Authentication (JWT, OAuth, Magic Link)
+            <b>Backend & APIs:</b> Node.js, Express, REST APIs
           </p>
           <p>
-            <b>Database:</b> Supabase (PostgreSQL), MongoDB (Mongoose)
+            <b>Database:</b> Supabase (PostgreSQL), MongoDB, SQL
           </p>
           <p>
-            <b>Dev & Deploy:</b> Git, GitHub, VS Code, Netlify, Vercel, Render
+            <b>Auth & Payments:</b> Clerk, Google OAuth, JWT, Magic Link, PayPal
           </p>
           <p>
-            <b>Debugging:</b> React DevTools, React Query Devtools, Redux
-            DevTools, React Profiler, Chrome DevTools
+            <b>Dev & Deploy:</b> Git, GitHub, Vercel, Netlify, Render
           </p>
           <p>
-            <b>Additional:</b> Figma, Jira, Python (data analysis), SQL
-            (JOIN-level)
+            <b>AI-Assisted Development:</b> Claude Code, GitHub Copilot, ChatGPT
+          </p>
+        </ServiceCard>
+
+        <ServiceCard icon={<FaPaintBrush />} title="UI Implementation">
+          <p>
+            Turning designs and ideas into responsive, polished interfaces with
+            attention to layout, accessibility, consistency and user experience.
+          </p>
+          <p>
+            Working from Figma designs with Tailwind CSS, Styled Components and
+            CSS Modules, including dark and light modes.
+          </p>
+        </ServiceCard>
+
+        <ServiceCard icon={<FaFileContract />} title="Quality & Testing">
+          <p>
+            Three years of QA experience: writing test documentation (STP, STD,
+            STR), running test cases and reporting bugs across web and mobile.
           </p>
         </ServiceCard>
       </div>

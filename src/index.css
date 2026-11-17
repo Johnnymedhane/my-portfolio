@@ -236,7 +236,7 @@ img {
 }
 
 section {
-  padding: 1.5rem 0;
+  padding: 2rem 0.5rem;
   max-width: 1200px;
   margin: 2rem auto;
   animation: fade linear;
@@ -337,24 +337,11 @@ body {
 .app-layout {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
+  min-height: 100vh;
 }
 .main-wrapper {
   flex: 1;
-  overflow: auto;
 }
-.main-wrapper::-webkit-scrollbar {
-  width: 8px;
-}
-.main-wrapper::-webkit-scrollbar-thumb {
-  background-color: var(--orange-2);
-  border-radius: 4px;
-}
-.main-wrapper::-webkit-scrollbar-track {
-  background-color: var(--bg);
-}
-
 .main-container {
   margin: auto;
   transition: var(--transition-2);
@@ -714,10 +701,11 @@ body {
   font-family: var(--ffLeagueSpartan);
   color: var(--light-gray-70);
   line-height: 1.1;
+  width: 26ch;
 }
 .hero-content h2 span {
   display: block;
-  width: 18ch;
+  width: 26ch;
   white-space: nowrap;
   border-right: 2px solid var(--lightGold);
   overflow: hidden;
@@ -726,7 +714,7 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   background-image: linear-gradient(to right, rgb(124, 59, 20), #e5e842);
-  animation: typing 2.5s steps(15) infinite alternate;
+  animation: typing 2.5s steps(31) infinite alternate;
 }
 @keyframes typing {
   from {
@@ -2052,7 +2040,8 @@ textarea.form-input::-webkit-resizer {
   }
 
   .hero-content h2 span {
-    width: 16ch;
+    width: 26ch;
+    font-size: 1.15rem;
     margin: auto;
   }
   .hero-content p {
@@ -2155,6 +2144,9 @@ textarea.form-input::-webkit-resizer {
     max-width: 150px;
     max-height: 180px;
     /* box-shadow: inset 0 0 0 1px var(--orange-1); */
+  }
+  .hero-content h2 span {
+    font-size: 0.95rem;
   }
 }
 

@@ -71,12 +71,12 @@ html.dark-mode {
 
 
 /* Target Next.js SVG specifically: invert in dark mode so black paths become visible */
-html.dark-mode .skills-item .img-wrapper img[src$="nextjs.svg"] {
+html.dark-mode .skills-item img.skill-icon[src$="nextjs.svg"] {
   filter: invert(1) brightness(1.2);
 }
 
 /* Improve Express icon visibility in dark mode by brightening/inverting */
-html.dark-mode .skills-item .img-wrapper img[src$="express.svg"] {
+html.dark-mode .skills-item img.skill-icon[src$="express.svg"] {
   filter: invert(1) brightness(1.5) contrast(1.05);
 }
 

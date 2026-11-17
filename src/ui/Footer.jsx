@@ -6,19 +6,24 @@ function Footer() {
   const currentYear = new Date().getFullYear();
   return (
     <footer className={styles.footer}>
-      <span>&copy; {currentYear} </span>
-      <div className={styles.contact}>
-        <div className={styles.email}>
-          <HiOutlineMail />
+      <div className={styles.inner}>
+        <span className={styles.copyright}>&copy; {currentYear} Johnny Medhane</span>
+        <div className={styles.contact}>
           <a
             href="mailto:johnnymedhane@gmail.com?subject=Frontend Opportunity"
-            className={styles.emailLink}  >
-          Send an email
+            className={styles.email}
+          >
+            <span className={styles.iconBadge}>
+              <HiOutlineMail />
+            </span>
+            Send an email
           </a>
-        </div>
-        <div className={styles.phone}>
-          <FaWhatsapp />
-          <a href="whatsapp:+97259649436">Send Message</a>
+          <a href="whatsapp:+97259649436" className={styles.phone}>
+            <span className={styles.iconBadge}>
+              <FaWhatsapp />
+            </span>
+            Send Message
+          </a>
         </div>
       </div>
     </footer>
