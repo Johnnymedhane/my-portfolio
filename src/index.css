@@ -1766,7 +1766,7 @@ article.animate {
 }
 
 .form-input::placeholder {
-  font-weight: var(500);
+  font-weight: 500;
 }
 
 .form-input:focus {

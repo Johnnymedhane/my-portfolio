@@ -1,0 +1,71 @@
+import styles from "./myStory.module.css";
+
+interface ValueDetail {
+  title: string;
+  text: string;
+}
+
+const values: [
+  { title: string; text: string },
+  { title: string; text: ValueDetail[] },
+] = [
+  {
+    title: "What Drives Me",
+    text: `I am motivated to serve as an example for
+         other asylum seekers and refugees, showing that
+         perseverance and self- belief can lead to success.My ambition is
+         to join a team that values growth, innovation, and collaboration.`,
+  },
+  {
+    title: "Personal characteristics & strengths",
+    text: [
+      {
+        title: "Resilience and perseverance: ",
+        text: `I have faced numerous challenges, from being forced into exile at an
+                    early age(14 years old) to struggling financially and
+                    overcoming difficult personal circumstances. Yet I refused to give up and continuously worked toward a better future.`,
+      },
+      {
+        title: "Growth & Learning: ",
+        text: ` Despite having no prior tech background I decided to
+                pursue educations in software testing and frontend development. I am eager to learn and grow.`,
+      },
+      {
+        title: "Ambition & Purpose",
+        text: "I aim not only to succeed for myself but also to inspire and serve as a prime example for asylum seekers and refugees like me, proving that obstacles can be overcome with determination.",
+      },
+      {
+        title: "Responsibility & Independence",
+        text: "Since the age of 14, I have taken ownership of my life—setting goals, working hard to sustain myself, and making conscious decisions to improve my situation through self-reliance.",
+      },
+      {
+        title: "Empathy & Community",
+        text: "My experiences have given me deep empathy for others facing similar struggles. I believe in supporting and uplifting my community, creating opportunities for those who need them most.",
+      },
+    ],
+  },
+];
+
+export function Values() {
+  return (
+    <div className={styles.valuesContainer}>
+      <h2 className={styles.h2Title}>My Values</h2>
+      <div className={styles.valuesContent}>
+        <h3 className={styles.contentTitle}>{values[0].title}</h3>
+        <p className={styles.valueText}>{values[0].text}</p>
+      </div>
+
+      <div className={styles.valuesContent}>
+        <h3 className={styles.contentTitle}>{values[1].title}</h3>
+        <ul className={styles.valuesList}>
+          {values[1].text.map((value, index) => (
+            <li key={index}>
+              <h4>{value.title}</h4>
+              <p className={styles.valueText}>{value.text}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
