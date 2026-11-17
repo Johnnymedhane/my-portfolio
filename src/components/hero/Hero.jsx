@@ -25,13 +25,13 @@ const handleScroll = (sectionId) => {
 
         <div className="hero-content">
           <h1> <span>Hello👋 I'm,  </span>Johnny  Medhane</h1>
-          <h2> A Passionate <span>Front-End Developer</span></h2>
+          <h2> A Passionate <span>Frontend & Full-Stack Developer</span></h2>
           <p>Building sleek, responsive and high-performance websites.</p>
           <div className="cta-buttons">
             <a href="#projects" onClick={() => handleScroll('projects')} className="btn">
               View My Work
             </a>
-            <a href={`${process.env.PUBLIC_URL}/Johnny_Medhane_CV_Frontend.doxc.pdf`} rel="noopener noreferrer"
+            <a href={`${process.env.PUBLIC_URL}/Johnny_Medhane_CV.pdf`} rel="noopener noreferrer"
               target="_blank"
               download
               className="btn btn-outline">

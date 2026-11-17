@@ -10,6 +10,22 @@ const ProjectsContext = createContext();
 
 const projects = [
   {
+    name: "SnipSlot",
+    category: "Full-Stack development",
+    img: `${process.env.PUBLIC_URL}/images/snipslot.png`,
+    webLink: "https://www.snipslot.co",
+    github: null,
+  },
+
+  {
+    name: "Mila",
+    category: "Frontend development",
+    img: `${process.env.PUBLIC_URL}/images/mila.png`,
+    webLink: "https://www.app.milaassist.com/",
+    github: null,
+  },
+
+  {
     name: "Anibinge",
     category: "Full-Stack development",
     img: `${process.env.PUBLIC_URL}/images/anibinge.png`,

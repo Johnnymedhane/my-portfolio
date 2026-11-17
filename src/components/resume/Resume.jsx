@@ -6,14 +6,14 @@ import { Timeline } from "./Timeline";
 export function Resume() {
   const educationList = [
     {
-      name: "Frontend Development",
+      name: "Frontend & Full-Stack Development",
       year: "2024 - 2026",
-      description: "Self-Study",
+      description: "Udemy & Self-Directed Learning",
       children: (
         <p className="timeline-text">
-          Structured self-directed learning in modern frontend development with
-          a focus on React, Next.js, and JavaScript, applied through real-world,
-          production-ready projects.
+          A 300+ hour online program focusing on React and Next.js (App
+          Router, SSR/SSG/ISR), Context API, React Query, Redux Toolkit,
+          Tailwind CSS, Styled Components and performance optimization.
         </p>
       ),
     },
@@ -33,29 +33,86 @@ export function Resume() {
     {
       name: "Python & Data Analysis",
       year: "2022",
-      description: "ARDC Community, Tel Aviv",
+      description: "ARDC, Tel Aviv",
       children: (
         <p className="timeline-text">
-          Completed a Python and data analysis course using Pandas, NumPy, and
-          real-world datasets.
+          A 40-hour course focusing on Python, Pandas and practical data
+          analysis.
         </p>
       ),
     },
 
     {
-      name: "Manual Software Testing",
-      year: "2020",
-      description: "SV College",
+      name: "QA Manual Testing",
+      year: "2021",
+      description: "SV College, Tel Aviv",
       children: (
         <p className="timeline-text">
-          Completed practical QA training covering STP, STD, STR, SQL basics,
-          manual testing, and bug reporting.
+          A six-month course focusing on manual testing methodologies, SQL,
+          Jira and test documentation.
         </p>
       ),
     },
   ];
 
  const experienceList = [
+   {
+     name: "Frontend Developer",
+     year: "2026 - Present",
+     description: "PrimeTech (Mila)",
+     children: (
+       <p className="timeline-text">
+         Developing frontend features for a multilingual, chat- and
+         voice-based AI assistant using Next.js.
+         <br />
+         <span>
+           Implementing custom authentication flows with Clerk, voice
+           interaction features using browser microphone APIs and real-time
+           audio handling, and collaborating with developers through Git and
+           GitHub workflows.
+         </span>
+       </p>
+     ),
+   },
+
+   {
+     name: "Full-Stack Developer",
+     year: "2026 - Present",
+     description: "SnipSlot (Own Product)",
+     children: (
+       <p className="timeline-text">
+         Built an online booking platform where barbershops get their own
+         booking page and customers book appointments.
+         <br />
+         <span>
+           Built with Next.js, Supabase and Tailwind CSS, using a shared
+           PostgreSQL database with shop-level security policies, monthly and
+           yearly subscription plans in ILS and USD, and Google sign-in for
+           shop owners and customers.
+         </span>
+       </p>
+     ),
+   },
+
+   {
+     name: "Full-Stack Developer",
+     year: "2026",
+     description: "Anibinge Streaming Platform (Client Project)",
+     children: (
+       <p className="timeline-text">
+         Built an anime micro-series streaming platform where viewers buy
+         coins to unlock episodes and creators upload their own content.
+         <br />
+         <span>
+           Built the frontend in React and the backend with Node.js and
+           Express, with a creator upload system and integrations with
+           Supabase, Google OAuth, PayPal Checkout, Bunny.net media delivery
+           and HLS.js video playback.
+         </span>
+       </p>
+     ),
+   },
+
    {
      name: "Frontend Developer",
      year: "2024 - Present",
@@ -83,18 +140,6 @@ export function Resume() {
        <p className="timeline-text">
          Conducting functional, regression, and exploratory testing across web
          and mobile applications.
-       </p>
-     ),
-   },
-
-   {
-     name: "Kitchen Manager",
-     year: "2018 - 2023",
-     description: "Biga Coffee Shop",
-     children: (
-       <p className="timeline-text">
-         Managed kitchen operations, staff scheduling, inventory, and workflow
-         in a high-pressure environment.
        </p>
      ),
    },

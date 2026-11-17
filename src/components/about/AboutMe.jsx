@@ -8,40 +8,36 @@ import Text from "../../ui/Text";
 // import { Link } from 'react-router-dom';
 export const values = [
   {
-    title: "Advanced React Development",
-    text: `Skilled in building modern React applications using hooks, React Router, React Query, Context API, Redux, and reusable component patterns. I focus on clean structure, maintainability, and scalable frontend architecture.`,
+    title: "React & Next.js Development",
+    text: `I build fast, scalable applications with React and Next.js, structuring them around reusable components, custom hooks and clear state management so they stay easy to maintain as they grow.`,
   },
   {
     title: "Full-Stack Capable",
-    text: `I can build complete features from database to UI using Supabase, PostgreSQL, authentication, Node.js, Express.js, and REST APIs. I understand how frontend and backend systems connect in real-world applications.`,
+    text: `I build complete features from database to UI with Supabase, PostgreSQL, Node.js, Express and REST APIs, including authentication and payment integrations.`,
   },
   {
     title: "Performance-Focused",
-    text: `Experienced in improving React performance through code splitting, lazy loading, memoization, optimized rendering, and better state management. I care about fast load times and smooth user interactions.`,
+    text: `I improve React performance through code splitting, lazy loading, memoization and smarter state management, aiming for fast load times and smooth interactions.`,
   },
   {
     title: "Quality-Driven Mindset",
-    text: `My QA background helps me think beyond writing code. I test carefully, debug effectively, and build reliable features with attention to edge cases, user experience, and production readiness.`,
+    text: `My QA background shapes how I build. I test carefully, think about edge cases early and ship reliable features with the user experience in mind.`,
   },
   {
     title: "Modern UI & Styling",
-    text: `Comfortable working with CSS Modules, Tailwind CSS, Styled Components, responsive layouts, dark/light modes, and accessible UI patterns. I aim to create interfaces that are clean, usable, and visually polished.`,
+    text: `I work with Tailwind CSS, CSS Modules and Styled Components to build responsive, accessible interfaces, including dark and light modes.`,
   },
   {
-    title: "Self-Taught & Consistent",
-    text: `I taught myself frontend development while working full-time, completing many real projects and continuously improving through practice, problem-solving, and hands-on learning.`,
+    title: "AI-Assisted Development",
+    text: `I use Claude Code, GitHub Copilot and ChatGPT to speed up development, debugging and code review, while owning the architecture and quality of the code I ship.`,
   },
   {
-    title: "Strong Problem Solver",
-    text: `I break complex problems into clear steps and work through them with patience and focus. Whether it’s UI logic, API issues, authentication, or performance bugs, I stay committed until I find a solution.`,
+    title: "Fast Learner & Problem Solver",
+    text: `I taught myself development while working full-time. I break complex problems into clear steps, learn what I need and stay with an issue until it's solved.`,
   },
   {
     title: "Team-Ready Communicator",
-    text: `I communicate clearly, ask thoughtful questions, and enjoy working with others. My QA and freelance experience helped me collaborate with people from different backgrounds and understand product needs.`,
-  },
-  {
-    title: "Resilient & Mission-Driven",
-    text: `My journey has built strong resilience, discipline, and adaptability. I bring purpose, persistence, and a deep motivation to grow, contribute, and create meaningful work through technology.`,
+    text: `I communicate clearly, ask good questions and collaborate through Git and GitHub workflows in an active product team.`,
   },
 ];
 
@@ -50,37 +46,34 @@ export function About() {
     <Section title="About Me" sectionType="about">
       <Text content="about" className="about-text">
         <p>
-          Hello, I'm <span>Johnny Medhane</span> — a self-taught Frontend
-          Developer focused on building responsive, accessible, and
-          user-friendly web applications.
+          I'm <span>Johnny Medhane</span> — a self-taught Frontend &
+          Full-Stack Developer specializing in <b>React</b> and{" "}
+          <b>Next.js</b>, with 20+ web applications built and deployed.
         </p>
         <p>
-          I work mainly with <b>React</b>, <b>Next.js</b>, <b>JavaScript</b>,{" "}
-          <b>TypeScript</b>, <b>Node.js</b>, and <b>Supabase</b>, styling with{" "}
-          <b>Tailwind CSS</b> and <b>CSS Modules</b>, and I’m continuously
-          improving my skills through real-world projects, problem-solving, and
-          hands-on learning.
-        </p>
-
-        <p>
-          Programming is both a creative outlet and a discipline for me. I enjoy
-          the full development process — planning, designing, coding, debugging,
-          testing, and improving the user experience.
-        </p>
-        <p>
-          My journey has taught me how to learn effectively, stay disciplined,
-          research deeply, and solve problems under pressure. I don’t panic when
-          facing new technologies — I break things down, learn what I need, and
-          keep moving forward.
+          I build more than interfaces. I enjoy understanding how an
+          application works as a whole — from its architecture and database
+          to authentication, APIs, user interactions, and deployment.
+          My focus is on writing maintainable code and creating responsive,
+          reliable applications that solve real problems.
         </p>
 
         <p>
-          I invite you to explore my projects and resume. If you’re looking for
-          a dedicated developer who learns fast, solves problems, and builds
-          with care, feel free to reach out.
+          My path into technology wasn't traditional. I taught myself
+          development while working full-time, using online courses,
+          documentation, experimentation, and real projects to build
+          my skills. My previous experience in QA also shaped how I
+          approach software: thinking about edge cases, investigating
+          problems, and paying attention to the details that make
+          applications reliable.
+        </p>
+
+        <p>
+          Explore my projects and resume, or{" "}
           <Link className="link-my-story" to="/my-story">
-            Read my story &rarr;
+            read my story &rarr;
           </Link>
+          {" "}to learn more about the journey behind my work.
         </p>
       </Text>
 
