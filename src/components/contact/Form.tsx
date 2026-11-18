@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Loading } from "../../ui/Loading";
-import { getClient, submitForm } from "../../api/apiClient";
+import { submitContactForm } from "../../api/apiClient";
 import toast from "react-hot-toast";
 import { useForm, type FieldErrors } from "react-hook-form";
 import type { ContactFormFields } from "../../types/contact";
@@ -20,35 +20,24 @@ export function Form() {
   async function onSubmit(data: ContactFormFields) {
     setResponseMessage("");
     if (isSubmitting) return;
-    try {
-      const clientList = await getClient();
 
-      // Check if email already exists
-      const isDuplicate = clientList.some(
-        (client) => client.email === data.email,
-      );
+    const result = await submitContactForm(data);
 
-      if (isDuplicate) {
-        toast.error("You have already submitted a form with this email.");
-        throw new Error("Duplicate submission");
-      }
-
-      const formData = {
-        clientName: data.name,
-        email: data.email,
-        phoneNumber: data.phone,
-        message: data.message || "",
-      };
-
-      await submitForm(formData);
+    if (result.ok) {
       setResponseMessage(
-        `thank you for contacting me ${data.name.split(" ")[0]}!`,
+        `thank you for contacting me ${result.name.split(" ")[0]}!`,
       );
       toast.success("Form submitted successfully!");
       setTimeout(() => setResponseMessage(""), 5000);
       reset();
-    } catch (error) {
-      console.error("Error:", error);
+      return;
+    }
+
+    if (result.reason === "duplicate") {
+      toast.error("You have already submitted a form with this email.");
+    } else {
+      console.error("Contact form submission failed");
+      toast.error("Something went wrong. Please try again.");
     }
   }
 

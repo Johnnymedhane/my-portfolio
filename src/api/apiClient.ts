@@ -1,21 +1,29 @@
-import { supabase } from "./supabase";
-import type { ContactRow, ContactSubmission } from "../types/contact";
+"use server";
 
-export async function getClient(): Promise<ContactRow[]> {
-  const { data: client, error } = await supabase.from("contacts").select("*");
+import { getSql } from "./db";
+import type { ContactFormFields, ContactSubmitResult } from "../types/contact";
 
-  if (error) {
-    console.error(error);
-    throw new Error("Failed to fetch client data");
+export async function submitContactForm(
+  data: ContactFormFields,
+): Promise<ContactSubmitResult> {
+  const sql = getSql();
+  const clientName = data.name;
+  const email = data.email;
+  const phoneNumber = data.phone;
+  const message = data.message || "";
+
+  try {
+    await sql`
+      INSERT INTO contacts ("clientName", email, "phoneNumber", message)
+      VALUES (${clientName}, ${email}, ${phoneNumber}, ${message})
+    `;
+    return { ok: true, name: clientName };
+  } catch (error: unknown) {
+    const code = (error as { code?: string } | null)?.code;
+    if (code === "23505") {
+      return { ok: false, reason: "duplicate" };
+    }
+    console.error("Failed to submit contact form:", error);
+    return { ok: false, reason: "error" };
   }
-  return client as ContactRow[];
-}
-
-export async function submitForm(formData: ContactSubmission) {
-  const { data, error } = await supabase.from("contacts").insert([formData]);
-  if (error) {
-    console.error("Supabase error:", error);
-    throw new Error(`Failed to submit form: ${error.message}`);
-  }
-  return data;
 }
