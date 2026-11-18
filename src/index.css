@@ -328,6 +328,7 @@ html {
 body {
   background: var(--bg);
   width: 100%;
+  overflow-x: hidden;
   color: var(--white-1);
   font-size: 1rem;
   line-height: 1.5;
@@ -677,6 +678,14 @@ body {
   }
   to {
     transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes content-fade {
+  from {
+    opacity: 0;
+  }
+  to {
     opacity: 1;
   }
 }
@@ -1897,6 +1906,9 @@ textarea.form-input::-webkit-resizer {
     margin: 1rem;
     align-self: center;
     justify-self: self-start;
+  }
+  .hero-content {
+    animation: content-fade 1s linear;
   }
 
   .hero-content h1 {
