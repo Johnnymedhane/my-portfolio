@@ -21,20 +21,14 @@ function useScrollingThrottling({
     }
 
     lastCall.current = now;
-
-    const container = document.querySelector<HTMLElement>(".main-wrapper");
-    const y = container ? container.scrollTop : window.scrollY;
-
-    setWindowHeight(y);
+    setWindowHeight(window.scrollY);
   }, [delay]);
 
   useEffect(() => {
-    const target: EventTarget =
-      document.querySelector(".main-wrapper") ?? window;
-    target.addEventListener("scroll", throttled);
+    window.addEventListener("scroll", throttled);
 
     return () => {
-      target.removeEventListener("scroll", throttled);
+      window.removeEventListener("scroll", throttled);
     };
   }, [throttled]);
 

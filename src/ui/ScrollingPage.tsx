@@ -8,12 +8,13 @@ interface ScrollupProps {
 
 function Scrollup({ scrollDirection }: ScrollupProps) {
   const handlescrollDown = () => {
-    const ele = document.querySelector(".main-wrapper");
-    ele?.scrollTo({ top: ele.scrollHeight, behavior: "smooth" });
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
   };
   const handleScrollUp = () => {
-    const ele = document.querySelector(".main-wrapper");
-    ele?.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
   if (!scrollDirection) return null;
   return scrollDirection === "down" ? (

@@ -1,6 +1,6 @@
 import styles from "../../components/myStoryContainer/myStory.module.css";
-import { BackGround } from "../../components/myStoryContainer/BackGround";
-import { MyJourney } from "../../components/myStoryContainer/MyJourney";
+import { Hero } from "../../components/myStoryContainer/Hero";
+import { Timeline } from "../../components/myStoryContainer/Timeline";
 import { Values } from "../../components/myStoryContainer/Values";
 
 export default function MyStoryPage() {
@@ -8,10 +8,10 @@ export default function MyStoryPage() {
     <div>
       <section id="mystory">
         <div className={styles.mystoryContainer}>
-          <BackGround />
-          <MyJourney />
+          <Hero />
+          <Timeline />
           <Values />
-          <ContactMe />
+          {/* <ContactMe /> */}
         </div>
       </section>
     </div>
@@ -21,11 +21,14 @@ export default function MyStoryPage() {
 function ContactMe() {
   return (
     <div className={styles.endStory}>
+      <p className={styles.closingStatement}>
+        This is where my story has brought me, but it&apos;s far from over. If
+        it resonates with you, or you&apos;d like to build something together,
+        I&apos;d love to hear from you.
+      </p>
       <p>
-        Thank you for reading my story! I&apos;m excited to connect and
-        explore new opportunities together! Feel free to reach me{" "}
+        Reach me at{" "}
         <a href="mailto:johnnymedhane@gmail.com" className={styles.link}>
-          {" "}
           johnnymedhane@gmail.com
         </a>
         .

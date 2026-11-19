@@ -6,7 +6,7 @@ import { Indicator } from "./Indicator";
 import { SocialMedia } from "./SocialMedia";
 
 export function Hero() {
-  const { setSelectedNav, showIndicator } = useAppContext();
+  const { setSelectedNav, showIndicator, isDarkMode } = useAppContext();
   const pathname = usePathname();
   const isRootRoute = pathname === "/";
 
@@ -18,7 +18,10 @@ export function Hero() {
     <div id="home" className="hero">
       <div className="hero-container">
         <div className="hero-image">
-          <img src="/images/removed-bg.png" alt="my-pic" />
+          <img
+            src={isDarkMode ? "/images/black-profile.png" : "/images/profile.png"}
+            alt="my-pic"
+          />
         </div>
 
         <div className="hero-content">
