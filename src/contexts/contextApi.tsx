@@ -31,16 +31,6 @@ function AppProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  useEffect(() => {
-    function changTitle() {
-      document.title = `${title} - ${selectedNav}`;
-    }
-    changTitle();
-    return () => {
-      document.title = title;
-    };
-  }, [selectedNav]);
-
   useEffect(
     function () {
       const root = document.documentElement;

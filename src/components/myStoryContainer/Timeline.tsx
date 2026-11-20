@@ -58,7 +58,7 @@ const entries: TimelineEntry[] = [
 
   {
     title: "Discovering a New Direction",
-    img: "",
+    img: "/images/view.png",
     paragraphs: [
       <>
         In 2021, I decided I wanted something different for my future. I
@@ -109,7 +109,7 @@ const entries: TimelineEntry[] = [
   },
   {
     title: "From Learning to Building",
-    img: "",
+    img: "/images/coding-img.jpg",
     paragraphs: [
       <>
         I eventually moved beyond tutorials and started building real
@@ -158,6 +158,7 @@ export function Timeline() {
                 src={entry.img}
                 alt={entry.title}
                 fill
+                
                 className={styles.timelineImg}
               />
             ) : (

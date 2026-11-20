@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useAppContext } from "../contexts/contextApi";
+import styles from "./Header.module.css";
 
 interface PagesNavProps {
   item: string;
@@ -12,10 +13,10 @@ function PagesNav({ item }: PagesNavProps) {
 
   const selected = item === selectedNav;
   return (
-    <li className="nav-item">
+    <li className={styles.navItem}>
       <Link
         href={`/${item}`}
-        className={selected ? "nav-active" : "nav-link"}
+        className={selected ? styles.navActive : styles.navLink}
         onClick={() => closeNavBar(item)}
       >
         {item}

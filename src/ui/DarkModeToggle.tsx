@@ -2,23 +2,24 @@
 
 import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi";
 import { useAppContext } from "../contexts/contextApi";
+import styles from "./Header.module.css";
 
 function DarkModeToggle() {
   const { isDarkMode, toggleDarkMode } = useAppContext();
   return (
-    <label className="switch">
+    <label className={styles.switch}>
       {isDarkMode ? (
-        <span className="sun">
+        <span className={styles.sun}>
           <HiOutlineSun />
         </span>
       ) : (
-        <span className="moon">
+        <span className={styles.moon}>
           <HiOutlineMoon />
         </span>
       )}
 
-      <input type="checkbox" className="input" onClick={toggleDarkMode} />
-      <span className="slider"></span>
+      <input type="checkbox" className={styles.input} onClick={toggleDarkMode} />
+      <span className={styles.slider}></span>
     </label>
   );
 }

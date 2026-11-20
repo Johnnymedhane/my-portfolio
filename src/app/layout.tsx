@@ -3,15 +3,16 @@ import Script from "next/script";
 import Header from "../ui/Header";
 import Footer from "../ui/Footer";
 import { Providers } from "./providers";
+import styles from "../ui/AppLayout.module.css";
 import "../index.css";
 
 export const metadata: Metadata = {
-  title: "My-portfolio",
+  title: {
+    default: "JohnnyMe - Home",
+    template: "JohnnyMe - %s",
+  },
   description:
     "Johnny Medhane's portfolio - Full-stack developer showcasing React, JavaScript, and web development projects",
-  icons: {
-    icon: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>JM</text></svg>",
-  },
 };
 
 export const viewport: Viewport = {
@@ -34,10 +35,10 @@ export default function RootLayout({
       <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <Providers>
-          <div className="app-layout">
+          <div className={styles.appLayout}>
             <Header />
-            <div className="main-wrapper">
-              <div className="main-container">{children}</div>
+            <div className={styles.mainWrapper}>
+              <div className={styles.mainContainer}>{children}</div>
             </div>
             <Footer />
           </div>

@@ -1,28 +1,29 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Logo from "./Logo";
-
 import Hamburger from "./Hamburger";
 import PagesNav from "./PagesNav";
 import List from "./List";
 import DarkModeToggle from "./DarkModeToggle";
+import styles from "./Header.module.css";
 
 export function Header() {
   const navList = ["home", "about", "skills", "projects", "resume", "contact"];
-
+  const headerRef = useRef<HTMLElement | null>(null);
+  const [isScrolledUp, setIsScrolledUp] = useState(false);
   useEffect(() => {
     let lastScroll = 0;
 
     const handleScroll = () => {
-      const currentScroll = window.pageYOffset;
-      const header = document.querySelector(".head");
+      const currentScroll = window.scrollY;
+
       if (currentScroll > lastScroll && currentScroll > 100) {
-        // Scrolling up
-        header?.classList.add("scrolled-up");
+        // Scrolling down - hide header
+        setIsScrolledUp(true);
       } else {
-        // Scrolling down or at top
-        header?.classList.remove("scrolled-up");
+        // Scrolling up or at top - show header
+        setIsScrolledUp(false);
       }
 
       lastScroll = currentScroll;
@@ -33,15 +34,16 @@ export function Header() {
   }, []);
 
   return (
-    <header className="head">
+    <header className={`${styles.head} ${isScrolledUp ? styles.scrolledUp : ""}`} >
       <Logo />
       <Hamburger />
 
       <DarkModeToggle />
-      <nav className="nav">
-        <List
+      <nav className={styles.nav}>
+        <List<string>
           item="nav"
           data={navList}
+          listClassName={styles.navList}
           renderItem={(nav, index) => <PagesNav item={nav} key={index} />}
         />
       </nav>

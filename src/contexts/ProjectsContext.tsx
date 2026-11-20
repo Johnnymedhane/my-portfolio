@@ -58,7 +58,7 @@ const projects: Project[] = [
   {
     name: "primeTech",
     category: "Frontend development",
-    img: "/images/primetech.png",
+    img: "/images/primeTech.png",
     webLink: "https://primete.netlify.app/",
     github: "https://github.com/Johnnymedhane/primeTech",
   },

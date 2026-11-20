@@ -3,17 +3,19 @@ import { Hero } from "../../components/myStoryContainer/Hero";
 import { Timeline } from "../../components/myStoryContainer/Timeline";
 import { Values } from "../../components/myStoryContainer/Values";
 
+export const metadata = { title: "My Story" };
+
 export default function MyStoryPage() {
   return (
     <div>
-      <section id="mystory">
+      <div id="mystory">
         <div className={styles.mystoryContainer}>
           <Hero />
           <Timeline />
           <Values />
           {/* <ContactMe /> */}
         </div>
-      </section>
+      </div>
     </div>
   );
 }
