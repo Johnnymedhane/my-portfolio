@@ -15,16 +15,18 @@
 /* Mobile screens */
 @media (max-width: 767px) {
   .logo {
-    width: 40px;
+    width: 30px;
     height: 50px;
     padding: 20px;
+    
   }
+  
 }
 
 /* Tablet screens */
 @media (min-width: 768px) and (max-width: 1023px) {
   .logo {
-    width: 150px;
+    width: 130px;
     height: 35px;
     padding: 5px 8px;
   }
@@ -33,7 +35,7 @@
 /* Large screens */
 @media (min-width: 1024px) {
   .logo {
-    width: 208px;
+    width: 150px;
     height: 40px;
     padding: 5px 10px;
   }

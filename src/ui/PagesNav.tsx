@@ -19,7 +19,7 @@ function PagesNav({ item }: PagesNavProps) {
         className={selected ? styles.navActive : styles.navLink}
         onClick={() => closeNavBar(item)}
       >
-        {item}
+        {item === "my-story" ? "My Story" : item}
       </Link>
     </li>
   );

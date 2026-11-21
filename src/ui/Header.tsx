@@ -9,7 +9,7 @@ import DarkModeToggle from "./DarkModeToggle";
 import styles from "./Header.module.css";
 
 export function Header() {
-  const navList = ["home", "about", "skills", "projects", "resume", "contact"];
+  const navList = ["home", "about", "my-story", "skills", "projects", "resume", "contact"];
   const headerRef = useRef<HTMLElement | null>(null);
   const [isScrolledUp, setIsScrolledUp] = useState(false);
   useEffect(() => {
@@ -34,11 +34,12 @@ export function Header() {
   }, []);
 
   return (
-    <header className={`${styles.head} ${isScrolledUp ? styles.scrolledUp : ""}`} >
+    <header
+      className={`${styles.head} ${isScrolledUp ? styles.scrolledUp : ""}`}
+    >
       <Logo />
       <Hamburger />
 
-      <DarkModeToggle />
       <nav className={styles.nav}>
         <List<string>
           item="nav"
@@ -47,6 +48,7 @@ export function Header() {
           renderItem={(nav, index) => <PagesNav item={nav} key={index} />}
         />
       </nav>
+      <DarkModeToggle />
     </header>
   );
 }
